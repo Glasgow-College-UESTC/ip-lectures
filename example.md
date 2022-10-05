@@ -9,7 +9,6 @@ transition: fade
 # <!-- fit --> CS 199 EMP
 
 ### Hosted by Jackie Chan and Akhila Ashokan
-
 **Topics:** Variables/Datatypes, Operations on Variables, and Conditional Statements/Expressions
 
 ---

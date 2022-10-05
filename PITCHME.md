@@ -1,48 +1,95 @@
 ---
 marp: true
-title: Marp CLI example
-description: Hosting Marp slide deck on the web
-theme: uncover
+title: UESTC 1005 - Introductory Programming
+description: Course Slides for the C programming course
+theme: uncovered
 paginate: true
+transition: fade
 _paginate: false
+
 ---
 
-![bg](./assets/gradient.jpg)
+<!-- _header: ![h:3em](http://www.gla.ac.uk/t4/visualidentity/files/downloads/University%20marque/UofG_keyline_boxed_marque%20(Digital_(RGB_72dpi)).jpg) -->
 
-# <!--fit--> Marp CLI example
+# UESTC 1005 - Introductory Programming
 
-Hosting Marp slide deck on the web
+Lecture 4 - Operators and Program Control
 
-https://github.com/yhatt/marp-cli-example
+Dr Hasan T Abbas
 
-<style scoped>a { color: #eee; }</style>
+<!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
 
 ---
 
-![Marp bg 60%](https://raw.githubusercontent.com/marp-team/marp/master/marp.png)
+# About Me
+
+- IP Course Coordinator since 2019
+- Research Interests in Numerical Electromagnetics
+- Fascinated by Nanoscale Physics
+![bg right 60%](https://www.gla.ac.uk/media/Media_701142_smxx.jpg)
 
 ---
 
-<!-- _backgroundColor: "#123" -->
-<!-- _color: "#fff" -->
+<!-- _backgroundColor: "#FFF" -->
+<!-- _color: "#093867" -->
 
-##### <!--fit--> [Marp CLI](https://github.com/marp-team/marp-cli) + [GitHub Pages](https://github.com/pages) | [Netlify](https://www.netlify.com/) | [Vercel](https://vercel.com/)
-
-##### <!--fit--> 👉 The easiest way to host<br />your Marp deck on the web
 
 ---
 
-![bg right 60%](https://icongr.am/octicons/mark-github.svg)
+# Lecture Outline
 
-## **[GitHub Pages](https://github.com/pages)**
-
-#### Ready to write & host your deck!
-
-[![Use this as template h:1.5em](https://img.shields.io/badge/-Use%20this%20as%20template-brightgreen?style=for-the-badge&logo=github)](https://github.com/yhatt/marp-cli-example/generate)
+- Dive deeper into operators (运算符)
+- Make Decisions
+- Introduce program control
 
 ---
+
+# Operators
+
+In the last lecture, we looked at a number of operators available in C. 
+C has in fact many more, and mastering all of them takes time. 
+
+- Interestingly, the results of operators as sometimes hardware dependent.
+- Let's look at some interesting observations.
+
+---
+
+# \textcolor{red}{Some Side Effects}
+
+Some unexpected results:
+
+```C
+int i;
+float pi;
+pi = i = 3.1416f;
+```
+---
+
+
+# <span style="color:red">Some Side Effects</span>
+
+Some unexpected results:
+
+```C
+int i;
+float pi;
+pi = i = 3.1416f;
+```
+The `float` variable `f` is assigned a value of `3.0` (as opposed to `3.1416`).
+
+<span style="color:green">better to use multiple statements to avoid unexpected behaviour</span>
+---
+
+# <span style="color:orange">Example - Operators</span>
+
+
+Write a C program where you are going to enter a *two-digit* number which is then printed on the screen.
+
+Task is to reverse
+
+
 
 ![bg right 60%](https://icongr.am/simple/netlify.svg?colored)
 
