@@ -22,4 +22,3 @@ In Chrome `chrome://flags` the `documentTransition API` needs to be enabled to t
 [marp]: https://marp.app/
 [marp cli]: https://github.com/marp-team/marp-cli
 [Github Discussions]: https://github.com/orgs/marp-team/discussions
-[]
