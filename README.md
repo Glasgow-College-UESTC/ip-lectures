@@ -1,4 +1,13 @@
-# Marp CLI example
+# IP lectures created through MARP
+
+The source file is just a markdown file that has pairing `CSS` file for themes and styling. 
+
+From the markdown file, we can create `PDF`, `HTML` and `PPTX` files to share with students.
+
+To do so, compile the slides using:
+
+```
+marp 
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/yhatt/marp-cli-example)
 
