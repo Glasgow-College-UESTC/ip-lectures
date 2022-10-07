@@ -351,7 +351,7 @@ We can implement a given logic through either `if` or `switch` statements.
 - `switch` checks the variable in the argument (between the parentheses `()`) against a range of possible values.
 - Code reads better if `switch` is used.
 
----
+---  
 <div class="columns">
 <div class="columns-left">
 
@@ -382,6 +382,7 @@ int main(){
 - [https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
 </div>
 </div>
+
 ---
 
 # `break` statement
