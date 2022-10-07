@@ -23,7 +23,7 @@ _color: "#093867"
 Lecture 4 - Operators and Program Control
 
 Dr Hasan T Abbas
-
+<!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
