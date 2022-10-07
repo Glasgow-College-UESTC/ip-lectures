@@ -12,6 +12,8 @@ style: |
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
+_backgroundColor: "#FFF"
+_color: "#093867"
 ---
 
 <!-- _header: ![h:3em](http://www.gla.ac.uk/t4/visualidentity/files/downloads/University%20marque/UofG_keyline_boxed_marque%20(Digital_(RGB_72dpi)).jpg) -->
@@ -35,12 +37,6 @@ Dr Hasan T Abbas
 - Fascinated by Nanoscale Physics
 - Also dabbles in Artificial Intelligence :brain: and Healthcare Technologies :hospital:
 ![bg right 60%](https://www.gla.ac.uk/media/Media_701142_smxx.jpg)
-
----
-
-<!-- _backgroundColor: "#FFF" -->
-<!-- _color: "#093867" -->
-
 
 ---
 
@@ -223,7 +219,7 @@ else
     {statementsN}
 ```
 
-![bg right 60%](assets/cascaded-ifs.svg)
+![bg right 80%](assets/cascaded-ifs.svg)
 
 ---
 
@@ -256,7 +252,7 @@ else
     {statements3}
 ```
 
-![bg right 60%](assets/nested-ifs.svg)
+![bg right 80%](assets/nested-ifs.svg)
 
 ---
 <div class="columns">
@@ -275,13 +271,13 @@ if ( !(num %2 == 0))
     printf("%d is not odd or divisible by 7", num);
 ```
 - *Hint:* Your answer is a single line 
-- 
+
 </div>
 <div class="columns-right">
 
-![50%](assets/quiz-1.png)
+![40%](assets/quiz-1.png)
 
-- Go to the website link - [https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
+Go to the website link - [https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
 </div>
 </div>
 
@@ -317,7 +313,7 @@ Imagine you call your mobile phone service helpline, and you are presented with 
   
 In C, we can implement the same using the `switch` statement. Options are selected using the `case` labels.
 
-![bg right 50%](assets/switch.svg)
+![bg right 90%](assets/switch.svg)
 
 ---
 # `switch` - Example :placard:
@@ -351,7 +347,7 @@ int main(){
 
 We can implement a given logic through either `if` or `switch` statements. 
 - Matter of personal choice/taste
-- `if` checks for a `*condition*
+- `if` checks for a *condition*
 - `switch` checks the variable in the argument (between the parentheses `()`) against a range of possible values.
 - Code reads better if `switch` is used.
 
@@ -415,15 +411,8 @@ Loops :carousel_horse:
 
 # Questions :question:
 
-- [https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
+![bg right 60%](assets/quiz-1.png)
 
+[https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
 
-
-
-<!-- When the grade is `B`, the output of the above code is:
-```
-Good
-Average
-Fail
-Invalid grade
-``` -->
+---
