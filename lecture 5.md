@@ -41,7 +41,6 @@ Hasan T Abbas
 - The need for iteration
 - The `while` loop
 - The `for` loop
-- Nested Loops
 
 
 ![bg right:40%](https://media.giphy.com/media/CR6MXuypuIipkMWVpg/giphy.gif)
@@ -301,7 +300,7 @@ are all <span style="color:green">valid</span> in C
 
 # Quiz :question:
 
-Pick a `for` loop statement that counts from `1` to `100` in steps of `10`.
+Pick a `for` loop statement that counts from `1` to `100` in steps of `5`.
 
 ![bg right 60%](assets/quiz-2.png)
 
