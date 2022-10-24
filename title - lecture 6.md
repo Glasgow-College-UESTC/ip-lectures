@@ -27,5 +27,5 @@ Covering until Arrays
 
 <span style="color:green"> Important Discussion on Lab 2 today</span>
 
-![bg right:40% 50%](qrcode-github.com.png)
+![bg right:40% 50%](assets/lecture%20slide.png)
 

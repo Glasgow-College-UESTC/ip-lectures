@@ -21,8 +21,7 @@ _color: "#093867"
 
 # UESTC 1005 - Introductory Programming
 
-Lecture 6 - Modular Programming 
-
+Lecture 6 - Modular Programming
 
 <!-- ```C
 extern int add (int a, int b)
@@ -48,9 +47,9 @@ Hasan T Abbas
 - Nested Loops :nesting_dolls:
 - Modular Programming :bento:
 - Functions in C
-- Scope - Program Organisation
+- Scope - Program Organisation :package:
 
-![bg right:25% 80%](https://media3.giphy.com/media/3oEjHWPTo7c0ajPwty/200.gif)
+![bg right:25% 95%](https://media3.giphy.com/media/3oEjHWPTo7c0ajPwty/200.gif)
 
 ---
 
@@ -168,7 +167,7 @@ average(a,b);
 sum(a,b);
 ```
 
-<span style="color:red"> WRONG</span>
+<span style="color:red"> WRONG</span> :x:
 
 ```C
 average;
@@ -517,17 +516,13 @@ What is the output of the program below:
 ```C
 #include <stdio.h>
 void swap(int a, int b);
-
-int main(void)
-{
+int main(void){
     int i = 1, j = 2;
     swap(i, j);
     printf("i = %d, j = %d\n", i, j);
     return 0;
 }
-
-void swap(int a, int b)
-{
+void swap(int a, int b){
     int temp = a;
     a = b;
     b = temp;
@@ -564,3 +559,12 @@ Visit [https://www.menti.com/alyevvb24kv8](https://www.menti.com/alyevvb24kv8) a
 ![bg right 60%](assets/quiz-2.png)
 
 [https://www.menti.com/alyevvb24kv8](https://www.menti.com/alyevvb24kv8) and type the code `4168 3514`.
+
+---
+
+# Further Reading
+
+- An awesome :cool: online book :book:
+- Lets you practice coding on site
+
+![bg right 60% 95%](assets/online%20book.png)
