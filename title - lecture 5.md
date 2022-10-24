@@ -20,13 +20,12 @@ _color: "#093867
 
 # UESTC 1005 - Introductory Programming
 
-Lecture 5 - Starting Shortly 
+Lecture 6 - Functions 
+
+<span style="color:red"> Midterm on November 13</span>
+Covering until Arrays
+
+<span style="color:green"> Important Discussion on Lab 2 today</span>
 
 ![bg right:40% 50%](qrcode-github.com.png)
 
-<!-- transition: fade -->
-<!-- <style scoped>a { color: #eee; }</style> -->
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
-
----

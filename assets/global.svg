@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="376.1311mm"
+   height="144.34982mm"
+   viewBox="0 0 376.13111 144.34982"
+   version="1.1"
+   id="svg4079"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   sodipodi:docname="global.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4081"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.65987367"
+     inkscape:cx="637.24318"
+     inkscape:cy="361.43282"
+     inkscape:window-width="1920"
+     inkscape:window-height="1147"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4076">
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleIn"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="EmptyTriangleIn"
+       markerWidth="5.8241119"
+       markerHeight="6.7330775"
+       viewBox="0 0 5.8241121 6.7330776"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path153" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(75.831619,-2.7414414)">
+    <g
+       id="g10979"
+       transform="translate(2.5449944)">
+      <rect
+         style="fill:#ffd5d5;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:1"
+         id="rect4310"
+         width="112.48843"
+         height="56.244217"
+         x="53.444729"
+         y="90.092545"
+         ry="5.7787161" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="90.850357"
+         y="122.0697"
+         id="text5260"><tspan
+           sodipodi:role="line"
+           id="tspan10599"
+           x="90.850357"
+           y="122.0697">main()</tspan></text>
+    </g>
+    <g
+       id="g10974">
+      <rect
+         style="fill:#d7d5ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:1"
+         id="rect10577"
+         width="112.48843"
+         height="56.244217"
+         x="-75.331619"
+         y="90.347046"
+         ry="5.7787161" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-51.010418"
+         y="121.55939"
+         id="text10581"><tspan
+           sodipodi:role="line"
+           id="tspan10601"
+           x="-51.010418"
+           y="121.55939">myFunc_1()</tspan></text>
+    </g>
+    <g
+       id="g10984">
+      <rect
+         style="fill:#d5ffea;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:1"
+         id="rect10585"
+         width="112.48843"
+         height="56.244217"
+         x="187.31107"
+         y="90.092545"
+         ry="5.7787161" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="211.63226"
+         y="121.30489"
+         id="text10589"><tspan
+           sodipodi:role="line"
+           id="tspan10606"
+           x="211.63226"
+           y="121.30489">myFunc_2()</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="58.886028"
+       y="60.396267"
+       id="text11042"><tspan
+         sodipodi:role="line"
+         id="tspan11040"
+         style="stroke-width:0.264583"
+         x="58.886028"
+         y="60.396267" /></text>
+    <g
+       id="g11068"
+       transform="translate(0,29.855066)">
+      <rect
+         style="fill:#fdffd5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:1"
+         id="rect11052"
+         width="112.48843"
+         height="56.244217"
+         x="55.989723"
+         y="-26.613625"
+         ry="5.7787161" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="63.252586"
+         y="4.6684875"
+         id="text11056"><tspan
+           sodipodi:role="line"
+           id="tspan11063"
+           x="63.252586"
+           y="4.6684875">global variable</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleIn)"
+       d="M 55.863433,29.765747 H -18.659599 V 86.07085"
+       id="path11070"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleIn)"
+       d="M 114.71888,59.620812 V 86.313843"
+       id="path11072"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleIn)"
+       d="m 168.61308,30.153476 h 82.19837 v 56.482592"
+       id="path11074"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>

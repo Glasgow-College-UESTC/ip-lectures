@@ -228,6 +228,14 @@ do{
 
 ---
 
+# Questions :question:
+
+![bg right 60%](assets/quiz-2.png)
+
+[https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
+
+---
+
 # The `for` Loop 
 
 - `for` loop is the most C-like thing in C
@@ -304,7 +312,7 @@ Pick a `for` loop statement that counts from `1` to `100` in steps of `5`.
 
 ![bg right 60%](assets/quiz-2.png)
 
-Go to [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `3874 5754`.
+Go to [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
 
 ---
 
@@ -389,7 +397,7 @@ $$ 1 + 2 + 4 + 5 + 7 + 8 $$
  for (i = 2; i < n; i++)
         if (n % i == 0)
             goto done;
- done:  if (i < n){
+ done:  else if (i < n){
         printf("%d is divisible by d\n", n, d);
     }
  else{
@@ -424,7 +432,7 @@ int main()
 
 ![bg right 60%](assets/quiz-2.png)
 
-Visit [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `3874 5754`.
+Visit [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
 
 ---
 
@@ -448,4 +456,4 @@ Visit [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) a
 
 ![bg right 60%](assets/quiz-2.png)
 
-[https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `3874 5754`.
+[https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
