@@ -53,6 +53,12 @@ Hasan T Abbas
 
 ---
 
+# Moodle Stars
+
+![bg right:70% 95%](assets/Moodle_stars.png)
+
+---
+
 # Nested Loops 
 
 ![bg right:40%](https://media.giphy.com/media/CR6MXuypuIipkMWVpg/giphy.gif)
@@ -73,7 +79,7 @@ Hasan T Abbas
 
 - Thinking of the screen as a 2D grid or matrix
 - Need to build a logic to display ` ` and `*` on screen
-- ` ` starts off with `n-1` and decreases by `1`` after each iteration
+- ` ` starts off with `n-1` and decreases by `1` after each iteration
 - `*` starts from `1`
 - `nth` row has `2n - 1` stars
 
@@ -143,7 +149,6 @@ Here `sum` and `average` are the names of the functions that *accept* as input t
 # Defining a function
 
 ```C
-
 return_type function_name (arguments)
 {
   //declarations 
@@ -311,7 +316,7 @@ srand(time(NULL)); // randomise using current time
   - Accept one integer (correct answer) as an argument,
   - Read an `int` from the keyboard,
   - *Compare* the input with the correct answer,
-  - Based on the comparison, displays an appropriate output such as `correct`, `too high`, or `too low``.
+  - Based on the comparison, displays an appropriate output such as `correct`, `too high`, or `too low`.
   - Returns a `1` if the user's guess was correct, and `0` if the user's guess was wrong.
 - Give the user five chances to guess the correct answer
 - Prints a message on the screen. For example, `You Win` or `You Lose`
@@ -380,7 +385,8 @@ int GuessNumber(int input){
 ```C
 int main(){
     srand(time(NULL)); // initialise the randomisation process
-    int correct_answer = 22;
+    int correct_answer;
+    correct_answer = getRand();
     int guess;
     for (int i = 1; i <= tries; i++){
         guess = GuessNumber(correct_answer);
@@ -415,7 +421,7 @@ int main(){
 
 - We have seen that passing arguments is one way to *exchange* information
 - Another way is to use a global (external) variable
-- Their scope is throughout the file i.e., all functions can see the variable value]
+- Their scope is throughout the file i.e., all functions can see the variable value
 - Their storage is static
 
 ![bg right 40% 95%](assets/global.svg)
@@ -486,7 +492,7 @@ int main(){
 
 Another one, the power function
 
-$$ x^n = n \times x^{n - 1} $$
+$$ x^n = x \times x^{n - 1} $$
 
 ```C
 #include <stdio.h>
