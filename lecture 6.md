@@ -37,14 +37,14 @@ Hasan T Abbas
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
 
----
+--- 
 
 <div class="columns">
 <div class="columns-left">
 
 # Lecture Outline
 
-- Nested Loops :nesting_dolls:
+- Nested Loops :loop:
 - Modular Programming :bento:
 - Functions in C
 - Scope - Program Organisation :package:
@@ -53,9 +53,9 @@ Hasan T Abbas
 
 ---
 
-# Moodle Stars
+# Moodle Stars :star:
 
-![bg right:70% 95%](assets/Moodle_stars.png)
+![bg right:70% 95%](assets/Moodle_stars_Hainan.png)
 
 ---
 
@@ -81,7 +81,7 @@ Hasan T Abbas
 - Need to build a logic to display ` ` and `*` on screen
 - ` ` starts off with `n-1` and decreases by `1` after each iteration
 - `*` starts from `1`
-- `nth` row has `2n - 1` stars
+- `nth` row has `2n `- 1` stars
 
 
 ![bg right:40% 95%](assets/grid_number.svg)
@@ -235,7 +235,7 @@ int main(){
 
 # Passing Arguments <span style="color:red"> *by reference*</span> :key:
 
-- In short we *modify* the value of the original variable passed to the function
+- In short, we *modify* the value of the original variable passed to the function
 - More about this when we study pointers.
 - For now, recall:
 
@@ -258,7 +258,7 @@ The `&` is the address operator used when we are going to pass the arguments by 
 # <span style="color:orange">Example - Make our Own Game</span> :key:
 
 - Let's use random number generation which is part of your lab programming exercises, where you are asked to create a `getRand()` function.
-- C has `rand()` function that generates a random integer number between 0 and `RAND_MAX()`(compiler dependent).
+- C has `rand()` function that generates a random integer number between 0 and `RAND_MAX`(compiler dependent).
 - Definition of `rand()` is stored in `stdlib.h` library.
 - Intuitively, the results should be *completely* random whenever they run the code. However, by design, this is <span style="color:red"> not</span> the case.
 

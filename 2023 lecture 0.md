@@ -20,7 +20,7 @@ _color: "#093867"
 
 # UESTC 1005 - Introductory Programming
 
-Lecture 4 - Operators and Program Control
+Lecture 0 — Course Information
 
 Dr Hasan T Abbas
 <!-- transition: fade -->
@@ -30,74 +30,93 @@ Dr Hasan T Abbas
 
 ---
 
-# About Me
+# Why Programming? 👩🏽‍💻👨🏽‍💻
 
-- IP Course Coordinator since 2019
-- Research Interests in Numerical Electromagnetics
-- Fascinated by Nanoscale Physics
-- Also dabbles in Artificial Intelligence :brain: and Healthcare Technologies :hospital:
-![bg right 60%](https://www.gla.ac.uk/media/Media_701142_smxx.jpg)
-
----
-
-# Lecture Outline
-
-- Dive deeper into operators (运算符)
-- Make Decisions
-- Introduce program control
+- Problem-Solving
+- Living in the New (Digital) World
+- Vast Career Opportunities
+- Automation and Artificial Intelligence
 
 ---
 
-# Operators
+# Why C? 
 
-In the last lecture, we looked at a number of operators available in C.
-C has in fact many more, and mastering all of them takes time.
-
-- Interestingly, the results of operators as sometimes hardware dependent.
-- Let's look at some interesting observations.
-
----
-
-# <span style="color:red">Some Side Effects</span>
-
-Some unexpected results:
-
-```C
-int i;
-float pi;
-pi = i = 3.1416f;
-```
-
-The `float` variable `f` is assigned a value of `3.0` (as opposed to `3.1416`).
-
-<span style="color:green">better to use multiple statements to avoid unexpected behaviour</span>
+- Mother of All (Programming) Languages
+- Highly Portable Language
+- Direct Hardware Interaction
+![bg right 45% 95%](assets/C-Tartan.svg)
 
 ---
 
-# <span style="color:orange">Example - Operators</span> :placard:
+# C Popularity?
 
-Write a C program where you are going to enter a *three-digit* number which is then printed on the screen.
-
-Task is to reverse the number. Example output of the program:
-
-```
-Enter a three-digit number: 123
-Reversed number is: 321
-```
+- Amongst top two programming languages (for >30 years)
+- Drives Electric Cars (Embedded Systems)
+- Backbone of Operating Systems (Windows, Linux, MacOS)
+- Game Design
+- Animation
+![bg right 45% 95%](assets/C-Tartan.svg)
 
 ---
 
-# <span style="color:orange">Example - Operators</span> :placard:
+# The Roadmap
 
-## Method
 
-- We need to extract the three digits from the number
-- Split the number `n` into units, tens, and hundreds
-- Units -- `n % 10` gives us the right-most digit
-- Hundreds -- `n / 100` gives us the hundreds
-- For tens, we need to do two steps, first remove the hundred `temp = n % 100` and then get the tens part, `ten = temp % 10` gives us the tens in the number
+![bg right:65% 85%](assets/timeline_courses.svg)
 
-For swapping, we can simply display the number in the reverse order (`unit`,`tens` and `hundred`).
+
+---
+
+# Course Aims 💡
+
+- Equip you with <span style="color:orange">skills</span> to write C programs
+- Introduce the concept of modular programming
+- Develop testing and debugging skills
+
+---
+
+# Intended Learning Outcomes 🦾 
+
+By the end of the course, we want you to ...
+
+- **Write** C programs that _work_
+- Identify errors in the code
+- Recognise the correct syntax in C programs
+- Design, compile and run C programs
+- Demonstrate technical English vocabulary 
+
+
+![bg right:35% 85%](assets/uncle_sam.jpeg)
+
+---
+
+# Textbooks? 📚
+
+We are going to use a [free, online wikibook](https://liascript.github.io/course/?https://raw.githubusercontent.com/liaBooks/C-Programming/master/README.md#3) as a reference
+
+
+![bg right:35% 100%](assets/qrcode_book.png)
+
+- Practice coding online
+- All we need to know
+
+---
+
+# Course Materials 🧰
+
+- We will use Moodle for **all** class activity
+- We will share all materials (notes, handouts, results) on Moodle
+- Ask your questions on Moodle Forums
+- Class and Moodle participation recorded and awarded
+
+---
+
+# Course Assessments 💯
+
+- One mid-term quiz of multiple choice questions - <span style="color:green">10 %</span>
+- 4 Lab sessions - <span style="color:orange">30%</span>
+- Written Final Exam - <span style="color:red">60%</span>
+- Programming Assignments <span style="color:green">formative = 0%</span> 📈
 
 ---
 
