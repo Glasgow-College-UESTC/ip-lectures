@@ -16,11 +16,18 @@ _backgroundColor: "#FFF"
 _color: "#093867"
 ---
 
+
+# <!--fit--> <span style="color:white">Confusion 😕 is part of programming </span>
+
+![bg opacity:100%](assets/gradient.jpg)
+
+---
+
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
 # UESTC 1005 - Introductory Programming
 
-Lecture 0 — Course Information
+Lecture 0 + 1 — Course Information
 
 Dr Hasan T Abbas
 <!-- transition: fade -->
@@ -43,8 +50,9 @@ Dr Hasan T Abbas
 
 - Mother of All (Programming) Languages
 - Highly Portable Language
+- Terse and uncomplicated (unlike Python spaghetti)
 - Direct Hardware Interaction
-![bg right 45% 95%](assets/C-Tartan.svg)
+![bg right 45% 95%](assets/C-Tartan.png)
 
 ---
 
@@ -55,7 +63,7 @@ Dr Hasan T Abbas
 - Backbone of Operating Systems (Windows, Linux, MacOS)
 - Game Design
 - Animation
-![bg right 45% 95%](assets/C-Tartan.svg)
+![bg right 45% 95%](assets/C-Tartan.png)
 
 ---
 
@@ -63,7 +71,6 @@ Dr Hasan T Abbas
 
 
 ![bg right:65% 85%](assets/timeline_courses.svg)
-
 
 ---
 
@@ -120,333 +127,150 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 ---
 
-# <span style="color:orange">Example - Operators</span>
+# Midterm Assessment 💯
 
-```C
-#include <stdio.h>
-int main(void)
-{
-    int input, unit, ten, hundred;
-    int temp; // for temporarily storing a value
+- Makes up 10% of the overall grade
+- 10 questions each carrying equal marks
+- ❗️ <span style="color:red">You can not miss the midterm</span>
 
-    printf("\nEnter a three-digit number: ");
-    scanf("%d", &input);
-
-    hundred = input / 100; // Get the hundred
-    temp = input % 100;  // remove the hundred
-    ten = temp / 10;  // Get the ten
-    unit = input % 10; // Get the unit
-
-    printf("\n\nThe reversal is %d%d%d\n\n", unit, ten, hundred);
-    return 0;
-}
-```
+![bg right:50% 80%](assets/SCR-20230910-buch.png)
 
 ---
 
-# Selection and Decisions
+# Lab Sessions
 
-C has three kinds of statements (selection, iteration, jump) that can help make decisions and select choices.
+- Each student has free lab sessions scheduled
+- You will be assessed during each lab session
+- Lab handout is available on Moodle
+- You will submit a lab report towards the end of the semester
+- You receive a `CW` grade for missing a lab
 
-![bg right 60%](assets/flowchart.svg)
-
-Today we will look at `if` and `switch` statements along with relational and logical operators.
-
----
-
-# Logical Expressions
-
-We need to check an expression to see if it is `true` or `false`.
-
-- Like, check whether `i < j` is `true` or `false`
-- The above `(i < j)` is a logical expression.
-- Result is an integer, `1` for true, and `0` for false
-- We usually call it *Boolean* logic
-- We can have relational operators such as `<`,`>`,`<=`,`>=` to *compare* two or more values
+![bg right:50% 100%](assets/2442.png)
 
 ---
 
-# Logical Operators
+# Final Exam 💯
 
-- Complex logical expressions built by combining simpler ones
-- This is done using the *logical operators*
+- Makes up 60% of the total grade
+- 4 questions each of 25 marks
+- Questions will have sub parts
+- Past exam papers available on Moodle
 
-| Symbol | Meaning |
-| :---: | :--- |
-| `!` | logical negation |
-| `&&` | logical AND |
-| `\|\|` | logical OR |
-
-As discussed in last lecture, the output of the logical expressions with logical operators is either `0` or `1`.
+![bg right:50% 100%](assets/final_exam.png)
 
 ---
 
-# Venn Diagram Visualisations
+# Questions 🙋❓
 
-Logical operators are best understood using Venn diagrams
-
-![50%](assets/logical-expressions.svg)
-
----
-
-# :warning: Clearing some Confusion
-
-We often confuse `==` with `=` operator
-
-- `==` is used for *comparison*. For example, is `i` equal to `10` can be written as `i == 10`.
-- `=` is used for *assignment*, eg. `i = 3;`.
-
----
-
-# The `if` `else` Statement
-
-- Allows choosing between *two* choices
-
-```C
-if (expresssion)
-    {statements1}
-else
-    {statements2}
-```
-
----
-
-# Example - Diagnosing Diabetes
-
-We can use `if` selection statement whether a person is suffering from diabetes or not.
-
-- Definition of diabetes according to World Health Organisation
-- Fasting plasma :drop_of_blood: glucose (FPG) ≥126 mg/dL <span style="color:red">**OR**</span>
-- Oral glucose :drop_of_blood: tolerance test (OGTT) 2-hour glucose ≥200 mg/dL
-
-```C
-if (fpg >= 126 || ogtt_2hpg >= 200)
-    diabetes = TRUE;
-else
-    diabetes = FALSE;
-```
-
----
-
-# Cascaded `if` Statements
-
-- We often need to check a series of conditions, seeking *one* of them to be true
-
-```C
-if (expresssion)
-    {statements1}
-else if (expression 2)
-    {statements2}
-...
-else
-    {statementsN}
-```
-
-![bg right 80%](assets/cascaded-ifs.svg)
-
----
-
-# Cascaded `if` - Example :placard:
-
-Check whether a number is positive, negative, or zero.
-
-```C
-if (n<0)
-    printf("n is less than 0 \n");
-else if (n==0)
-    printf("n is equal to 0 \n");
-else
-    printf("n is greater than 0 \n ");
-```
-
----
-
-# Nested `if` Statements
-
-There is also an option to use a `if` statement *inside* another one
-
-```C
-if (expresssion)
-    if (expression2)
-    {statements1}
-    else
-    {statements2}
-else
-    {statements3}
-```
-
-![bg right 80%](assets/nested-ifs.svg)
-
----
-<div class="columns">
-<div class="columns-left">
-
-# Question :question:
-
-Writing nested `if` statements is a poor programming practice. Can you propose a better alternative?
-
-- Check whether a number is odd <span style="color:green">AND</span> divisible by 7.
-
-```C
-if ( !(num %2 == 0))
-    if (num % 7 == 0)
-        printf("%d is odd and divisible by 7", num);
-    else
-    printf("%d is not odd or divisible by 7", num);
-```
-
-- *Hint:* Your answer is a single line
-
-</div>
-<div class="columns-right">
-
-![40%](assets/quiz-1.png)
-
-Go to the website link - [https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
-</div>
-</div>
-
----
-
-# A Terse form of selection Statement
-
-Conditional expressions help us execute the function of `if else` statements in a brief manner.
-
-Syntax:
-
-```
-    expr1 ? expr2 : expr3
-```
-
-It reads as:
-If `expr1` is `true` <span style="color:green">THEN</span> execute `expr2`, <span style="color:red">OTHERWISE</span> execute `expr3`.
-
-```C
-int i, j, k;
-i = 1, j = 2;
-k = i < j ? i : j; // Since i < j so k gets the value k = i = 1
-```
-
----
-
-# The `switch` statement
-
-Imagine you call your mobile phone service helpline, and you are presented with a series of options
-
-- Press `1` for billing
-- Press `2` for text messages
-- Press `3` for international roaming
-- Press `4` to speak to an agent
+- Let us know what you think?
   
-In C, we can implement the same using the `switch` statement. Options are selected using the `case` labels.
-
-![bg right 90%](assets/switch.svg)
+![bg right:50% 70%](assets/padlet_qr_code.png)
 
 ---
 
-# `switch` - Example :placard:
+# <!--fit--> <span style="color:white">Now Let's C!</span>
 
-```C
-int main(){
-    char grade = ‘B’; 
-    switch(grade) {
-      case 'A' :
-         printf("Excellent!\n" );
-         break;
-      case 'B' :
-      case 'C' :
-         printf("Well done\n" );
-         break;
-      case 'D' :
-         printf("You passed\n" );
-         break;
-      case 'F' :
-         printf("Better try again\n" );
-         break;
-      default :
-         printf("Invalid grade\n" );
-    }
-   return 0;
-} 
-```
+![bg opacity:100%](assets/gradient.jpg)
 
 ---
 
-# Difference between `if` and `switch`
+# The Art of Problem Solving 
 
-We can implement a given logic through either `if` or `switch` statements.
-
-- Matter of personal choice/taste
-- `if` checks for a *condition*
-- `switch` checks the variable in the argument (between the parentheses `()`) against a range of possible values.
-- Code reads better if `switch` is used.
-
----  
-<div class="columns">
-<div class="columns-left">
-
-# Question :question:
-
-You may be wondering what is the purpose of the lines with `break` statements in there
-
-```C
-int main(){
-    char grade = ‘B’; 
-    switch(grade) {
-      case 'A' :
-         printf("Excellent " );
-      case 'B' :
-      case 'C' :
-         printf("Good " );
-      case 'D' :
-         printf("Average " );
-      default :
-         printf("Invalid grade\n" );
-    }
-   return 0;
-} 
-```
-
-</div>
-<div class="columns-right">
-
-![50%](assets/quiz-1.png)
-
-- [https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
-
-</div>
-</div>
+- Coming with a step-by-step plan
+- We call the plan an *algorithm*
+- Computers are good at processing algorithms
+- We can <span style="color:green">automate</span> tasks
 
 ---
 
-# `break` statement
 
-- `break` simply *breaks* the program flow to take out of the `switch`
-- `break` is necessary to exit the `switch` statement once the particular option has been executed
-- If not used, remaining cases are also executed.
+# <!--fit--> <span style="color:white">First, solve the problem. Then, write the code.</span>
+
+John Johnson
+
+![bg opacity:100%](assets/gradient.jpg)
+
 
 ---
+
+# Problem Solving in Engineering 👩‍🔬👨‍💻
+
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+![350% center](assets/block.svg)
+
+---
+
+# Computer Programming
+
+- Historically, we have found ways to solve our problems with the use of numbers.
+- Computers are very good at dealing with numbers.
+- We need to tell the computer <span style="color:red">exactly</span> what to do.
+- Sequence of instructions is called a computer program
+
+---
+
+# Computers 💻
+
+- Computers are **phenomenally** faster than us in performing calculations.
+- Computers _only_ directly understand <span style="color:red">machine language</span>.
+- Communication with computers require *assemblers*.
+- High-level Languages require *compilers*
+
+---
+
+# Why C? 🤔
+
+- C is a by-product of UNIX operating system
+- Developed in the 1970s at Bell Laboratories by Ken Thompson
+- *High-level* Programming language
+- Linux, Windows, and Android are written in **C**
+- <span style="color:red">**C** can run on computer</span>
+
+![bg right:30% 95%](assets/CLang.png)
+
+---
+
+# <!--fit--> <span style="color:white">Example Program</span>
+
+![bg opacity:100%](assets/gradient.jpg)
+
+---
+
+
 
 # Today's Summary :spiral_notepad:
 
-- Using relational operators and logical operators to describe conditions
+- The art of problem-solving 🖌️
+- Learn by practice 🚴‍♀️🚴‍♂️
+- Always get help when in doubt 😇
 
-- Using `if-else` and `switch-case` statements in C to realise decision-making
+---
 
-- Flow charts to visualise program flow
+# Task 🧗‍♀️
+
+- Set up your machine for C programming
+- Refer to Course Information Section on Moodle for guidance
+- Start Practicing 
+
+![bg right:35% 85%](assets/uncle_sam.jpeg)
 
 ---
 
 # Next up :spiral_calendar:
 
-Loops :carousel_horse:
+Let's C!
 
-- We will use `for` and `while` loops
+- Start with the C program structure
 
 ---
 
-# Questions :question:
+# <!--fit--> <span style="color:white">Any fool can write code that a computer can understand. Good programmers write code that humans can understand </span>
 
-![bg right 60%](assets/quiz-1.png)
+![bg opacity:100%](assets/gradient.jpg)
 
-[https://www.menti.com/almp8abh7wkj](https://www.menti.com/almp8abh7wkj) and type the code `8625 1887`.
+---
