@@ -19,6 +19,6 @@ int main(void)
 {
     double a = 2;
     double b = 3;
-    printf("%1f/%1f-%51.52f\n", a, b, a / b);
+    printf("%1f/%1f-%51.52  f\n", a, b, a / b);
     return 0;
 }
