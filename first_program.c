@@ -1,11 +1,7 @@
-#include<stdio.h> // some raw ingredients
+#include<stdio.h>
 
-int main() // main function
+int main()
 {
-    printf("Hello UESTC 1005 Class! \n");
-
+    printf("Welcome to UESTC HN 1005 in the beautiful Hainan\n"); // this is a message for the screen
     return 0;
-
 }
-
-// We need to compile the code

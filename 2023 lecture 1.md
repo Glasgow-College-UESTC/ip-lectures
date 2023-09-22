@@ -25,7 +25,7 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 1005 - Introductory Programming
+# UESTC HN 1005 - Introductory Programming
 
 Lecture 2 — Let's C!
 
@@ -37,17 +37,25 @@ Dr Hasan T Abbas
 
 ---
 
-# Today's Lecture 📆 
+# Questions 🙋❓
 
-- Under the hood …
-- Ingredients of a C program
-- The C Lexicon. 
+- Ask us anything (programming-related 😎)
+  
+![bg right:50% 70%](assets/hainan_qr_code_l2.png)
 
 ---
 
-<!-- ![bg 100%](assets/wow.gif)
+# Today's Lecture 📆 
 
---- -->
+- Under the hood 🚇
+- Ingredients of a C program
+- The C Lexicon ⌨️
+
+---
+
+![bg 100%](assets/wow.gif)
+
+---
 
 # The Ingredients 🍳🧂
 
@@ -80,7 +88,7 @@ img[alt~="center"] {
 
 ---
 
-# From yesterday ⏮️
+# From last time ⏮️
 
 ```C
 /*
@@ -190,15 +198,23 @@ comment */
 # Quiz Time ⌛
 
 - Log on to menti.com: <https://www.menti.com>
-- Use code `6571 9618`
+- Use code `2257 7423`
 
-![bg right:35% 100%](assets/quiz_menti.png)
+![bg right:35% 100%](assets/hainan_qr_code_quiz1_week4_l2download.png)
 
 ---
 
 # <!--fit--> <span style="color:white">What's in `main()`?</span>
 
 ![bg opacity:100%](assets/gradient.jpg)
+
+---
+
+# Questions 🙋❓
+
+- Ask us anything (programming-related 😎)
+  
+![bg right:50% 70%](assets/hainan_qr_code_l2.png)
 
 ---
 
@@ -261,8 +277,8 @@ v@riable ❌
 - Large size means we can store big, precise values
 
 ```C
-float pi_float = 3.14159265;
-double pi_double = 3.141592653589793238462643383279502884197169399;
+float pi_float = 3.1415926;
+double pi_double = 3.141592653589793;
 int pi_int = 3;
 ```
 

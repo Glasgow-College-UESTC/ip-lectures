@@ -25,7 +25,7 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 1005 - Introductory Programming
+# UESTC HN 1005 - Introductory Programming
 
 Lecture 3 — Pedalling along 🚴‍♀️🚴‍♂️
 
@@ -37,27 +37,17 @@ Dr Hasan T Abbas
 
 ---
 
-# Yesterday's Winners
-
-## 1. Treeman 🐨
-## 2. Nemo 🐠
-## 3. MisakaSkywalker 👻
-
-![bg opacity:50%](assets/gradient2.jpg)
-
----
-
 # Questions 🙋❓
 
-- Let us know what you think?
+- Ask us anything (programming-related 😎)
   
-![bg right:50% 70%](assets/qr_code_padlet.png)
+![bg right:50% 70%](assets/hainan_qr_code_l2.png)
 
 ---
 
 # Something on ChatGPT 💭
 
-- Compilers are very precise in their requirements 
+- Compilers are very precise in their requirements
 - We the humans can make sense of sentences even with a misspelled word
 - a C compiler will fail to provide a translation of a syntactically incorrect program,
 - No matter how small the error is
@@ -82,17 +72,6 @@ Dr Hasan T Abbas
 | digits | 0-9 |
 | Other Characters | + - * / = ( ) { } [ ] < > ' " ! # % _ ^ ~ \ . , : ; ? |
 | white space characters | blank, newline, tab etc. |
-
----
-
-# A Simple Calculator
-
-- Performs basic arithmetic on two numbers
-- Addition (`+`), Subtraction (`-`), Multiplication (`*`) and Division (`/`)
-- Results are displayed on the screen
-- Start with integer numbers
-- Move to `float`
-- to finally `double`
 
 ---
 
@@ -202,9 +181,21 @@ scanf("%f",&radius);
 # Quiz Time 💯
 
 - Log on to menti.com: <https://www.menti.com>
-- Use code `7275 0121`
+- Use code `49 46 05`
 
-![bg right:35% 100%](assets/quiz2_qrcode.png)
+![bg right:35% 100%](assets/menti_hainan_week4_l3.png)
+
+---
+
+# A Simple Calculator
+
+- Performs basic arithmetic on two numbers
+- Addition (`+`), Subtraction (`-`), Multiplication (`*`) and Division (`/`)
+- Results are displayed on the screen
+- Start with integer numbers
+- Move to `float`
+- Use `double`
+- Next up ... use `scanf()` to insert the values of the variables
 
 ---
 

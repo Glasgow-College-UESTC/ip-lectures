@@ -25,7 +25,7 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 1005 - Introductory Programming
+# UESTC HN 1005 - Introductory Programming
 
 Lecture 0 + 1 — Course Information
 
@@ -90,7 +90,7 @@ By the end of the course, we want you to ...
 - Identify errors in the code
 - Recognise the correct syntax in C programs
 - Design, compile and run C programs
-- Demonstrate technical English vocabulary 
+- Demonstrate technical English vocabulary
 
 
 ![bg right:35% 85%](assets/uncle_sam.jpeg)
@@ -139,7 +139,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 # Lab Sessions
 
-- Each student has free lab sessions scheduled
+- Each student has four lab sessions scheduled
 - You will be assessed during each lab session
 - Lab handout is available on Moodle
 - You will submit a lab report towards the end of the semester
@@ -164,7 +164,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 - Let us know what you think?
   
-![bg right:50% 70%](assets/padlet_qr_code.png)
+![bg right:50% 70%](assets/hainan_qr_code_l1.png)
 
 ---
 
@@ -174,7 +174,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 ---
 
-# The Art of Problem Solving 
+# The Art of Problem-Solving 
 
 - Coming with a step-by-step plan
 - We call the plan an *algorithm*
@@ -183,17 +183,15 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 ---
 
-
 # <!--fit--> <span style="color:white">First, solve the problem. Then, write the code.</span>
 
 John Johnson
 
 ![bg opacity:100%](assets/gradient.jpg)
 
-
 ---
 
-# Problem Solving in Engineering 👩‍🔬👨‍💻
+# Problem-Solving in Engineering 👩‍🔬👨‍💻
 
 <style>
 img[alt~="center"] {
@@ -201,7 +199,7 @@ img[alt~="center"] {
   margin: 0 auto;
 }
 </style>
-![350% center](assets/block.svg)
+![500% center](assets/block.svg)
 
 ---
 
@@ -229,7 +227,7 @@ img[alt~="center"] {
 - Developed in the 1970s at Bell Laboratories by Ken Thompson
 - *High-level* Programming language
 - Linux, Windows, and Android are written in **C**
-- <span style="color:red">**C** can run on computer</span>
+- **C** can run on <span style="color:red">ANY</span>  computer
 
 ![bg right:30% 95%](assets/CLang.png)
 
@@ -240,8 +238,6 @@ img[alt~="center"] {
 ![bg opacity:100%](assets/gradient.jpg)
 
 ---
-
-
 
 # Today's Summary :spiral_notepad:
 
@@ -255,7 +251,7 @@ img[alt~="center"] {
 
 - Set up your machine for C programming
 - Refer to Course Information Section on Moodle for guidance
-- Start Practicing 
+- Start Practicing
 
 ![bg right:35% 85%](assets/uncle_sam.jpeg)
 
@@ -274,3 +270,7 @@ Let's C!
 ![bg opacity:100%](assets/gradient.jpg)
 
 ---
+
+# Get in touch ✍️
+
+<Hasan.abbas@glasgow.ac.uk>
