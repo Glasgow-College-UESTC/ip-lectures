@@ -1,0 +1,37 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgfmath} % use to create randum numbers
+
+\begin{document}
+
+\def\total{10}
+\usetikzlibrary{math} %needed tikz library
+
+\begin{tikzpicture}[block/.style={rectangle, draw, minimum size=1cm}]
+
+% Create ten boxes
+\foreach \i in {0,...,9} {
+    % Create ten random numbers between i and 100 and store the value in variable `vara`
+    \pgfmathparse{int(random(\i,100))}\let\vara=\pgfmathresult 
+
+    % seeding ensures we have a random set of numbers everytime
+    \pgfmathsetseed{random(1,12)}
+
+    \tikzmath{
+     \varb = int(9 - \i);
+    }
+    % Heres the labels
+    % \fill[/pgfplots/color of colormap=\x*100 of hot]
+    \pgfmathsetmacro\wavelen{400+(700-400)*\i/\total}
+    \definecolor{adhoc_color}{wave}{\wavelen}
+    \fill[adhoc_color,draw=black];
+    \node[block, fill = green!\vara] at (1,\i) {$\vara$};
+    \node[block, fill = green!\vara ] at (0,\i + 0) {$ \varb$};
+
+    % and the subscripts
+    % \node[below] at (0.25,\i + .25) {$\i$};
+}
+\end{tikzpicture}
+\end{document}
