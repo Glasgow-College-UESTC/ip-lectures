@@ -191,12 +191,33 @@ int main(void)
 
 - First let's create an array called `grades`
 - The array should hold `int` type numbers
+- `[]` is the array  (subscript) operator, only accepts integers  
 - The array should be able to store `280` elements
 - 🔑 <span style="color:green">We reserve the array size *before* compiling</span>
 
 ```C
 int grades[280]; // array declaration
 ```
+
+---
+
+# Array Initialisation 
+
+- Like variables, we can initialise array with values but with several ways
+
+```C
+int grade[5] = {100,90,80,50,60}; // provide inidividual elements
+```
+
+```C
+int grade[5] = {0}; // initialise all the 5 elements of grade array to zero
+```
+
+```C
+int grade[5] = {[3] = 90, [4] = 100}; // designated initialisation
+```
+
+- ❗<span style="color:red">We cannot go over the array index </span>
 
 ---
 
@@ -239,9 +260,10 @@ for (int i = 0; i < 280; i++)
 
 ---
 
-# Further Stats ⚡
+# Searching the Arrays ⚡
 
 - We are also interested in the highest and lowest marks
+- We can go over the array in a [linear fashion](https://datalgo-7c588.firebaseapp.com/LinearSearch)
 
 ```C
     // Find the highest and lowest grade
@@ -261,18 +283,56 @@ for (int i = 0; i < 280; i++)
 
 ---
 
-# Sorting
+# Array Sorting 💡
 
 - Historically, sorting algorithms have attracted huge research interests
 - The task is to organise the data in some order
 - Sorting is critical in deciding the performance of search algorithms
-- 
+- There are several algorithms used today, we will look at [Bubble sort](https://datalgo-7c588.firebaseapp.com/bubble-sort)
 
+<video src="assets/bubble_sort.mp4" controls width="70%"></video>
 
+---
+
+# 🫧 Bubble Sort Algorithm 🫧
+
+- One of the simplest sorting algorithms
+- We compare adjacent elements and swap if needed
+- Bubble sort is very inefficient in performance
+- Not suitable for practical use in large datasets
+
+![bg right 70%](assets/bub_sort.gif)
+
+---
+
+# 🫧 Bubble Sort Implementation 🫧
+
+```C
+void bubbleSort(int arr[], int n) {
+    int temp;
+    int swapped;
+    for (int i = 0; i < n - 1; i++) {
+        swapped = 0;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = 1;
+            }
+        }
+        // If no two elements were swapped in the inner loop, the array is already sorted
+        if (swapped == 0) {
+            break;
+        }
+    }
+}
+```
+
+---
 
 # Questions :question:
-
-<!--fit-->  :goodbye:
 
 ![bg right 60%](assets/quiz-2.png)
 
@@ -280,9 +340,7 @@ for (int i = 0; i < 280; i++)
 
 ---
 
-# Further Reading
+# Next Up ⏭️
 
-- An awesome :cool: online book :book:
-- Lets you practice coding on site
-
-![bg right 60% 95%](assets/online%20book.png)
+- Multidimensional Arrays
+- Pointers
