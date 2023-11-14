@@ -19,16 +19,10 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 1005 - Introductory Programming
+# UESTC 1005 — Introductory Programming
 
-Lecture 8 - Multidimensional Arrays and Strings
+Lecture 8 — Multidimensional Arrays and Pointers
 
-<!-- ```C
-extern int add (int a, int b)
-extern float add (float a, float b);
-extern double add (double a,double b);
-x = add(4, 0.3);
-``` -->
 Hasan T Abbas
 [Hasan.Abbas@glasgow.ac.uk](mailto:Hasan.Abbas@glasgow.ac.uk)
 
@@ -39,7 +33,7 @@ Hasan T Abbas
 
 --- 
 
-# <!--fit--> <span style="color:white"> Today, we will be off by 1 </span>
+# <!--fit--> <span style="color:white"> If a program manipulates a large amount of data it does so in a small number of ways </span>
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
@@ -50,297 +44,224 @@ Hasan T Abbas
 
 # Lecture Outline
 
-- Computer Memory
-- Data Structures
-- Arrays
+- Multidimensional Arrays
+- Function Calls
+- Pointers 🔑
 
-![bg right:35% 95%](assets/tablesetup.png)
-
----
-
-# Computer Memory
-
-- In C programming language, we don't focus on <span style="color:orange">*how*</span> memory is organised
-- We rather specify an *address* and a *size*
-
-![bg right:45% 95%](assets/array%20block.svg)
+![bg right:35% 95%](assets/chess_2D.jpeg)
 
 ---
 
-# Computer Memory
+# Multidimensional Arrays
+
+- 2D array akin to matrix (as in mathematics)
+
+```C
+int table[5][5]; // creates a 2D array of 5 rows and 5 columns
+```
+
+- How much size does a 2D array take?
+
+
+```C
+printf("size of array = %zu bytes\n", sizeof(table)); // %zu is for unsigned long
+```
+
+![bg right:30% 95%](assets/c_2darrays_tikz.svg)
+
+---
+
+# Use in Mathematics 📐
+
+- 2D matrices heavily used in matrix manipulation
+- Backbone of linear algebra and numerical computation
+
+![bg right:30% 95%](assets/c_2darrays_ID_matrix.svg)
 
 ```C
 #include <stdio.h>
+#define N 5 // size of the matrix
 int main(void)
 {
-    char c = 1;
-    printf("%d %p\n", c, (void *)&c); // we are printing the address of the variable
-    int i = 2;
-    printf("%d %p\n", i, (void *)&i);
-    double d = 3.0;
-    printf("%f %p\n", d, (void *)&d);
+
+    double ident_matrix[N][N];
+    int row, col;
+    for (row = 0; row < N; row++)
+        for (col = 0; col < N; col++)
+            if (row == col)
+                ident_matrix[row][col] = 1.0;
+            else
+                ident_matrix[row][col] = 0.0;
     return 0;
 }
 ```
 
-Output is:
+---
 
+# Multidimensional Array Initialisation 
+
+```C
+int m[5][5] = {{1, 1, 1, 0, 1},
+            {0, 1, 0, 1, 1, 2},
+            {0, 5, 7, 9, 10, 12},
+            {3, 7, -1, 3, 32, 76},
+            {0, 3, 5, -4, 1, 8}};
 ```
-1 0x16cf32e1b
-2 0x16cf32e14
-3.000000 0x16cf32e08
+
+- Empty elements are initialised to `0`
+- C treats multidimensional arrays as 1D essentially.
+- We can go out of bounds in terms of indices.
+
+```C
+printf("&array[%d][%d] = %p\n", row, col,  (void *)&ident_matrix[row][col]);
 ```
 
 ---
 
-# Computer Memory 💡
+# Function Calls and Arrays 🔑
 
-Main Takeaways
+- Recall the concept of <span style="color:green">passing by reference</span> and <span style="color:red">by value</span>
 
-- No hard rules <span style="color:blue">where</span> the variables are stored in the memory
-- Memory management done automatically by C programming language
-- Data can be stored <span style="color:red">anywhere</span>
-- We can use `sizeof()` to check how much space each variable type occupies
+```C
+someFunction(ArrayName); // passing by reference. Array name is a pointer
+```
 
----
+Passing by Reference
+- We pass the <span style="color:green">array name</span> i.e., a pointer
+- Since we pass the memory locations, contents are changed inside the function
 
-# Data Structures
 
-- Previously, we have been talking about data types
-- For large data, we need more organisation of the data
-- Enter data structures that allow efficient access and store of data
-
-![bg right:50% 95%](assets/tikz_tree.svg)
+![bg right:45% 95%](assets/passing.gif)
 
 ---
 
-# <!--fit--> <span style="color:white"> Arrays </span>
+# Passing by value
+
+- We pass individual elements of the array
+- There is no pointer passed
+- No changes made to the original array contents
+
+```C
+someOtherFunction(AnotherArrayName[0]); // passing by value. Argument is an element
+```
+
+---
+
+# <!--fit--> <span style="color:white"> Pointers </span>
 
 ![bg opacity:100%](assets/gradient.jpg)
 
 ---
 
-![bg 90%](assets/C_arrays.svg)
+# Pointers 🔑
 
----
-
-# Arrays
-
-- Variables are *scalar*. Can only store one value
-- Arrays are *vectors*, we can store a collection of values
-- Array is the simplest data structure
-- All the array <span style="color:orange">elements</span> have the same data type
-- Array elements occupy consecutive memory locations
-
----
-
-# Array Declaration
-
-- We need to specify the `type` of array and `number` of elements
-- The first element of the array starts from `0`
-- We use the array index to access array elements
+- Just another data type
+- A key feature of C
+- Allows <span style="color:green">byte-sized</span> memory access
 
 ```C
-int class[100]; // create an array `class` of type `int` containing 100 elements
+int *ptr; // -> The variable ptr stores a pointer to an int
 ```
 
 ---
 
-# Example Program 🔑
+# <!--fit--> <span style="color:white"> Pointer stores the **address** of a memory location </span>
+
+![bg opacity:100%](assets/gradient.jpg)
+
+---
+
+# So what is all about Pointers?
+
+- How to create/declare pointers?
+- We use the `*` dereferencing operator
 
 ```C
-#include <stdio.h>
-int main(void)
+int a = 10;  // declare an integer variable
+int *ptr; // declare a pointer 
+ptr = &a;  // and initialize it to the address of 'a'
+printf("%d", *ptr);  // dereference the pointer and print the value it points to
+```
+
+---
+
+# Initialising and Indirect Assignment
+
+- Pointers are like a map
+- Helps us navigate a specific memory location
+
+![bg right:45% 95%](assets/houses.jpg)
+
+---
+
+# Example 🔑
+
+```C
+#include <stdio.h> // which has definitions of printf function
+
+int main() // void means nothing
 {
-    int array[5];
-    printf(" array == %p\n", (void *)array);
-    for (int i = 0; i < 5; i++)
-    {
-        printf("&array[%d] = %p\n", i, (void *)&array[i]); // %p is used for pointers
-    }
-    printf("size of array = %zu bytes\n", sizeof(array)); // %zu is for unsigned long
+    int a = 10;         // declare an integer variable
+    int *ptr;           // declare a pointer
+    ptr = &a;          // and initialize it to the address of 'a'
+    printf("%d\n", *ptr); // dereference the pointer and print the value it points to
+    printf("%p\n", ptr); // print the value the pointer points to
+    printf("%p\n", &a); //  print the address of a
+    printf("%p\n", a); //  print the value of a
     return 0;
 }
 ```
-- Array elements are store contiguously in memory
-- Array name is also the address of the first element
-- First element starts with index `0` and the last is `4`
 
 ---
 
-# But Why Arrays? 🤔
-
-- Imagine you are a teacher 👩‍🏫🧑‍🏫
-- There are 280 students in your class
-- You are required to compile the mid-term results
-- You also need to generate statistics, like highest/lowest marks, average, median etc.
-
----
-
-# <span style="color:red">**Solution**</span>
-
-- Let's create a table of the marks
-- We note that left column is the index (off by 1 😉)
-- Second column contains integers between 0 - 100
-
-![bg right:50% 20%](assets/Array_marks.svg)
-
----
-
-# Array Declaration 
-
-- First let's create an array called `grades`
-- The array should hold `int` type numbers
-- `[]` is the array  (subscript) operator, only accepts integers  
-- The array should be able to store `280` elements
-- 🔑 <span style="color:green">We reserve the array size *before* compiling</span>
+# Two Pointers
 
 ```C
-int grades[280]; // array declaration
-```
+#include <stdio.h> // which has definitions of printf function
 
----
-
-# Array Initialisation 
-
-- Like variables, we can initialise array with values but with several ways
-
-```C
-int grade[5] = {100,90,80,50,60}; // provide inidividual elements
-```
-
-```C
-int grade[5] = {0}; // initialise all the 5 elements of grade array to zero
-```
-
-```C
-int grade[5] = {[3] = 90, [4] = 100}; // designated initialisation
-```
-
-- ❗<span style="color:red">We cannot go over the array index </span>
-
----
-
-# Feeding the Data
-
-- Without arrays, we will <span style="color:red">need 280 variables</span>.
-- Tedious and time-consuming
-
-```C
-// Input grades for each student
-for (int i = 0; i < 280; i++)
+int main() // void means nothing
 {
-    printf("Enter the grade for Student %d: ", i + 1); // notice we are off by 1 again :-)
-    scanf("%d", &grades[i]);
+    int a = 10; int b =20;         
+    int *ptr1, *ptr2;           
+    ptr1 = &a;          
+    ptr2 = &b;
+    printf("%d\n", *ptr1); 
+    printf("%p\n", ptr2); 
+    printf("%p\n", &a); 
+    printf("%p\n", &b); 
+    return 0;
 }
 ```
 
 ---
 
-# Data Processing and Statistics
+# Pointer Arithmetic
 
-- We are interested in the class average
-- We can iterate through the array using loops
-
-```C
-// Calculate the average grade
-    int sum = 0;
-    for (int i = 0; i < 280; i++) {
-        sum += grades[i]; // note we can access individual elements
-    }
-    double average = (double)sum / numStudents;
-
-    // Display the grades and average
-    printf("Grades:\n");
-    for (int i = 0; i < numStudents; i++) {
-        printf("Student %d: %d\n", i + 1, grades[i]); 
-    }
-    printf("Average Grade: %.2f\n", average);
-```
-
----
-
-# Searching the Arrays ⚡
-
-- We are also interested in the highest and lowest marks
-- We can go over the array in a [linear fashion](https://datalgo-7c588.firebaseapp.com/LinearSearch)
+- What happens when we perform arithmetic?
+- We can simply *add*, *subtract* on pointers
 
 ```C
-    // Find the highest and lowest grade
-    int highest = grades[0];
-    int lowest = grades[0];
-    for (int i = 1; i < 280; i++) {
-        if (grades[i] > highest) {
-            highest = grades[i];
-        }
-        if (grades[i] < lowest) {
-            lowest = grades[i];
-        }
-    }
-    printf("Highest Grade: %d\n", highest);
-    printf("Lowest Grade: %d\n", lowest);
+char *p;
+char a;
+char b;
+p = &a;
+p += 1;
 ```
 
----
-
-# Array Sorting 💡
-
-- Historically, sorting algorithms have attracted huge research interests
-- The task is to organise the data in some order
-- Sorting is critical in deciding the performance of search algorithms
-- There are several algorithms used today, we will look at [Bubble sort](https://datalgo-7c588.firebaseapp.com/bubble-sort)
-
-<video src="assets/bubble_sort.mp4" controls width="70%"></video>
-
----
-
-# 🫧 Bubble Sort Algorithm 🫧
-
-- One of the simplest sorting algorithms
-- We compare adjacent elements and swap if needed
-- Bubble sort is very inefficient in performance
-- Not suitable for practical use in large datasets
-
-![bg right 70%](assets/bub_sort.gif)
-
----
-
-# 🫧 Bubble Sort Implementation 🫧
-
-```C
-void bubbleSort(int arr[], int n) {
-    int temp;
-    int swapped;
-    for (int i = 0; i < n - 1; i++) {
-        swapped = 0;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // Swap arr[j] and arr[j+1]
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = 1;
-            }
-        }
-        // If no two elements were swapped in the inner loop, the array is already sorted
-        if (swapped == 0) {
-            break;
-        }
-    }
-}
-```
+- Adds `1*sizeof(char)` to the memory address
+- The pointer `p` now points to ?? 🤔
 
 ---
 
 # Questions :question:
 
-![bg right 60%](assets/quiz-2.png)
+![bg right 60%](assets/quiz-5.png)
 
-[https://www.menti.com/alyevvb24kv8](https://www.menti.com/alyevvb24kv8) and type the code `4168 3514`.
+[https://www.menti.com/alwtri69b15f](https://www.menti.com/alwtri69b15f) and type the code `4792 0589`.
 
 ---
 
 # Next Up ⏭️
 
-- Multidimensional Arrays
-- Pointers
+- Class Tutorial
+- Bring your Laptops!

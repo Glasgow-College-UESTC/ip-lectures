@@ -19,9 +19,9 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 1005 - Introductory Programming
+# UESTC 1005 — Introductory Programming
 
-Lecture 7 - Arrays
+Lecture 7 — Arrays
 
 <!-- ```C
 extern int add (int a, int b)
@@ -54,16 +54,17 @@ Hasan T Abbas
 - Data Structures
 - Arrays
 
-![bg right:35% 95%](assets/tablesetup.png)
+![bg right:35% 100%](assets/tablesetup.png)
 
 ---
+
 
 # Computer Memory
 
 - In C programming language, we don't focus on <span style="color:orange">*how*</span> memory is organised
 - We rather specify an *address* and a *size*
 
-![bg right:45% 95%](assets/array%20block.svg)
+![bg right:45% 90%](assets/array%20block.svg)
 
 ---
 
@@ -76,9 +77,9 @@ int main(void)
     char c = 1;
     printf("%d %p\n", c, (void *)&c); // we are printing the address of the variable
     int i = 2;
-    printf("%d %p\n", i, (void *)&i);
+    printf("%d %p\n", i, (void *)&i); // the %p placeholder is reserved for pointers
     double d = 3.0;
-    printf("%f %p\n", d, (void *)&d);
+    printf("%f %p\n", d, (void *)&d); // More on (void *) tomorrow
     return 0;
 }
 ```
@@ -130,7 +131,7 @@ Main Takeaways
 - Arrays are *vectors*, we can store a collection of values
 - Array is the simplest data structure
 - All the array <span style="color:orange">elements</span> have the same data type
-- Array elements occupy consecutive memory locations
+- Array elements occupy consecutive memory locations.
 
 ---
 
@@ -162,9 +163,10 @@ int main(void)
     return 0;
 }
 ```
-- Array elements are store contiguously in memory
+
+- Array elements are stored contiguously in memory
 - Array name is also the address of the first element
-- First element starts with index `0` and the last is `4`
+- Array starts with index `0` and the last is `4`
 
 ---
 
@@ -172,7 +174,7 @@ int main(void)
 
 - Imagine you are a teacher 👩‍🏫🧑‍🏫
 - There are 280 students in your class
-- You are required to compile the mid-term results
+- You are required to compile the midterm results
 - You also need to generate statistics, like highest/lowest marks, average, median etc.
 
 ---
@@ -181,7 +183,7 @@ int main(void)
 
 - Let's create a table of the marks
 - We note that left column is the index (off by 1 😉)
-- Second column contains integers between 0 - 100
+- Second column contains integers between 0 – 100
 
 ![bg right:50% 20%](assets/Array_marks.svg)
 
@@ -191,7 +193,7 @@ int main(void)
 
 - First let's create an array called `grades`
 - The array should hold `int` type numbers
-- `[]` is the array  (subscript) operator, only accepts integers  
+- `[]` is the array (subscript) operator, only accepts integers  
 - The array should be able to store `280` elements
 - 🔑 <span style="color:green">We reserve the array size *before* compiling</span>
 
@@ -206,7 +208,7 @@ int grades[280]; // array declaration
 - Like variables, we can initialise array with values but with several ways
 
 ```C
-int grade[5] = {100,90,80,50,60}; // provide inidividual elements
+int grade[5] = {100,90,80,50,60}; // provide individual elements
 ```
 
 ```C
@@ -224,7 +226,7 @@ int grade[5] = {[3] = 90, [4] = 100}; // designated initialisation
 # Feeding the Data
 
 - Without arrays, we will <span style="color:red">need 280 variables</span>.
-- Tedious and time-consuming
+- Tedious and time-consuming.
 
 ```C
 // Input grades for each student
@@ -290,7 +292,7 @@ for (int i = 0; i < 280; i++)
 - Sorting is critical in deciding the performance of search algorithms
 - There are several algorithms used today, we will look at [Bubble sort](https://datalgo-7c588.firebaseapp.com/bubble-sort)
 
-<video src="assets/bubble_sort.mp4" controls width="70%"></video>
+<video src="assets/bubble_sort.mp4" controls width="50%"></video>
 
 ---
 
@@ -334,9 +336,9 @@ void bubbleSort(int arr[], int n) {
 
 # Questions :question:
 
-![bg right 60%](assets/quiz-2.png)
+![bg right 60%](assets/quiz-4.png)
 
-[https://www.menti.com/alyevvb24kv8](https://www.menti.com/alyevvb24kv8) and type the code `4168 3514`.
+[https://www.menti.com/albfifi2d5pn](https://www.menti.com/albfifi2d5pn) and type the code `1814 7474`.
 
 ---
 
@@ -344,3 +346,4 @@ void bubbleSort(int arr[], int n) {
 
 - Multidimensional Arrays
 - Pointers
+- Strings
