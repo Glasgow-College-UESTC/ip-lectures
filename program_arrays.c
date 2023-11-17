@@ -7,7 +7,9 @@
 
 int main()
 {
+    char a,b,c;
     int square_matrix[N][N]; // declaration part
+    double matrix;
 
     // use a nested for loop so that we can run along the array indices
 

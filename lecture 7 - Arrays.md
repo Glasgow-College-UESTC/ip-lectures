@@ -338,7 +338,7 @@ void bubbleSort(int arr[], int n) {
 
 ![bg right 60%](assets/quiz-4.png)
 
-[https://www.menti.com/albfifi2d5pn](https://www.menti.com/albfifi2d5pn) and type the code `1814 7474`.
+[https://www.menti.com/alkwf6e2vb9u](https://www.menti.com/alkwf6e2vb9u) and type the code `2543 7042`.
 
 ---
 
@@ -346,4 +346,3 @@ void bubbleSort(int arr[], int n) {
 
 - Multidimensional Arrays
 - Pointers
-- Strings
