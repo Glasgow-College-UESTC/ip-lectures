@@ -248,5 +248,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
 # End of https://www.gitignore.io/api/node,windows,macos,linux,sublimetext,emacs,vim,visualstudiocode
+
+*.dSYM/
+/lecture_src/lab1/loop_and_accumulate
