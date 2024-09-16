@@ -23,13 +23,24 @@ _color: "#093867"
 
 ---
 
+# Quotes from Dennis Ritchie, creator of C and co-creator of UNIX
+
+- [C has] the power of assembly language and the convenience of … assembly language.
+- UNIX is very simple, it just needs a genius to understand its simplicity.
+- C is quirky, flawed, and an enormous success.
+
+![bg right 45% 95%](assets/Dennis_Ritchie_2011.jpg)
+
+---
+
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
 # UESTC HN 1005 - Introductory Programming
 
 Lecture 0 + 1 — Course Information
 
-Dr Hasan T Abbas
+Dr. Hasan T. Abbas, Dr. Mark D. Butala
+
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
@@ -39,19 +50,19 @@ Dr Hasan T Abbas
 
 # Why Programming? 👩🏽‍💻👨🏽‍💻
 
-- Problem-Solving
-- Living in the New (Digital) World
-- Vast Career Opportunities
-- Automation and Artificial Intelligence
+- Problem-solving
+- Living in the new (digital) world
+- Vast career opportunities
+- Automation and artificial intelligence
 
 ---
 
-# Why C? 
+# Why C?
 
-- Mother of All (Programming) Languages
-- Highly Portable Language
-- Terse and uncomplicated (unlike Python spaghetti)
-- Direct Hardware Interaction
+- Mother of numerous programming languages
+- Highly portable language
+- Terse and uncomplicated
+- Direct hardware interaction
 ![bg right 45% 95%](assets/C-Tartan.png)
 
 ---
@@ -59,9 +70,9 @@ Dr Hasan T Abbas
 # C Popularity?
 
 - Amongst top two programming languages (for >30 years)
-- Drives Electric Cars (Embedded Systems)
-- Backbone of Operating Systems (Windows, Linux, MacOS)
-- Game Design
+- Embedded systems
+- Backbone of operating systems (UNIX, Linux, MacOS)
+- Game design
 - Animation
 ![bg right 45% 95%](assets/C-Tartan.png)
 
@@ -82,7 +93,7 @@ Dr Hasan T Abbas
 
 ---
 
-# Intended Learning Outcomes 🦾 
+# Intended Learning Outcomes 🦾
 
 By the end of the course, we want you to ...
 
@@ -163,7 +174,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 # Questions 🙋❓
 
 - Let us know what you think?
-  
+
 ![bg right:50% 70%](assets/hainan_qr_code_l1.png)
 
 ---
@@ -174,7 +185,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 ---
 
-# The Art of Problem-Solving 
+# The Art of Problem-Solving
 
 - Coming with a step-by-step plan
 - We call the plan an *algorithm*
@@ -223,10 +234,10 @@ img[alt~="center"] {
 
 # Why C? 🤔
 
-- C is a by-product of UNIX operating system
-- Developed in the 1970s at Bell Laboratories by Ken Thompson
+- C was co-developed with the UNIX operating system
+- Created in the 1970s at Bell Laboratories by Dennis Ritchie
 - *High-level* Programming language
-- Linux, Windows, and Android are written in **C**
+- As examples, Linux, Windows, and Android are written in **C**
 - **C** can run on <span style="color:red">ANY</span>  computer
 
 ![bg right:30% 95%](assets/CLang.png)
@@ -250,8 +261,8 @@ img[alt~="center"] {
 # Task 🧗‍♀️
 
 - Set up your machine for C programming
-- Refer to Course Information Section on Moodle for guidance
-- Start Practicing
+- Refer to the Course Information Section on Moodle for guidance
+- Start practicing
 
 ![bg right:35% 85%](assets/uncle_sam.jpeg)
 
@@ -274,3 +285,4 @@ Let's C!
 # Get in touch ✍️
 
 <Hasan.abbas@glasgow.ac.uk>
+<mark.butala@glasgow.ac.uk>
