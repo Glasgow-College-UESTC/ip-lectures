@@ -39,7 +39,7 @@ _color: "#093867"
 
 Lecture 0 + 1 — Course Information
 
-Dr. Hasan T. Abbas, Dr. Mark D. Butala
+Dr. Hasan T. Abbas, Dr. Syed M. Raza, Dr. Mark D. Butala
 
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
@@ -146,8 +146,8 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 - We will use Moodle for **all** class activity
 - We will share all materials (notes, handouts, results) on Moodle
-- Ask your questions on campuswire (QR code on slide 18)
-- Class and campuswire participation recorded and awarded
+- We will be in touch with details of a Q\&A system
+- Class and Q\&A system participation recorded and awarded
 
 ---
 
@@ -196,11 +196,16 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 # Questions 🙋❓
 
 - Let us know what you think!
+- I am so very lonely and sad without your questions 😢😞😴
+- You can email me, arrange a meeting, stop and talk to me when you see me, get in touch on the Q&A system, ...
+
+![bg right:50% 70%](./assets/R-C.jpeg)
+
+<!---
 - If you wish, you can post anonymously (from GTAs, other students, and me) on campuswire
 
 ![bg right:50% 70%](./assets/campuswire_url_2024.svg)
-
-
+--->
 
 ---
 
@@ -319,5 +324,5 @@ Let's C!
 
 # Get in touch ✍️
 
-<Hasan.abbas@glasgow.ac.uk>
-<mark.butala@glasgow.ac.uk>
+<SyedMuhammad.Raza@glasgow.ac.uk> (Chengdu)
+<mark.butala@glasgow.ac.uk> (Hainan)
