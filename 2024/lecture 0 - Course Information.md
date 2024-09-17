@@ -19,7 +19,7 @@ _color: "#093867"
 
 # <!--fit--> <span style="color:white">Confusion 😕 is part of programming </span>
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](./assets/gradient.jpg)
 
 ---
 
@@ -29,11 +29,11 @@ _color: "#093867"
 - UNIX is very simple, it just needs a genius to understand its simplicity.
 - C is quirky, flawed, and an enormous success.
 
-![bg right 45% 95%](assets/Dennis_Ritchie_2011.jpg)
+![bg right 45% 95%](./assets/Dennis_Ritchie_2011.jpg)
 
 ---
 
-<!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
+<!-- _header: ![h:5em](./assets/UoG_keyline.svg) -->
 
 # UESTC HN 1005 - Introductory Programming
 
@@ -63,7 +63,7 @@ Dr. Hasan T. Abbas, Dr. Mark D. Butala
 - Highly portable language
 - Terse and uncomplicated
 - Direct hardware interaction
-![bg right 45% 95%](assets/C-Tartan.png)
+![bg right 45% 95%](./assets/C-Tartan.png)
 
 ---
 
@@ -74,14 +74,35 @@ Dr. Hasan T. Abbas, Dr. Mark D. Butala
 - Backbone of operating systems (UNIX, Linux, MacOS)
 - Game design
 - Animation
-![bg right 45% 95%](assets/C-Tartan.png)
+![bg right 45% 95%](./assets/C-Tartan.png)
 
 ---
 
+<style scoped>h1 {position: absolute; top: 1%}</style>
+
+# The TIOBE Programming Language Index
+
+![bg 80%](./assets/TIOBE_sep_2024.png)
+
+---
+
+<style scoped>h1 {position: absolute; top: 1%}</style>
+
+# Is There Engineering Value in Popularity?
+
+![bg 60%](./assets/Wicked-Popular.jpg)
+
+---
+
+<style scoped>h1 {position: absolute; top: 5%}</style>
+
 # The Roadmap
 
+<style scoped>
+img {background-position: center}
+</style>
 
-![bg right:65% 85%](assets/timeline_courses.svg)
+![bg 85%](./assets/timeline_courses.svg)
 
 ---
 
@@ -90,6 +111,7 @@ Dr. Hasan T. Abbas, Dr. Mark D. Butala
 - Equip you with <span style="color:orange">skills</span> to write C programs
 - Introduce the concept of modular programming
 - Develop testing and debugging skills
+- (Sharpen, refine, and perfect your technical English listening and speaking skills)
 
 ---
 
@@ -104,7 +126,7 @@ By the end of the course, we want you to ...
 - Demonstrate technical English vocabulary
 
 
-![bg right:35% 85%](assets/uncle_sam.jpeg)
+![bg right:35% 85%](./assets/uncle_sam.jpeg)
 
 ---
 
@@ -113,7 +135,7 @@ By the end of the course, we want you to ...
 We are going to use a [free, online wikibook](https://liascript.github.io/course/?https://raw.githubusercontent.com/liaBooks/C-Programming/master/README.md#3) as a reference
 
 
-![bg right:35% 100%](assets/qrcode_book.png)
+![bg right:35% 100%](./assets/qrcode_book.png)
 
 - Practice coding online
 - All we need to know
@@ -124,8 +146,8 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 - We will use Moodle for **all** class activity
 - We will share all materials (notes, handouts, results) on Moodle
-- Ask your questions on Moodle Forums
-- Class and Moodle participation recorded and awarded
+- Ask your questions on campuswire (QR code on slide 18)
+- Class and campuswire participation recorded and awarded
 
 ---
 
@@ -144,7 +166,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 - 10 questions each carrying equal marks
 - ❗️ <span style="color:red">You can not miss the midterm</span>
 
-![bg right:50% 80%](assets/SCR-20230910-buch.png)
+![bg right:50% 80%](./assets/SCR-20230910-buch.png)
 
 ---
 
@@ -156,7 +178,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 - You will submit a lab report towards the end of the semester
 - You receive a `CW` grade for missing a lab
 
-![bg right:50% 100%](assets/2442.png)
+![bg right:50% 100%](./assets/2442.png)
 
 ---
 
@@ -167,27 +189,30 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 - Questions will have sub parts
 - Past exam papers available on Moodle
 
-![bg right:50% 100%](assets/final_exam.png)
+![bg right:50% 100%](./assets/final_exam.png)
 
 ---
 
 # Questions 🙋❓
 
-- Let us know what you think?
+- Let us know what you think!
+- If you wish, you can post anonymously (from GTAs, other students, and me) on campuswire
 
-![bg right:50% 70%](assets/hainan_qr_code_l1.png)
+![bg right:50% 70%](./assets/campuswire_url_2024.svg)
+
+
 
 ---
 
 # <!--fit--> <span style="color:white">Now Let's C!</span>
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](./assets/gradient.jpg)
 
 ---
 
 # The Art of Problem-Solving
 
-- Coming with a step-by-step plan
+- Develop a step-by-step plan
 - We call the plan an *algorithm*
 - Computers are good at processing algorithms
 - We can <span style="color:green">automate</span> tasks
@@ -198,9 +223,11 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 John Johnson
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](./assets/gradient.jpg)
 
 ---
+
+<style scoped>h1 {position: absolute; top: 10%}</style>
 
 # Problem-Solving in Engineering 👩‍🔬👨‍💻
 
@@ -210,7 +237,7 @@ img[alt~="center"] {
   margin: 0 auto;
 }
 </style>
-![500% center](assets/block.svg)
+![bg 60%](./assets/block2.svg)
 
 ---
 
@@ -219,7 +246,7 @@ img[alt~="center"] {
 - Historically, we have found ways to solve our problems with the use of numbers.
 - Computers are very good at dealing with numbers.
 - We need to tell the computer <span style="color:red">exactly</span> what to do.
-- Sequence of instructions is called a computer program
+- Sequence of instructions is called a computer program.
 
 ---
 
@@ -227,8 +254,8 @@ img[alt~="center"] {
 
 - Computers are **phenomenally** faster than us in performing calculations.
 - Computers _only_ directly understand <span style="color:red">machine language</span>.
-- Communication with computers require *assemblers*.
-- High-level Languages require *compilers*
+- Writing a program that maps directly machine language requires an *assembler*.
+- High-level languages require *compilers* to transform a program to machine language.
 
 ---
 
@@ -240,13 +267,21 @@ img[alt~="center"] {
 - As examples, Linux, Windows, and Android are written in **C**
 - **C** can run on <span style="color:red">ANY</span>  computer
 
-![bg right:30% 95%](assets/CLang.png)
+![bg right:30% 95%](./assets/CLang.png)
+
+---
+
+![bg](./assets/Priscilla-Huston-late-70s.webp)
+
+---
+
+![bg](./assets/SMCnrigQ.jpg)
 
 ---
 
 # <!--fit--> <span style="color:white">Example Program</span>
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](./assets/gradient.jpg)
 
 ---
 
@@ -261,10 +296,10 @@ img[alt~="center"] {
 # Task 🧗‍♀️
 
 - Set up your machine for C programming
-- Refer to the Course Information Section on Moodle for guidance
+- Refer to the Course Information section on Moodle for guidance
 - Start practicing
 
-![bg right:35% 85%](assets/uncle_sam.jpeg)
+![bg right:35% 85%](./assets/uncle_sam.jpeg)
 
 ---
 
@@ -278,7 +313,7 @@ Let's C!
 
 # <!--fit--> <span style="color:white">Any fool can write code that a computer can understand. Good programmers write code that humans can understand </span>
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](./assets/gradient.jpg)
 
 ---
 
