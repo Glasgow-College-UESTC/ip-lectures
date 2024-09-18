@@ -23,23 +23,24 @@ _color: "#093867"
 
 ---
 
-# Quotes from Dennis Ritchie, creator of C and co-creator of UNIX
-
-- [C has] the power of assembly language and the convenience of … assembly language.
-- UNIX is very simple, it just needs a genius to understand its simplicity.
-- C is quirky, flawed, and an enormous success.
-
-![bg right 45% 95%](./assets/Dennis_Ritchie_2011.jpg)
-
----
-
 <!-- _header: ![h:5em](./assets/UoG_keyline.svg) -->
 
 # UESTC HN 1005 - Introductory Programming
 
 Lecture 0 + 1 — Course Information
 
-Dr. Hasan T. Abbas, Dr. Syed M. Raza, Dr. Mark D. Butala
+Dr. Hasan T. Abbas
+
+<div align="center">
+
+| Chengdu Team | Hainan Team |
+|--------------|-------------|
+|Dr. Syed M. Raza | Dr. Mark D. Butala |
+| Dr. Ahmad Zoha | Dr. Bo Liu |
+| Dr. Hassan Abbas | Dr. Chong Li |
+
+</div>
+
 
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
@@ -54,6 +55,7 @@ Dr. Hasan T. Abbas, Dr. Syed M. Raza, Dr. Mark D. Butala
 - Living in the new (digital) world
 - Vast career opportunities
 - Automation and artificial intelligence
+- A creative outlet (poetry for engineers? 😂)
 
 ---
 
@@ -73,7 +75,7 @@ Dr. Hasan T. Abbas, Dr. Syed M. Raza, Dr. Mark D. Butala
 - Embedded systems
 - Backbone of operating systems (UNIX, Linux, MacOS)
 - Game design
-- Animation
+
 ![bg right 45% 95%](./assets/C-Tartan.png)
 
 ---
@@ -137,8 +139,8 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 ![bg right:35% 100%](./assets/qrcode_book.png)
 
-- Practice coding online
-- All we need to know
+- It includes interactive examples
+- Covers the essentials (i.e., the scope of IP)
 
 ---
 
@@ -153,7 +155,7 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 # Course Assessments 💯
 
-- One mid-term quiz of multiple choice questions - <span style="color:green">10 %</span>
+- One mid-term quiz (multiple choice questions) - <span style="color:green">10 %</span>
 - 4 Lab sessions - <span style="color:orange">30%</span>
 - Written Final Exam - <span style="color:red">60%</span>
 - Programming Assignments <span style="color:green">formative = 0%</span> 📈
@@ -197,9 +199,15 @@ We are going to use a [free, online wikibook](https://liascript.github.io/course
 
 - Let us know what you think!
 - I am so very lonely and sad without your questions 😢😞😴
-- You can email me, arrange a meeting, stop and talk to me when you see me, get in touch on the Q&A system, ...
+- For example, you can:
+  + Raise your hand
+  + Email me
+  + Arrange a meeting
+  + Stop and talk to me when you see me
+  + Get in touch on the Q&A system
+  + ...
 
-![bg right:50% 70%](./assets/R-C.jpeg)
+![bg right:40% 70%](./assets/R-C.jpeg)
 
 <!---
 - If you wish, you can post anonymously (from GTAs, other students, and me) on campuswire
@@ -232,35 +240,36 @@ John Johnson
 
 ---
 
-<style scoped>h1 {position: absolute; top: 10%}</style>
+
 
 # Problem-Solving in Engineering 👩‍🔬👨‍💻
 
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-![bg 60%](./assets/block2.svg)
+<style scoped>h1 {position: absolute; top: 10%;}</style>
+
+1. Understand the problem thoroughly
+2. Read the requirements carefully
+3. Devise a plan/algorithm
+4. Validate the plan
+
+![bg right:50% 90%](./assets/block2.svg)
 
 ---
 
 # Computer Programming
 
-- Historically, we have found ways to solve our problems with the use of numbers.
-- Computers are very good at dealing with numbers.
-- We need to tell the computer <span style="color:red">exactly</span> what to do.
-- Sequence of instructions is called a computer program.
+- Historically, we have found ways to solve our problems with the use of numbers
+- Computers are very good at performing mathematical operations on numbers
+- We need to tell the computer <span style="color:red">exactly</span> what to do
+- Sequence of instructions is called a computer program
 
 ---
 
 # Computers 💻
 
-- Computers are **phenomenally** faster than us in performing calculations.
-- Computers _only_ directly understand <span style="color:red">machine language</span>.
-- Writing a program that maps directly machine language requires an *assembler*.
-- High-level languages require *compilers* to transform a program to machine language.
+- Computers are **phenomenally** faster than us in performing calculations
+- Computers _only_ directly understand <span style="color:red">machine language</span>
+- Writing a program that maps directly to machine language requires an *assembler*
+- High-level languages require *compilers* to transform a program to machine language
 
 ---
 
@@ -268,7 +277,7 @@ img[alt~="center"] {
 
 - C was co-developed with the UNIX operating system
 - Created in the 1970s at Bell Laboratories by Dennis Ritchie
-- *High-level* Programming language
+- *High-level* programming language
 - As examples, Linux, Windows, and Android are written in **C**
 - **C** can run on <span style="color:red">ANY</span>  computer
 
@@ -284,6 +293,16 @@ img[alt~="center"] {
 
 ---
 
+# Quotes from Dennis Ritchie, creator of C and co-creator of UNIX
+
+- "[C has] the power of assembly language and the convenience of … assembly language."
+- "UNIX is very simple, it just needs a genius to understand its simplicity."
+- "C is quirky, flawed, and an enormous success."
+
+![bg right 45% 95%](./assets/Dennis_Ritchie_2011.jpg)
+
+---
+
 # <!--fit--> <span style="color:white">Example Program</span>
 
 ![bg opacity:100%](./assets/gradient.jpg)
@@ -292,8 +311,8 @@ img[alt~="center"] {
 
 # Today's Summary :spiral_notepad:
 
-- The art of problem-solving 🖌️
-- Learn by practice 🚴‍♀️🚴‍♂️
+- General course logistics
+- How to improve your programming skills? Learn through practice 🚴‍♀️🚴‍♂️
 - Always get help when in doubt 😇
 
 ---
@@ -316,7 +335,9 @@ Let's C!
 
 ---
 
-# <!--fit--> <span style="color:white">Any fool can write code that a computer can understand. Good programmers write code that humans can understand </span>
+# <span style="color:white">Any fool can write code that a computer can understand. Good programmers write code that humans can understand. </span>
+
+Martin Fowler
 
 ![bg opacity:100%](./assets/gradient.jpg)
 
@@ -324,5 +345,5 @@ Let's C!
 
 # Get in touch ✍️
 
-<SyedMuhammad.Raza@glasgow.ac.uk> (Chengdu)
+
 <mark.butala@glasgow.ac.uk> (Hainan)
