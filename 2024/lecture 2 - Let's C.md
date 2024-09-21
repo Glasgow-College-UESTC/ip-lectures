@@ -17,11 +17,22 @@ _color: "#093867"
 ---
 
 
-# <!--fit--> <span style="color:white">A thousand *li* begin with a single step </span>
+# <!--fit--> <span style="color:white">A thousand lǐ begins with a single step </span>
+
+Lǎozǐ
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
 ---
+
+# <!--fit--> <span style="color:white">千里之行，始于足下</span>
+
+老子
+
+![bg opacity:100%](assets/gradient2.jpg)
+
+---
+
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
@@ -30,26 +41,48 @@ _color: "#093867"
 Lecture 2 — Let's C!
 
 Dr Hasan T Abbas
+
+<style scoped>
+    .team-table {
+        .bottom: 1%;
+    }
+</style>
+
+<div align="center">
+<p style="margin-bottom:0.5cm;">
+
+| Chengdu Team | Hainan Team |
+|--------------|-------------|
+|Dr. Syed M. Raza | Dr. Mark D. Butala |
+| Dr. Ahmad Zoha | Dr. Bo Liu |
+| Dr. Hassan Abbas | Dr. Chong Li |
+
+</p>
+</div>
+
+
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
 
+<!---
 ---
 
 # Questions 🙋❓
 
 - Ask us anything (programming-related 😎)
-  
+
 ![bg right:50% 70%](assets/hainan_qr_code_l2.png)
+--->
 
 ---
 
-# Today's Lecture 📆 
+# Today's Lecture 📆
 
-- Under the hood 🚇
+- Under the hood 🚗
 - Ingredients of a C program
-- The C Lexicon ⌨️
+- The C lexicon (language elements) ⌨️
 
 ---
 
@@ -185,10 +218,10 @@ printf("Sky is the limit!");
 - Words that are not processed by compiler
 - Only there for our information
 - Single Line `//` and multiline `/* */`
-  
+
 ```C
 // This is a single line comment
-/* This is a multi line 
+/* This is a multi line
 comment */
 
 ```
@@ -213,12 +246,12 @@ comment */
 # Questions 🙋❓
 
 - Ask us anything (programming-related 😎)
-  
+
 ![bg right:50% 70%](assets/hainan_qr_code_l2.png)
 
 ---
 
-# Variables 
+# Variables
 
 - Look at all the houses that have an address
 - Shi lives at *2 Galaxy Road, Mars*
