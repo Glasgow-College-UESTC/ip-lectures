@@ -80,7 +80,7 @@ Dr Hasan T Abbas
 
 # Today's Lecture 📆
 
-- Under the hood 🚗
+- Peaking under the hood 🚗
 - Ingredients of a C program
 - The C lexicon (language elements) ⌨️
 
@@ -105,12 +105,7 @@ Dr Hasan T Abbas
 - C programming language is small
 - There are only 32 keywords in the language
 
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
+<div align="center">
 
 | Language    | Keywords |
 | -------- | ------- |
@@ -119,30 +114,32 @@ img[alt~="center"] {
 | Java    | 50    |
 | Python (3.7) | 35 |
 
+</div>
+
 ---
 
 # From last time ⏮️
 
 ```C
-/*
-A C program that prints a message on screen */
-#include<stdio.h> // some raw ingredients
+/* A C program that prints a message on screen */
+
+#include <stdio.h> // some raw ingredients
 
 int main() // main function
 {
-    printf("Shine like a diamond! \n"); // Statements
+    printf("Shine on you crazy diamond! \n"); // Statements
 
     return 0; // Return the control back to the operating system
-
-} // This is a code block
+              // with code 0 (no errors)
+} // Everything between "{" and "}" is a code block
 ```
 
 ---
 
 # Keywords
 
-- There special words that <span style="color:red">serve</span> a specific purpose
-- We can not use `keywords` for any other purpose
+- These are special words that are <span style="color:red">reserved</span> for a specific purpose
+- We can not use C for any other purpose
 - <span style="color:red">Special</span> meaning to the compiler
 - Examples are `return`,`int`,`char`,`for`,`while`,`if`,`else`
 
