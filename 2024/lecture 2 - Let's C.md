@@ -178,7 +178,7 @@ int main() // main function
     printf("Shine on you crazy diamond! \n"); // Call the printf function
                                               // defined in stdio.h
 
-    return 0; // Return the control back to the operating system
+    return 0; // Return control to the operating system
               // with code 0 (no errors)
 } // Everything between "{" and "}" is a code block, that is, a
   // sequence of statements that are run in sequential order
@@ -211,7 +211,7 @@ The standard components of a C program (a `.c` file) are:
 2) Global definitions ("global" variables visible to all functions &mdash; avoid these)
     - Not required
     - Not used in this example
-3) Body (functions declarations)
+3) Body (function declarations)
     - **Must** have a `main` function
 
 ---
@@ -234,7 +234,7 @@ The standard components of a C program (a `.c` file) are:
 
 # The Body 🐊
 
-- We can have declare as many functions as we want (large projects will have more than one `.c` file with function declarations)
+- We can declare as many functions as we want (large projects will have more than one `.c` file with function declarations)
 - Parts are usually C programming language *functions*
 - ❗ Every C program has a `main()` function
 - Functions have `()` after their names
@@ -281,9 +281,9 @@ printf("The sky is the limit!");
 ---
 # Comments ❇️ and Whitespace
 
-- Text that is ignored by the compiler
-- Useful for documenting your program
-- Single Line `//` and multiline `/*` ... `*/`
+- A comment is text that is ignored by the compiler
+- Comments are useful for documenting your program
+- Comments may span a single line `//` or multiple lines `/*` ... `*/`
 ```C
 // This is a single line comment
 
@@ -332,7 +332,7 @@ printf("The sky is the limit!");
 - The final step involves the *linker* ⛓️
 - The linker produces an executable ⚙️ by combining
   + Object file(s)
-  + References (links) to functions from libraries and modules
+  + References (links) to functions from external libraries and modules
 - By historical convention, the default name of an executable is `a.out`
 - The linker can generate a library of functions for use in other programs
   + Useful for large projects and beyond the scope of Introductory Programming
@@ -340,19 +340,6 @@ printf("The sky is the limit!");
 ---
 
 # Quiz Time ⌛
-
-<!--
-- Log on to menti.com: <https://www.menti.com>
-- Use code `2257 7423`
-
-![bg right:35% 100%](assets/hainan_qr_code_quiz1_week4_l2download.png)
--->
-
----
-
-# <!--fit--> <span style="color:white">What's in `main()`?</span>
-
-![bg opacity:100%](assets/gradient.jpg)
 
 ---
 
@@ -383,7 +370,7 @@ printf("The sky is the limit!");
 - A hexadecimal *literal* in C is prefixed by `0x`
 - Each hexadecimal digit represents 4 bits
 - A four digit hexadecimal number represents 16 bits
-  - `0xABCD` (hexadecimal) = 43,981 (decimal) = `1010101111001101` (binary)
+  - `0xABCD` (hexadecimal) = 43,981 (decimal) = <span style="color:red">`1010`</span><span style="color:blue">`1011`</span><span style="color:green">`1100`</span><span style="color:purple">`1101`</span> (binary)
 
 ---
 
@@ -396,7 +383,7 @@ printf("The sky is the limit!");
 - Every house can be **identified** by a <span style="color:red">unique</span> address of the location
 - A different **type** of house may be found at different locations
 
-![bg right:35% 100%](assets/houses.jpg)
+![bg right:35% 95%](assets/houses.jpg)
 
 ---
 
@@ -412,6 +399,8 @@ img[alt~="center"] {
 
 
 # The C Memory Model
+
+Consider an *example* memory space on a 16-bit computer system:
 
 <div align="center">
 
@@ -435,14 +424,15 @@ img[alt~="center"] {
 
 
 - A variable is a mapping between an *identifier* (name) and a *value* stored somewhere on the computer
-- A variable's declaration specifies its *type*
+- A variable's declaration specifies its *type*, which in term determines:
   - The amount of memory allocated for storage
-  - How the value is interpreted: as an integer, floating point number, or character
+  - How the value is interpreted: for example, as an integer, floating point number, or character
 
 ```C
 int   student_ID; // an integer type variable with name `student_ID`
 float area;       // a floating-point number with name `area`
 char  gender;     // a character type variable accepts a single character
+                  //     (letter, e.g., 'M' or 'F') with name `gender`
 ```
 
 ---
@@ -451,9 +441,9 @@ char  gender;     // a character type variable accepts a single character
 
 - The name of a variable is called its <span style="color:green">identifier</span>
 - Variable name constrains:
-  - The first character must be a letter `a-z` or underscore `_`
-  - Identifiers can only contain letters `a-z`, digits `0-9`, and `_`
-  - Identifiers are case sensitive, i.e., `VARIABLE` and `variable` are two different variables
+  - The first character must be a letter `a-z` and `A-Z` or underscore `_`
+  - Identifiers can only contain letters `a-z` and `A-Z`, digits `0-9`, and `_`
+  - Identifiers are case sensitive, i.e., `VARIABLE` and `variable` refer to two different variables
 
 ```C
 variable ✅
@@ -466,8 +456,8 @@ v@riable ❌
 
 # Variable Type Declaration 🤔
 
-- So what do type *specifers* like `float`, `int`, `double`, `char`, etc. mean?
-- A variable's type determine the amount of required memory to store it
+- So what do *type specifiers* like `float`, `int`, `double`, `char`, etc. mean?
+- A variable's type determines the amount of memory required to store it
 - More memory means more room to store a number with greater precision
   + For example, a *double* is more precise than a *float* but requires **twice** the storage
   + The specific details are compiler and machine dependent
