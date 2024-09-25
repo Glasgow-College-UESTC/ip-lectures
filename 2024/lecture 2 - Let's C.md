@@ -208,7 +208,7 @@ Wish You Were Here, Pink Floyd
 The standard components of a C program (a `.c` file) are:
 1) Header (the `#include` directives)
     - Not required
-2) Global definitions ("global" variables visible to all functions &mdash; avoid these)
+2) Global definitions (for example, "global" variables that are visible to all functions &mdash; avoid these)
     - Not required
     - Not used in this example
 3) Body (function declarations)
@@ -219,7 +219,7 @@ The standard components of a C program (a `.c` file) are:
 # The Header 🎓
 
 - The example program uses the `printf` function
-- We need to include extra files before we *compile* the code
+- We need to include extra files before we *compile* the code to inform the compiler of the available set of functions
 - `#include` tells the compiler to copy and paste in the given file
 - This example `#include`s the standard IO (input/output) library function definitions
 - `#` denotes a preprocessor directive
