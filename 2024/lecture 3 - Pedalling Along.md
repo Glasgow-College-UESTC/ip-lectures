@@ -17,9 +17,21 @@ _color: "#093867"
 ---
 
 
-# <!--fit--> <span style="color:white"> 👑 Secret of getting ahead = getting started! </span>
 
-![bg opacity:100%](assets/gradient2.jpg)
+
+![bg left](assets/Mark_Twain_by_AF_Bradley.jpg)
+
+# 👑 The secret of getting ahead is getting started!
+
+<span style="color:white">&mdash; Mark Twain (Samuel Clemens)</span>
+
+---
+
+![bg left](assets/Mark_Twain_by_AF_Bradley.jpg)
+
+# 👑 The secret of getting ahead is getting started!
+
+&mdash; Mark Twain (Samuel Clemens)
 
 ---
 
@@ -27,21 +39,39 @@ _color: "#093867"
 
 # UESTC HN 1005 - Introductory Programming
 
-Lecture 3 — Pedalling along 🚴‍♀️🚴‍♂️
+**Lecture 3 — Pedalling along** 🚴‍♀️🚴‍♂️
 
-Dr Hasan T Abbas
+Dr. Hasan T Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
+
+<style scoped>
+    .team-table {
+        .bottom: 1%;
+    }
+</style>
+
+<div align="center">
+<p style="margin-bottom:0.5cm;">
+
+| Chengdu Team | Hainan Team |
+|--------------|-------------|
+| Dr. Syed M. Raza | Dr. Mark D. Butala |
+| Dr. Ahmad Zoha | Dr. Bo Liu |
+| Dr. Hassan Abbas | Dr. Chong Li |
+
+</p>
+</div>
+
+
 
 ---
 
 # Questions 🙋❓
 
 - Ask us anything (programming-related 😎)
-  
-![bg right:50% 70%](assets/hainan_qr_code_l2.png)
 
 ---
 
@@ -49,35 +79,35 @@ Dr Hasan T Abbas
 
 - Compilers are very precise in their requirements
 - We the humans can make sense of sentences even with a misspelled word
-- a C compiler will fail to provide a translation of a syntactically incorrect program,
-- No matter how small the error is
-- <span style="color:red">We got to learn to be **precise** in writing code</span>
-  
+- A C compiler will fail to provide a translation of a syntactically incorrect program (matter how small the error)
+- <span style="color:red">We have to learn to be **precise** when writing code</span>
+- **Senior engineers** communicate technical material with precision and fluency
+
 ---
 
-# Today's Lecture 📆 
+# Today's Lecture 📆
 
 - Operators, expressions, and assignment 🏗️
-- Make larger programs
-- Interactivity: Input and Output
+- Progress to (slightly) larger programs
+- Interactivity: Input and output
 
 ---
 
-# The C character set 🪐
+# The C Character Set 🪐
 
-| Type | Character |
+| Category | Character |
 | -------- | ------- |
-| lowercase letters  | a-z |
-| uppercase letters | A-Z |
-| digits | 0-9 |
-| Other Characters | + - * / = ( ) { } [ ] < > ' " ! # % _ ^ ~ \ . , : ; ? |
-| white space characters | blank, newline, tab etc. |
+| Lowercase letters  | `a`&ndash;`z` |
+| Uppercase letters | `A`&ndash;`Z` |
+| Digits | `0`&ndash;`9` |
+| Other Characters | `+` `-` `*` `/` `=` `(` `)` `{` `}` `[` `]` `<` `>` `'` `"` `!` `#` `%` `_` `^` `~` `\` `.` `,` `:` `;` `?` |
+| White space characters | space, newline (`\n`), tab (`\t`), etc. |
 
 ---
 
 # More Operators ➕
 
-- C has arithmetic operators
+- C has all the expected arithmetic operators, e.g., `+`, `-`, `*`, and `/`
 - Increment operators (`++`, `--`)
 - Assignment operator (`=`)
 - Relational operators (`<`, `>`, `==`, `<=`, `>=`)
@@ -87,84 +117,86 @@ Dr Hasan T Abbas
 
 # Displaying Output
 
-- We have been using `printf()` function to display messages on screen
-- `printf()` is defined in `stdio.h` library (header file)
+- We have been using the `printf()` function to display messages on screen
+- The `printf()` function is declared in `stdio.h` library (header file)
 
 ```C
 printf("<formattext>", var1, var2, ... );
-
 ```
 
-- `<formattext>` is a <span style="color:red">string</span> that indicates ...
-- how many variables to expect at the end of the statement,
-- the expected printing type of each variable,
-- how many columns to use for printing,
-- any associated fixed text
+- The `<formattext>` argument is a <span style="color:red">string</span> that specifies:
+  - How many variables to expect at the end of the statement
+  - The expected printing type of each variable
+  - The field width and precision of a printed variable (optional)
+  - Explicit text to display
 
 ---
 
-# `printf()` function
+# Example: The `printf()` Function
 
 ```C
 #include <stdio.h>
 int main()
 {
-    int age = 50;
-    char firstname = 'H';
-    char lastname = 'A';
-    float weight = 100.3;
-    printf("My age is %d, my initials are %c %c, and my weight is %f.\n", age, firstname, lastname, weight); 
+    int age = 44;
+    char firstname_initial = 'M';
+    char lastname_initial = 'B';
+    float height_cm = 172.7;
+    printf("My age is %d, my initials are %c %c, and my height is %f (cm).\n",
+           age, firstname_initial, lastname_initial, height_cm);
     return 0;
 }
 ```
 
 ---
 
-# More on output format 
+# More Information Concerning the Format String
 
-- All this is done by special `%` characters in the `<formattext>` string
-- `%<w>.<p><t>`
-- `<w>` is the total width of the field (optional)
-- If `w <= actual width`, output actual – no truncation
-- If `w > actual width`, add zero at the left
-- `<p>` is the # digits after the point (optional)
-- `<t>` is the type conversion (<span style="color:red">required</span>)
+- How a variable is printed is controlled with special `%` characters in the `<formattext>` string
+- The general form is `%<w>.<p><t>`:
+  - `<w>` is the total width of the field (optional)
+  - If `w <= actual width`, no change to the output &mdash; no truncation
+  - If `w > actual width`, add zero at the left
+  - `<p>` is the # of digits to display after the decimal point (optional)
+  - `<t>` is the type conversion (<span style="color:red">required</span>)
 
 ---
 
-# `printf()` Rules
+# Some `printf()` Type Conversion Specifiers
 
-| `printf()` type | Description |
-| -------- | ------- |
-| `i` or `d` | signed integer |
-| `u` | unsigned integer |
-| `f`, `lf` | real decimal normal format, double |
-| `e` | real decimal engineering format/scientific notation |
-| `o`, `x` | octal, hexadecimal |
-| `c`, `s` | character, strings |
+<div align="center">
+
+| Conversion Specifier | Description                                         |
+|----------------------|-----------------------------------------------------|
+| `i` or `d`           | signed integer                                      |
+| `u`                  | unsigned integer                                    |
+| `f`, `lf`            | real decimal normal format, double                  |
+| `e`                  | real decimal engineering format/scientific notation |
+| `o`, `x`             | octal, hexadecimal                                  |
+| `c`, `s`             | character, string                                   |
+
+</div>
 
 ---
 
 # Example
 
 ```C
-
 #include <stdio.h>
 int main () {
-  int x = 20;
-  float y = -16.7889;
-  printf("Value x=%d and value y=%9.3f\n", x, y); 
-  printf("Value x=%i and value y=%7.1f\n", x, y);
-  printf("Value x=%3d and value y=%5.1f\n", x, y);
-  printf("Value x=%3d and value y=%3.1f\n", x, y);   
-  return 0;
+    int x = 20;
+    float y = -16.7889;
+    printf("Value x=%d and value y=%9.3f\n", x, y);
+    printf("Value x=%i and value y=%7.1f\n", x, y);
+    printf("Value x=%3d and value y=%5.1f\n", x, y);
+    printf("Value x=%3d and value y=%3.1f\n", x, y);
+    return 0;
 }
-
 ```
 
 ---
 
-# Making programs more interactive
+# Making Programs More Interactive: User Input
 
 - We have been using variables to store data in memory
 - We can ask the user to insert a value
