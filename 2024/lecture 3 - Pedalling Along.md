@@ -89,7 +89,7 @@ Dr. Hasan T Abbas
 
 - Operators, expressions, and assignment 🏗️
 - Progress to (slightly) larger programs
-- Interactivity: Input and output
+- Interactivity: Input ⌨️ and output 🖥️
 
 ---
 
@@ -198,45 +198,44 @@ int main () {
 
 # Making Programs More Interactive: User Input
 
-- We have been using variables to store data in memory
-- We can ask the user to insert a value
-- That's the job of the `scanf()` function
+- So far, we have been using input variables to store data in memory
+- Another source of input: interaction with the user
+- This is the the job of the "scanned formatted" function `scanf()`
 
 ```C
-scanf("%f",&radius);
-
+scanf("%f", &radius);
 ```
-- Note the `&` character
+- Note the `&` character &mdash; pass the **address** of the variable `radius` to the `scanf` function **NOT** the **value** of `radius`
 
 ---
 
 # Quiz Time 💯
 
-- Log on to menti.com: <https://www.menti.com>
-- Use code `49 46 05`
-
-![bg right:35% 100%](assets/menti_hainan_week4_l3.png)
 
 ---
 
-# A Simple Calculator
+# Coding Exercise: A Simple Calculator 🧮
 
-- Performs basic arithmetic on two numbers
-- Addition (`+`), Subtraction (`-`), Multiplication (`*`) and Division (`/`)
-- Results are displayed on the screen
-- Start with integer numbers
-- Move to `float`
-- Use `double`
-- Next up ... use `scanf()` to insert the values of the variables
+Write a C program that can performs basic arithmetic on two numbers
+- Addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`)
+- Display the result on the screen
+- Start with signed integer numbers (`int`)
+- Then, move to `float`
+- Next, use `double`
+- Finally (if you are a more experienced programming), use `scanf()` to implement a simple, interactive calculator
+  - Accept input like `10 + 3.14` and `12 / 42`
+  - I will introduce the `if` statement to implement this functionality &mdash; we will return to the subject of `if` in the next lecture
 
 ---
 
 # Next up :spiral_calendar:
 
-- Flow Control and Conditions
+- Flow Control 🔀
+- Conditional Statements ¿?
 
 ---
 
-# Get in touch
+# Get in Touch
 
-Hasan.abbas@glasgow.ac.uk
+- Campuswire 💬
+- mark.butala@glasgow.ac.uk 📨
