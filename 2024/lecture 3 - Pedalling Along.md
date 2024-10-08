@@ -71,7 +71,7 @@ Dr. Hasan T Abbas
 
 # Questions 🙋❓
 
-- Ask us anything (programming-related 😎)
+- Ask me anything (programming-related 😎)
 
 ---
 
@@ -79,7 +79,7 @@ Dr. Hasan T Abbas
 
 - Compilers are very precise in their requirements
 - We the humans can make sense of sentences even with a misspelled word
-- A C compiler will fail to provide a translation of a syntactically incorrect program (matter how small the error)
+- A C compiler will fail to provide a translation of a syntactically incorrect program (no matter how small the error)
 - <span style="color:red">We have to learn to be **precise** when writing code</span>
 - **Senior engineers** communicate technical material with precision and fluency
 
@@ -90,6 +90,11 @@ Dr. Hasan T Abbas
 - Operators, expressions, and assignment 🏗️
 - Progress to (slightly) larger programs
 - Interactivity: Input ⌨️ and output 🖥️
+
+
+---
+
+# Quiz Time 💯
 
 ---
 
@@ -118,7 +123,7 @@ Dr. Hasan T Abbas
 # Displaying Output
 
 - We have been using the `printf()` function to display messages on screen
-- The `printf()` function is declared in `stdio.h` library (header file)
+- The `printf()` function is declared in the `stdio.h` library (header file)
 
 ```C
 printf("<formattext>", var1, var2, ... );
@@ -156,7 +161,7 @@ int main()
 - The general form is `%<w>.<p><t>`:
   - `<w>` is the total width of the field (optional)
   - If `w <= actual width`, no change to the output &mdash; no truncation
-  - If `w > actual width`, add zero at the left
+  - If `w > actual width`, add space to the left
   - `<p>` is the # of digits to display after the decimal point (optional)
   - `<t>` is the type conversion (<span style="color:red">required</span>)
 
@@ -209,14 +214,9 @@ scanf("%f", &radius);
 
 ---
 
-# Quiz Time 💯
-
-
----
-
 # Coding Exercise: A Simple Calculator 🧮
 
-Write a C program that can performs basic arithmetic on two numbers
+Write a C program that can perform basic arithmetic on two numbers
 - Addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`)
 - Display the result on the screen
 - Start with signed integer numbers (`int`)
@@ -239,3 +239,9 @@ Write a C program that can performs basic arithmetic on two numbers
 
 - Campuswire 💬
 - mark.butala@glasgow.ac.uk 📨
+
+---
+
+# Questions 🙋❓
+
+- Ask me anything (programming-related 😎)
