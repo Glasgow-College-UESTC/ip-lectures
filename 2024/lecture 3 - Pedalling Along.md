@@ -75,6 +75,16 @@ Dr. Hasan T Abbas
 
 ---
 
+# Flight Software at NASA/JPL is Written in C!
+
+<div align="center">
+
+![width:800px](assets/loc.png)
+
+</div>
+
+---
+
 # Something on ChatGPT 💭
 
 - Compilers are very precise in their requirements
@@ -90,7 +100,7 @@ Dr. Hasan T Abbas
 - Operators, expressions, and assignment 🏗️
 - Progress to (slightly) larger programs
 - Interactivity: Input ⌨️ and output 🖥️
-
+- Reminder: the first lab is this week 🔬
 
 ---
 
@@ -194,7 +204,7 @@ int main () {
     printf("Value x=%d and value y=%9.3f\n", x, y);
     printf("Value x=%i and value y=%7.1f\n", x, y);
     printf("Value x=%3d and value y=%5.1f\n", x, y);
-    printf("Value x=%3d and value y=%3.1f\n", x, y);
+    printf("Value x=%1d and value y=%3.1f\n", x, y);
     return 0;
 }
 ```
