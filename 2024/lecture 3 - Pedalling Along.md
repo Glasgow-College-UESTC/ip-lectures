@@ -17,9 +17,11 @@ _color: "#093867"
 ---
 
 
+<div align="center">
 
+![width:300px Samuel Clements, aka, Mark Twain](assets/Mark_Twain_by_AF_Bradley.jpg)
 
-![bg left](assets/Mark_Twain_by_AF_Bradley.jpg)
+</div>
 
 # 👑 The secret of getting ahead is getting started!
 
@@ -27,7 +29,11 @@ _color: "#093867"
 
 ---
 
-![bg left](assets/Mark_Twain_by_AF_Bradley.jpg)
+<div align="center">
+
+![width:300px left Samuel Clements, aka, Mark Twain](assets/Mark_Twain_by_AF_Bradley.jpg)
+
+</div>
 
 # 👑 The secret of getting ahead is getting started!
 
@@ -41,7 +47,7 @@ _color: "#093867"
 
 **Lecture 3 — Pedalling along** 🚴‍♀️🚴‍♂️
 
-Dr. Hasan T Abbas
+Dr. Hasan T. Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
@@ -60,7 +66,7 @@ Dr. Hasan T Abbas
 |--------------|-------------|
 | Dr. Syed M. Raza | Dr. Mark D. Butala |
 | Dr. Ahmad Zoha | Dr. Bo Liu |
-| Dr. Hassan Abbas | Dr. Chong Li |
+| Dr. Hassan T. Abbas | Dr. Chong Li |
 
 </p>
 </div>
@@ -75,6 +81,14 @@ Dr. Hasan T Abbas
 
 ---
 
+# Some Reminders 📳
+
+- Ask questions, get answers, and join the conversation on Campuswire (https://campuswire.com &mdash; use the website, not the APP)
+- Still do not have a University of Glasgow login? Contact Chenyang in Room 419
+- If the staff in 419 cannot address your problem, contact me (mark.butala@glasgow.ac.uk)
+
+---
+
 # Flight Software at NASA/JPL is Written in C!
 
 <div align="center">
@@ -85,7 +99,7 @@ Dr. Hasan T Abbas
 
 ---
 
-# Something on ChatGPT 💭
+# Some Comments on ChatGPT 💭
 
 - Compilers are very precise in their requirements
 - We the humans can make sense of sentences even with a misspelled word
@@ -227,14 +241,11 @@ scanf("%f", &radius);
 # Coding Exercise: A Simple Calculator 🧮
 
 Write a C program that can perform basic arithmetic on two numbers
-- Addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`)
-- Display the result on the screen
-- Start with signed integer numbers (`int`)
-- Then, move to `float`
-- Next, use `double`
-- Finally (if you are a more experienced programming), use `scanf()` to implement a simple, interactive calculator
+- Support the addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) arithmetic operations
+- Use `scanf()` to implement a simple, interactive calculator:
   - Accept input like `10 + 3.14` and `12 / 42`
   - I will introduce the `if` statement to implement this functionality &mdash; we will return to the subject of `if` in the next lecture
+- Display the result on the screen
 
 ---
 
@@ -247,7 +258,7 @@ Write a C program that can perform basic arithmetic on two numbers
 
 # Get in Touch
 
-- Campuswire 💬
+- Campuswire (https://campuswire.com) 💬
 - mark.butala@glasgow.ac.uk 📨
 
 ---
