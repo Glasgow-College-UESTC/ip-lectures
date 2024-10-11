@@ -16,18 +16,29 @@ _backgroundColor: "#FFF"
 _color: "#093867"
 ---
 
+<style scoped>
+    h1 {
+        color: white;
+    }
+</style>
 
 # <!--fit--> <span style="color:white">A thousand lǐ begins with a single step </span>
 
-<h1>Lǎozǐ</h1>
+<h1>&mdash; Lǎozǐ</h1>
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
 ---
 
+<style scoped>
+    h1 {
+        color: white;
+    }
+</style>
+
 # <!--fit--> <span style="color:white">千里之行，始于足下</span>
 
-<h1>老子</h1>
+<h1>&mdash; 老子</h1>
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
@@ -120,7 +131,7 @@ Dr Hasan T Abbas
 
 # The Original C Keywords (32 Total)
 
-<div align="center">
+<div align="center" id="kw_table">
 
 | <!-- --> | <!-- -->  | <!-- --> | <!-- --> |
 |----------|-----------|----------|----------|
@@ -134,6 +145,12 @@ Dr Hasan T Abbas
 | <span style="color:red"> `do`</span>	|  <span style="color:green">`int`</span>	|  <span style="color:green">`struct`</span>	|  <span style="color:green">`double`</span> |
 
 </div>
+
+<style scoped>
+    #kw_table {
+        font-size: 24px;
+    }
+</style>
 
 Legend: <span style="color:red">flow control</span>, <span style="color:green">type specifier</span>, <span style="color:purple">sizeof</span> operator, forget that <s>`goto`</s> exists 🙈🙉🙊, and other keywords are much less important for Introductory Programming
 
@@ -156,7 +173,7 @@ Legend: <span style="color:red">flow control</span>, <span style="color:green">t
 | `#if`                                        | `#elif`   | `#else`   | `#endif`   |
 | `#ifdef`                                     | `#ifndef` | `#define` | `#undef`   |
 | `#line`                                      | `#error`  | `#pragma` | `#defined` |
-| <span style="color:orange">`#include`</span> |           |           |            |
+| <span style="color:red">`#include`</span> |           |           |            |
 
 
 </div>
