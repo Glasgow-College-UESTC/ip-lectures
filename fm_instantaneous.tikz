@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{tikz}
+\usepackage{media9}
+\usepackage{animate}[2014/11/27]
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{animateinline}[
+  %poster=1, % sin 2x (frames are numbered in zero-based manner)
+  width=12cm,
+  height=6cm,
+  label=graph_switch,
+  begin={\begin{tikzpicture}},
+  end={\end{tikzpicture}},
+  step
+]{0}
+
+% Carrier Signal
+  \begin{axis}[
+    hide axis,
+    %xlabel={$x$},
+    %ylabel={$\text{sin}(x)$},
+    xmin=-4*pi,xmax=4*pi]
+    \addplot[black,samples=101] {5*cos(x*180./pi)};
+  \end{axis}
+
+% Modulating Signal
+    \begin{axis}[
+    hide axis,
+    %xlabel={$x$},
+    %ylabel={$\text{sin}(x)$},
+    xmin=-4*pi,xmax=4*pi]
+    \addplot[blue,samples=501] {5*cos(6*x*180./pi)};
+  \end{axis}
+
+% Modulated Signal
+    \begin{axis}[
+    hide axis,
+    %xlabel={$x$},
+    %ylabel={$\text{sin}(x)$},
+    xmin=-4*pi,xmax=4*pi]
+    \addplot[red,samples=501] {5*cos(x*180./pi)*5*cos(6*x*180./pi)};
+  \end{axis}
+
+
+\end{animateinline}
+
+\end{document}

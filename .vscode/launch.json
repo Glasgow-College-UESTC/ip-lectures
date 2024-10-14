@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/hasan.abbas/ip-lectures",
-      "program": "/Users/hasan.abbas/ip-lectures/build/Debug/outDebug"
+      "cwd": "/Users/hasanabbas/IP-MARP",
+      "program": "/Users/hasanabbas/IP-MARP/build/Debug/outDebug"
     }
   ]
 }

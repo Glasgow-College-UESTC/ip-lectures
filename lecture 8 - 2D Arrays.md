@@ -1,6 +1,6 @@
 ---
-title: UESTC 1005 - Introductory Programming
-description: Course Slides for the C programming course - lecture 8 on 2D arrays
+title: ENG 5056 - Microwave and Mm-wave Circuit Design
+description: Course Slides for the mmwave course - Glasgow guest  lecture
 theme: uncovered
 paginate: true
 math: katex
@@ -19,9 +19,9 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 1005 — Introductory Programming
+# ENG 5056 — Microwave and mmWave Circuit Design
 
-Lecture 8 — Multidimensional Arrays and Pointers
+Guest Lecture — Noise
 
 Hasan T Abbas
 [Hasan.Abbas@glasgow.ac.uk](mailto:Hasan.Abbas@glasgow.ac.uk)
@@ -33,7 +33,7 @@ Hasan T Abbas
 
 --- 
 
-# <!--fit--> <span style="color:white"> If a program manipulates a large amount of data it does so in a small number of ways </span>
+# <!--fit--> <span style="color:white"> Macroscopic Behaviours driven by Microscopic Mechanisms</span>
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
@@ -45,8 +45,10 @@ Hasan T Abbas
 # Lecture Outline
 
 - Multidimensional Arrays
-- Function Calls
-- Pointers 🔑
+- Kinds of Noise
+- Linear Systems
+- Noise Analysis
+- Removing Noise
 
 ![bg right:35% 95%](assets/chess_2D.jpeg)
 

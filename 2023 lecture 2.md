@@ -1,7 +1,7 @@
 ---
 marp: false
-title: UESTC 1005 - Introductory Programming
-description: Course Slides for the C programming course
+title: UESTC 3018 - Communication Systems and Principles
+description: Course Slides for the CPS course
 theme: uncovered
 paginate: true
 transition: fade
@@ -17,7 +17,7 @@ _color: "#093867"
 ---
 
 
-# <!--fit--> <span style="color:white"> 👑 Secret of getting ahead = getting started! </span>
+# <!--fit--> <span style="color:white"> 💡 Modulation is the art of transforming simple signals into complex forms! </span>
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
@@ -25,11 +25,11 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC HN 1005 - Introductory Programming
+# UESTC 2018 - Communication Systems and Principles
 
-Lecture 3 — Pedalling along 🚴‍♀️🚴‍♂️
+Lecture 11 — Angle Modulation
 
-Dr Hasan T Abbas
+Dr Hanaa Aboumarshod and Dr Hasan Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
@@ -37,33 +37,29 @@ Dr Hasan T Abbas
 
 ---
 
-# Questions 🙋❓
+# Reflection 🤔
 
-- Ask us anything (programming-related 😎)
+- Why Modulation?
+- Amplitude Modulation (AM) is a linear process
+- AM wave is a band limited signal
+- AM is not resilient to noise 
   
+<!-- Need to change the QR code here -->
 ![bg right:50% 70%](assets/hainan_qr_code_l2.png)
 
 ---
 
-# Something on ChatGPT 💭
+# Today's Lecture 📆
 
-- Compilers are very precise in their requirements
-- We the humans can make sense of sentences even with a misspelled word
-- a C compiler will fail to provide a translation of a syntactically incorrect program,
-- No matter how small the error is
-- <span style="color:red">We got to learn to be **precise** in writing code</span>
-  
----
-
-# Today's Lecture 📆 
-
-- Operators, expressions, and assignment 🏗️
-- Make larger programs
-- Interactivity: Input and Output
+- Angle Modulation
+- Frequency Modulation
+- Some Bandwidth Analysis
 
 ---
 
-# The C character set 🪐
+# First Some Amplitude Modulation 🎗️
+
+
 
 | Type | Character |
 | -------- | ------- |

@@ -1,0 +1,37 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc, arrows, backgrounds}
+\usepackage[export]{animate}
+\tikzset{
+    dots/.style={fill=#1, circle, inner sep=2pt},
+    angle/.style={draw=green!70!black, fill=green!30},
+    mainline/.style={green!70!black, very thick},
+    arc/.style={red, very thick},
+    rads/.style={very thin},
+}
+
+\begin{document}
+
+\foreach \ang in {0,15,...,360}{
+    \begin{tikzpicture}
+    \draw[dashed] (0,0) circle (1.5); % Arc circle
+    \draw[-stealth] (-2,0) -- (2,0) node[right] {$\mathcal{R}$};
+    \draw[-stealth] (0,-2) -- (0,2) node[above] {$\mathcal{I}$};
+    \node[dots=red] (a) at (0,0) {};
+    \node[dots=red] (b) at (\ang:1.5) {};
+    \draw[blue, thick] (1.5,0) arc (0:\ang:1.5);
+    \draw[arc] (a) -- (b) {$e^{\mathrm{j}2\pi f_ct}$};
+    \node[below] at (-1,-2) {Carrier};
+    \end{tikzpicture}
+}
+
+\begin{tikzpicture}
+
+% Second Figure - Modulated Signal
+
+\draw[-stealth] (4,0) -- (8,0) node[right] {$\mathcal{R}$};
+\draw[>=stealth,<->,very thick, color=red] (5,0) -- (7,0) node[anchor=north west, color = black] {$m(t)$};
+\draw[-stealth] (6,-2) -- (6,2) node[above] {$\mathcal{I}$};
+
+\end{tikzpicture}
+\end{document}

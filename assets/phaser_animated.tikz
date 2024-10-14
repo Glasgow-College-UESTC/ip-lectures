@@ -1,0 +1,25 @@
+\documentclass[tikz, margin=10pt]{standalone}
+\usetikzlibrary{calc, arrows, backgrounds}
+
+\newcommand\rad{57.296}
+\pgfmathsetmacro\radq{\rad*2}
+\pgfmathsetmacro\radc{\rad*3}
+
+\tikzset{
+    dots/.style={fill=#1, circle, inner sep=2pt},
+    angle/.style={draw=green!70!black, fill=green!30},
+    mainline/.style={green!70!black, very thick},
+    arc/.style={red, very thick},
+    rads/.style={very thin},
+}
+
+\begin{document}
+\foreach \x in {1,1.1,1.2,1.3,1.4,1.5}{
+    \begin{tikzpicture}
+    % Second Figure - Modulated Signal
+    \draw[-stealth, gray] (-2,0) -- (2,0) node[right] {$\mathcal{R}$};
+    \draw[>=stealth,<->,very thick, color=red] (-\x,0) -- (\x,0) node[anchor=north west, color = black] {$m(t)$};
+    \draw[-stealth, gray] (0,-2) -- (0,2) node[above] {$\mathcal{I}$};
+    \node[below] at (-1,-2) {Envelop};
+    \end{tikzpicture}}
+\end{document}

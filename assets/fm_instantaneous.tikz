@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% uncomment \def\export{} below to export animation
+%% to multipage PDF a.pdf and run
+%% 
+%%  convert -density 300 -delay 4 -loop 0 -alpha remove a.pdf b.gif
+%%
+%% to get an animated GIF b.gif at 100/4 = 25 frames per s
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\export{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\export
+  \documentclass[export]{standalone}
+\else
+  \documentclass{standalone}
+\fi
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{animate}
+\usepackage{xsavebox} % xlrbox
+\usepackage{calc} % \widthof{...}, \real{...}
+
+\usepackage{amsmath}
+
+\begin{document}
+%
+%save ONE cycle in an xlrbox
+\begin{xlrbox}{OneCycle}
+  \begin{tikzpicture}
+    \begin{axis}[
+      hide axis,
+      x=1cm,y=1cm,
+      /tikz/line cap=rect, /tikz/line join=round
+    ]
+      \addplot[domain=0:pi,black,samples=250] {cos(x*2*180/pi)};
+      \addplot[domain=0:pi,blue,samples=500] {cos(x*20*180/pi)-2.5};
+      \addplot[domain=0:pi,red,samples=500] {cos((x*20 + 6*sin(x*2*180/pi))*180/pi)-5};
+    \end{axis}
+  \end{tikzpicture}
+\end{xlrbox}%
+%
+\begin{animateinline}[controls,loop]{10}
+  \multiframe{18}{i=0+1}{
+    \makebox[\widthof{\theOneCycle}*\real{4}][l]{% window = FOUR cycles
+      \makebox[\widthof{\theOneCycle}/\real{18}*\real{-\i}]{}% offset
+      \theOneCycle\theOneCycle\theOneCycle\theOneCycle\theOneCycle% moving FIVE cycles 
+    }
+  }
+\end{animateinline}
+
+\end{document}
