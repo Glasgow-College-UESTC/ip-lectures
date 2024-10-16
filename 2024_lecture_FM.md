@@ -29,7 +29,7 @@ _color: "#093867"
 
 Lecture 11 — Angle Modulation
 
-Dr Hanaa Aboumarshod and Dr Hasan Abbas
+Dr Hanaa Abumarshoud and Dr Hasan Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
@@ -42,18 +42,18 @@ Dr Hanaa Aboumarshod and Dr Hasan Abbas
 - Why Modulation?
 - Amplitude Modulation (AM) is a linear process
 - AM wave is a band limited signal
-- AM is not resilient to noise 
+- AM is not resilient to noise
   
 <!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/hainan_qr_code_l2.png)
+![bg right:50% 70%](assets/menti_FM.png)
 
 ---
 
 # Today's Lecture 📆
 
 - Angle Modulation
-- Frequency Modulation
-- Some Bandwidth Analysis
+- Frequency Modulation (FM)
+- Phase Modulation (PM)
 
 ---
 
@@ -123,7 +123,7 @@ $$
 
 Lets look at,
 $$
-\phi(t) = A \cos \theta (t)
+\varphi(t) = A \cos \theta (t)
 $$
 
 Here $\theta(t)$ is the generalised angle that can have any value
@@ -160,7 +160,7 @@ $$
 - The generalised or in fact the transmitted signal is thus,
 
 $$
-\phi^{PM}(t) = A_c \cos (\omega_c t + k_p m(t))
+\varphi^{\mathrm{PM}}(t) = A_c \cos (\omega_c t + k_p m(t))
 $$
 
 We get the instantaneous frequency as,
@@ -184,7 +184,7 @@ $$
 
 The transmitted signal is thus,
 $$
-\phi^{FM}(t) = A_c \cos \left(\omega_c t + k_f m(t) \times t\right)
+\varphi^{\mathrm{FM}}(t) = A_c \cos \left(\omega_c t + k_f m(t) \times t\right)
 $$
 
 Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
@@ -196,14 +196,62 @@ $$
 
 - 🔑 $\theta^{FM}(t)$ to a phase modulator $\equiv$ $\omega_i^{PM}(t)$ to a frequency modulator.
 
+<!-- The integral term needs to be broken into limits from -\infty to zero which can be safely considered to be zero for a causal signal. This leaves only 0 to t limits for the integral. -->
+<!-- This also needs to be included with the fact the system is linear at least the part where the frequency varies linearly with the message signal -->
 ---
 # <!--fit--> <span style="color:white"> 📻 FM vs PM </span>
 
 ![bg opacity:100%](assets/gradient2.jpg)
 
 ---
-# 
+
+# Guess the 🟡, 🔴 and 🟢 signals
+
+![bg right:50% 60%](assets/Dfference.svg)
+
+---
+
+![bg 60%](assets/Difference.svg)
+
+---
+
+# Some Observations
+
+- Regardless of PM or FM, angle modulation signal has constant amplitude
+- Power of the signal remains the same irrespective of $k_p$ or $k_f$.
+- PM is a $90\degree$ shifted version of FM and vice versa
+
+![bg right:50% 100%](assets/modulation_animated.gif)
+
+
+--- 
+
+# An Example
+
+- Given a signal $m(t)$, sketch the FM and PM waves.
+- $k_f = 2 \pi \times 10^{5}$, $k_p = 10\pi$ and $f_c = 100$ MHz.
+
+![bg right:60% 90%](assets/example_signal.svg)
+
+---
+
+# Questions 🤔
+
+- You can ask on Menti
+
+<!-- Need to change the QR code here -->
+![bg right:50% 70%](assets/menti_FM.png)
+
+---
+# Further Reading 
+
+- Section 4.5 - Angle Modulation 
+<span style="color:green">Modern Digital and Analog Communication Systems</span>, $5^{th}$ Edition
+- B P Lathi and Zhi Ding
+
+---
 
 # Get in touch
 
+Hanaa.Aburmarshoud@glasgow.ac.uk
 Hasan.abbas@glasgow.ac.uk

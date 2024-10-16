@@ -6,7 +6,7 @@
 %%
 %% to get an animated GIF b.gif at 100/4 = 25 frames per s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\export{}
+% \def\export{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ifdefined\export
@@ -33,9 +33,9 @@
       x=1cm,y=1cm,
       /tikz/line cap=rect, /tikz/line join=round
     ]
-      \addplot[domain=0:pi,black,samples=250] {cos(x*2*180/pi)};
-      \addplot[domain=0:pi,blue,samples=500] {cos(x*20*180/pi)-2.5};
-      \addplot[domain=0:pi,red,samples=500] {cos((x*20 + 6*sin(x*2*180/pi))*180/pi)-5};
+      \addplot[domain=0:pi,blue,samples=500] {cos(x*20*180/pi)};
+      \addplot[domain=0:pi,red,samples=500] {cos((x*20 -0.2*180/pi * sin(x*180/pi)))-2.5};
+      \addplot[domain=0:pi,green,samples=500] {cos((x*20 + 6*sin(x*2*180/pi))*180/pi)-5};
     \end{axis}
   \end{tikzpicture}
 \end{xlrbox}%
