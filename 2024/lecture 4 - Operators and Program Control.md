@@ -304,17 +304,15 @@ else
 
 ---
 
+
 # C Operator Precedence 🔢
 
-`(fpg>=126 || ogtt_2hpg>=200)`
+- In primary school, you learned that `2+3*4` is equal to `2+(3*4)`
+- This is true because, *by convention*, `*` has higher precedence than `+`
+- Parentheses *override* the precedence convention
+- So, for example, `x < y || z` is equal to `(x < y) || z` but **NOT** equal to `x < (y || z)`
 
-and
-
-`((fpg>=126)||(ogtt_2hpg>=200))`
-
-![bg right 60%](assets/operator_precendence.png)
-
-are equivalent &mdash; why?
+![bg right 90%](assets/operator_precendence.png)
 
 ---
 
@@ -386,6 +384,8 @@ else
 *Hint:* Can the condition be expressed as one line of C code?
 
 
+<!---
+
 ---
 
 # The Ternary Conditional Operator
@@ -413,6 +413,8 @@ k = i < j ? i : j; // Since i < j, then k is assigned the value k = i = 1
 ```
 
 When to use `?` or an `if else` statement? I would choose the form that is most *readable*
+
+-->
 
 ---
 
