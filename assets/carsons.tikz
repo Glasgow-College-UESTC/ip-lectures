@@ -1,0 +1,19 @@
+\documentclass[tikz,border=3mm,]{standalone}
+\usetikzlibrary{arrows.meta,quotes}
+\begin{document}
+\begin{tikzpicture}[x=16mm,
+        every edge/.style = {draw, -Straight Barb},
+        declare function={f2(\x)=0.6*(1.2*sin(.2*deg(\x))+1*sin(2*deg(\x))+1.2*sin(1*deg(\x)));
+        }
+    ]
+    \pgfmathsetseed{1} % to get same output every time
+    \draw[red, smooth,domain=-0:1.75] plot (\x,rand+\x);
+    \draw[-stealth] (-1,0) -- (2,0) node[right] {$t$};
+    \draw[-stealth] (0,-2) -- (0,2) node[above] {$\theta$};
+    \draw[-stealth, dashed] (0,.2) -- (2., 1.5) {};
+    \node[right] at (2.0, 1.5) {$\theta(0) + 2 \pi f_c t$};
+    \node[above] at (.75,1) {$\theta(t)$};
+    \node[left] at (0,.2) {$\theta(0)$};
+    \plot[domain=-5:9,variable=\x,samples=101,smooth] ({\x},{f2(\x)});
+\end{tikzpicture}
+\end{document}

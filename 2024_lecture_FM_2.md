@@ -44,7 +44,7 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 - PM and FM are very similar - a $90 \degree$ phase-shift
   
 <!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/menti_FM.png)
+![bg right:50% 70%](assets/qr_2_lecture.png)
 
 ---
 
@@ -82,7 +82,6 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 
 ---
 
-
 # Analysing Bandwidth
 
 - To simplify the expression, $a(t)=\int_{-\infty}^{t}m(u)\,d u$
@@ -90,8 +89,9 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 $$
 \hat{\varphi}^{\mathrm{FM}}(t)=A\,e^{j[\omega_{c}t+k_{f}a(t)]}=A e^{j k_{f}a(t)}e^{j\omega_{c}t}
 $$
-from where, 
-$$\varphi^{\mathrm{FM}} (t) = \Re \left[\hat{\varphi}^{\mathrm{FM}}(t) \right] .
+from where,
+$$
+\varphi^{\mathrm{FM}} (t) = \Re \left[\hat{\varphi}^{\mathrm{FM}}(t) \right] .
 $$
 - Expanding the complex exponential through the Maclaurin power series,
 $$
@@ -180,15 +180,14 @@ img[alt~="center"] {
 - ⚠️ We can't ignore the higher order terms in the power series anymore
 - We need to rely on empirical formulas to estimate the bandwidth
 
-
-
 ---
 
-# Some Observations
+# Wideband FM
 
-- Regardless of PM or FM, angle modulation signal has constant amplitude
-- Power of the signal remains the same irrespective of $k_p$ or $k_f$.
-- PM is a $90\degree$ shifted version of FM and vice versa
+- <span style="color:red">**Context**</span> We need frequency deviation for the FM signal to be meaningful
+- But what is the bandwidth of an FM signal?
+- <span style="color:green">*Answer*</span> We use empirical methods / estimations 
+
 
 ![bg right:50% 100%](assets/modulation_animated.gif)
 
@@ -197,19 +196,66 @@ img[alt~="center"] {
 
 # An Example
 
-- Given a signal $m(t)$, sketch the FM and PM waves.
-- $k_f = 2 \pi \times 10^{5}$, $k_p = 10\pi$ and $f_c = 100$ MHz.
+- For an FM signal  $m(t)$, the max and min centre frequencies are $\omega_c + k_f m_p$ and $\omega_c - k_f m_p$ respectively
+- Taking into account the bandwidth of the sinc lobe ($4 \pi B$)
+- Total Bandwidth is the difference
 
-![bg right:60% 90%](assets/example_signal.svg)
+![bg right:60% 75%](assets/WBFM.svg)
 
 ---
 
-# Questions 🤔
+# Carson's Rule 🔑
 
+- The estimated bandwidth is,
+
+$$
+B^{\mathrm{FM}} = \frac{1}{2 \pi} \left( 2 k_f m_p + 8 \pi B \right)
+$$
+
+- The frequency deviation $\Delta f$ is given by,
+$$
+\Delta f = k_f \frac{m_{\mathrm{max}} - m_{\mathrm{max}}}{2 \times 2 \pi} \, \mathrm{Hz}
+$$
+
+- The estimated bandwidth (Hz) is,
+
+$$
+B^{\mathrm{FM}} \approx 2 (\Delta f + 2B)
+$$
+
+
+---
+
+# Carson's Rule - Narrowband Formula
+
+- Remember for narrowband FM, $\left| k_f a(t) \right| \ll 1$
+- $\Delta f$ is also very small
+
+$$
+B^{\mathrm{FM}} \approx 4B
+$$
+
+- Earlier we analysed that for narrowband, the bandwidth is 2B Hz.
+- A better estimate is then,
+$$
+B^{\mathrm{FM}} = 2 \left( \Delta f +B\right) = 2 \left( \frac{k_f m_p}{2 \pi} + B \right) 
+$$
+
+- A commonly used expression is in terms of deviation ratio,
+
+$$
+B^{\mathrm{FM}} = 2B (\beta + 1)
+$$
+
+where $\beta$ is th deviation ratio $\Delta f/B$
+
+---
+
+# Questions ❓
 - You can ask on Menti
 
 <!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/menti_FM.png)
+![bg right:50% 70%](assets/qr_2_lecture.png)
 
 ---
 
@@ -223,4 +269,4 @@ img[alt~="center"] {
 # Get in touch
 
 Hanaa.Aburmarshoud@glasgow.ac.uk
-Hasan.abbas@glasgow.ac.uk
+Hasan.Abbas@glasgow.ac.uk 
