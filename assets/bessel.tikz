@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\pgfplotsset{compat=1.18}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[width=\textwidth, height=0.5*\textwidth, xlabel=$x$]
+        \addplot+[id=parable,domain=0:20, samples=500, mark=none, width=2pt,color=blue]
+        gnuplot{besj0(x)} node[pin=95:{$J_0(x)$}]{};
+        \addplot+[id=parable,domain=0:20, samples=500, mark=none, width=2pt, color=red]
+        gnuplot{besj1(x)} node[pin=130:{$J_1(x)$}]{};       
+        \addplot+[id=parable,domain=0:20, samples=500, mark=none, width=2pt, color=green]
+        gnuplot{besjn(2,x)} node[pin=-140:{$J_2(x)$}]{};
+        \addplot+[id=parable,domain=0:20, samples=500, mark=none, width=2pt, color=black]
+        gnuplot{besjn(3,x)} node[pin=-90:{$J_3(x)$}]{};
+
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+
+
