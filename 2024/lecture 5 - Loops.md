@@ -18,23 +18,53 @@ _color: "#093867"
 
 ---
 
-<!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
+![bg right:35%](assets/Martin_Fowler.jpg)
 
-# UESTC 1005 - Introductory Programming
+# "Any fool 🤡 can write code that a computer 🤖 can understand. Good programmers write code that humans 🧑‍💻 can understand"
 
-Lecture 5 - Loops :carousel_horse:
+## &mdash; Martin Fowler (proponent of *agile* and *extreme* programming styles, https://martinfowler.com)
 
-Hasan T Abbas
-[Hasan.Abbas@glasgow.ac.uk](mailto:Hasan.Abbas@glasgow.ac.uk)
-
-<!-- transition: fade -->
-<!-- <style scoped>a { color: #eee; }</style> -->
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
 
 ---
+
+<!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
+
+# UESTC 1005 &mdash; Introductory Programming
+
+<h2>Lecture 5 &mdash; Loops 🎠</h2>
+
+Dr. Hasan T. Abbas
+
+
+<style scoped>
+    .team-table {
+        .bottom: 1%;
+    }
+</style>
+
+<div align="center">
+<p style="margin-bottom:0.5cm;">
+
+| Chengdu Team | Hainan Team |
+|--------------|-------------|
+| Dr. Syed M. Raza | Dr. Mark D. Butala |
+| Dr. Ahmad Zoha | Dr. Bo Liu |
+| Dr. Hassan T. Abbas | Dr. Chong Li |
+
+</p>
+</div>
+
+---
+
+# Questions 🙋❓
+
+- Ask me anything (programming-related 😎)
+
+---
+
+<!--
 <div class="columns">
-<div class="columns-left">
+<div class="columns-left"> -->
 
 # Lecture Outline
 
@@ -56,22 +86,21 @@ Hasan T Abbas
 ---
 <style scoped>section { justify-content: center; }</style>
 
-# *Iteration means repetition of a process*
+# *Iteration means repetition of a process* 🔢🔢🔢🔢...
 
 ---
 <style scoped>section { justify-content: center; }</style>
 
-# *Loop is a process which is connected to its beginning*
---- 
+# *A loop is a process which is connected to its beginning* 🔄
+---
 
-# Why iterations :question:
+# Why Iteration :question:
 
-In the last lecture, we talked about *building* logic.
-Algorithms build on logic to make *logical and meaningful* decisions.
-
-An **algorithm** is a sequence of clearly defined steps and instructions with clear start and end points.
-
-Iterations let us <span style="color:green">automate</span> boring tasks
+- In the last lecture, we talked about *building* logic
+- An **algorithms** is
+  - A set of rules, making *logical and meaningful* decisions, to solve a problem
+  - A sequence of clearly defined steps and instructions with clear start and end points
+- Iteration provide a mechanism to <span style="color:green">automate</span> repetitive tasks
 
 ---
 
@@ -79,6 +108,8 @@ Iterations let us <span style="color:green">automate</span> boring tasks
 
 - Statements that are executed *repeatedly*
 - Every loop has a *controlling expression*
+  - A logical expression
+  - Iterate again or stop looping?
 - C has three kinds of loops
   1. `while`
   2. `do while`
@@ -86,11 +117,11 @@ Iterations let us <span style="color:green">automate</span> boring tasks
 
 ---
 
-# The `while` loop
+# The `while` Loop
 
-`while` is the simplest of the loops
+<!--  `while` is the simplest of the loops -->
 
-- The controlling expression is executed <span style="color:red"> before</span> `the loop block.
+- The controlling expression is executed <span style="color:red"> before</span> the loop block
 
 ```C
 while (controlling expression)
@@ -100,59 +131,83 @@ while (controlling expression)
 ```
 
 - Note there is no `;` in the first line
-- Just like before `controlling expression` can be `true` or `false`
+- The `controlling expression` is a logical expression, i.e., check if it is `true` or `false`
 
 ![bg right:40% 70%](assets/while-loop.svg)
 
 ---
 
-# <span style="color:orange">Example - `while` loop</span> :placard:
+# <span style="color:orange">Example: `while` Loop</span> :placard:
 
-Write a C program that calculates a number equal to the smallest power of `2` that is greater than or equal to `20`.
+Write a C program that calculates a number equal to the smallest power of `2` that is greater than or equal to `20`, i.e., determine the smallest number $2^k$ such that
 
-$$ x = 2 ^ i \ge n$$
+$$2^k \ge 20$$
+
+![bg right:40% 80%](assets/while-demo_revised.png)
+
+---
+
+
+# <span style="color:orange">Example: `while` Loop</span> :placard:
+
+Write a C program that calculates a number equal to the smallest power of `2` that is greater than or equal to `20`, i.e., determine the smallest number $2^k$ such that
+
+$$2 ^ k \ge 20$$
 
 ```C
 int i, n;
 i = 1; n = 20;
 while (i < n)
 {
-    i = i * 2;
+    i = i * 2;  // equivalent to "i *= 2"
 }
 printf("The smallest value is %d \n", i);
 ```
 
-![bg right:40% 80%](assets/while-demo.svg)
+![bg right:40% 80%](assets/while-demo_revised.png)
 
 ---
 
-# <span style="color:orange">How Example worked</span> :placard:
+# <span style="color:orange">Example: `while` Loop &mdash; ✂️ Dissection ✂️</span> :placard:
 
 ```
 i = 1; i is now 1.
-Is i < n? Yes; continue.
-i = 1*2; i is now 2.
-Is i < n? Yes; continue.
+Is i < 20? Yes; continue.
+
+i = i*2; i is now 2.
+Is i < 20? Yes; continue.
+
 i = i*2; i is now 4.
-Is i < n? Yes; continue.
+Is i < 20? Yes; continue.
+
 i = i*2; i is now 8.
-Is i < n? Yes; continue.
+Is i < 20? Yes; continue.
+
 i = i * 2; i is now 16.
-Is i < n? Yes; continue.
+Is i < 20? Yes; continue.
+
 i = i * 2; i is now 32.
-Is i < n? No; exit from loop.
+Is i < 20? No; exit from loop.
 ```
 
 ---
 
-# The <span style="color:red"> *infinite*</span> Loop
+![bg right:35%](assets/KenThompson.jpg)
 
-Sometimes we delibrately construct a condition that remains *true* all the time. 
+# "When in doubt 🤔, use brute force 🏋️"
+
+## &mdash; Ken Thompson (original designer and implementer of Unix, co-developer of the Go programming language, Turing Award winner)
+
+---
+
+# The <span style="color:red"> *Infinite*</span> Loop
+
+Sometimes we delibrately construct a controlling expression that is always *true*
 
 - When paired with a loop, we call this an infinite loop
 - It executes forever until we tell the compiler to stop
-- We can use `break` or some other ways to get out of the loop
-- We commonly use infinite loops in embedded systems such as an Arduino.
+- We can use `break` or some other mechanism to terminate the loop
+- Infinite loops are often used embedded systems such as an Arduino
 
 ```C
 while(1)
@@ -163,15 +218,13 @@ while(1)
 
 ---
 
-# <span style="color:orange">Example - Infinite Loop</span> :placard:
+# <span style="color:orange">Example: Infinite Loop</span> :placard:
 
-Write a C program that accepts integers from a user through the keyboard and then computes their sum. The process is carried on *until* the user enters `0`
+Write a C program that accepts integers from a user through the keyboard and then computes their sum. The process repeats *until* the user enters `0`.
 
-Program Template:
+Example input and output:
 
 ```
-A C program that computes the sum of non-zero integers
-
 Enter an integer (0 to terminate):
 12
 32
@@ -184,23 +237,22 @@ The sum of the entered integers is: 378
 ```
 ---
 
-# <span style="color:orange">Example - Infinite Loop Implementation</span> :placard:
+# <span style="color:orange">Example: Infinite Loop Implementation</span> :placard:
 
 
 ```C
+#include <stdio.h>
 
-#include<stdio.h>
-int main(){
-    // we are going to define an infinite loop
+int main() {
     int sum, input;
-    sum = 0; // always initialise to 0 as the initial value may be undefined
+    sum = 0; // initialise to 0, otherwise the value of sum is undefined
     printf("Enter an integer (0 to terminate):\n");
-    while(1){
+    while(1) {
         scanf("%d", &input);
-        if (input == 0){
+        if (input == 0) {
             break;
         }
-        else{
+        else {
             sum += input;
         }
     }
@@ -213,43 +265,84 @@ int main(){
 
 # The `do while` Loop
 
-- We check the condition after the body statements are executed 
-
+- A `while` loop checks the condition at the *start* of each loop
+- A `do while` loop checks the condition at the *end* of each loop
 ```C
-do{
+do {
     // Statements
-} while ( expression);
+} while(expression);
 ```
 
-- Note the `;` in the end of the `while()`
-- `do while` loops run at least once
+- Note the `;` in the end of `while()`
+- A `do while` loop executes at least once
 
-![bg right:40% 40%](assets/do-while.svg)
+![bg right:40% 55%](assets/do-while_revised.png)
 
----
-
-# Questions :question:
-
-![bg right 60%](assets/quiz-2.png)
-
-[https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
 
 ---
 
-# The `for` Loop 
+# Questions 🙋❓
 
-- `for` loop is the most C-like thing in C
-- Best way to write loops
-- We have a *counting variable* that dictates the iterations
-- Ideal for cases where we need to count *up* or *down*
+- Ask me anything (programming-related 😎)
 
+---
+
+# The `for` Loop
+
+<!-- - `for` loop is the most C-like thing in C -->
+- A `for` loop is (usually) the clearest way to express a simple loop structure
+- The following looping structure
 ```C
-for( expr1 ; expr2 ; expr3){
-    //statements
+for (init; condition; increment) {
+    // statements
+}
+```
+is semantically equivalent to
+``` C
+init;
+while (condition) {
+    // statements
+    increment;
+}
+```
+<!-- - We have a *counting variable* that dictates the iterations
+- Ideal for cases where we need to count *up* or *down* -->
+
+
+<!-- ![bg right:40% 80%](assets/for-loops.svg) -->
+
+---
+
+# The Most Commonly Encountered `for` Loop
+
+- Most common use case: repeat a block of statements `N` times
+
+``` C
+for (int i = 0; i < N; i++) {
+    // statements
 }
 ```
 
-![bg right:40% 80%](assets/for-loops.svg)
+---
+
+# <span style="color:orange">Example: Infinite Loop Implementation</span> (revisited) :placard:
+
+- The following is an equivalent way to write the <span style="color:orange">Infinite Loop Example</span>:
+``` C
+#include <stdio.h>
+int main() {
+    int sum, input;
+    printf("Enter an integer (0 to terminate):\n");
+    for (sum = 0; 1; ) {
+        scanf("%d", &input);
+        if (input == 0) break;
+        sum += input;
+    }
+    printf("The sum of the entered integers is: %d\n", sum);
+    return 0;
+}
+```
+- This version is less *readable* than the first version with a `while` loop
 
 ---
 
@@ -261,48 +354,55 @@ for( expr1 ; expr2 ; expr3){
 
 # Mixing Operators
 
-- Create a `for` loop to *even* display numbers from 2 to 200.
+- Create a `for` loop to display the *even* numbers from 2 to 200:
 
 ```C
-for (i = 2 ; i <= 200 ; i += 2){
-    printf("%d\n",i);
-} 
+for (int i = 2; i <= 200; i += 2) {
+    printf("%d\n", i);
+}
 ```
 
 ---
 
 # Countdown!
 
-- Create a counter down from `n - 1` to `0`.
+- Create a counter down from `n - 1` to `0`:
 
 ```C
-for (i = n - 1 ; i >= 0 ; i--)
+for (int i = n - 1; i >= 0; i--) {
+    printf("%d\n", i);
+}
 ```
 
-- Create a counter down from `n` to `1`.
+- Create a counter down from `n` to `1`:
 
 ```C
-for (i = n  ; i > 0 ; i--)
+for (i = n; i > 0; i--) {
+    printf("%d\n", i);
+
+}
 ```
 
 ---
 
-# Flexible `for` loop
+# Flexibility of the `for` Loop Syntax
 
 - The three expressions in the `for` loop declaration are *optional*
-- Something like:
+- The following are all <span style="color:green">valid</span> in C:
 ```C
 for (i = 0 ; i < 2 ;)
 ```
-or 
+or
 ```C
 for(; i < 20 ; )
 ```
-or 
+or
 ```C
-for (; ;)
+for (; ;)  // an empty condition evaluates to true
+           // this is equivalent to while(1)
 ```
-are all <span style="color:green">valid</span> in C
+
+<!--
 
 ---
 
@@ -314,76 +414,84 @@ Pick a `for` loop statement that counts from `1` to `100` in steps of `5`.
 
 Go to [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
 
+-->
+
 ---
 
-# :warning: Some Care needed
+# :warning: Some Care Needed
 
-Modern versions of C allow us to *declare* a variable in the first `for` *expression*
+- Modern versions of C allow us to *declare* a variable in the `for` loop initialization:
 
 ```C
 for (int i = 0; i < 20 ; i++){
-    printf("%d",i); // -----> RIGHT
+    printf("%d", i); // -----> CORRECT
 }
-printf("%d",i); // ----> WRONG
+printf("%d", i); // ----> INCORRECT, error at comple time
 ```
-The variable `i` is only visible <span style="color:red">*inside*</span> the loop. It cannot be accessed from outside.
-
+- The variable `i` is only visible <span style="color:red">*inside*</span> the loop &mdash; `i` *cannot* be accessed from outside the loop
+- Technical terminology: the `scope` (visible region) of the variable `i` is `for` loop statement block
 ---
 
-# Example - Display a Table of Cubes :placard:
+# Example: Display a Table of Cubes :placard:
 
-Say we want to compute the cube of the first 10 integers and display on the screen. Lets use `for` loop.
-
+- Compute the cube of the integers $\{0, 1, \dotsc, 10\}$ and display on the screen:
 ```C
-for (int n = 0, cube = 0; n <= 10 ; n++){
+for (int n = 0, cube = 0; n <= 10; n++) {
     cube = n * n * n;
-    printf("The cube of the number %8d is %8d \n", n, cube);
+    printf("The cube of the number %8d is %8d\n", n, cube);
 }
 ```
+
 ## Points to note
 
-- The comma `,` operator lets us <span style="color:orange">glue</span> two or more expressions
+- The comma `,` operator lets us <span style="color:orange">glue</span> two or more expressions together, i.e., create a *compound expression*
 - `%8d` is called a *placeholder* where we reserve 8 characters on the screen to display an integer value
 ---
 
-# Control Statements - `break`
+# Control Statements: `break`
 
-- `while` and `for` loops have exit points typically before the body 
-- Sometimes we require to exit in the middle of the code
-- Just like with `switch` the `break` statement takes us out of the loop
+<!-- - `while` and `for` loops have exit points typically before the body -->
+
+- Sometimes, we would like force an exist from a loop at an arbitrary code point
+- Similar to its use in `switch`, the `break` statement will immediately exit the loop body
 
 ```C
-    for (i = 2; i < n; i++){
-        if (n % i == 0){
+    for (i = 2; i < n; i++) {
+        if (n % i == 0) {
             break;
         }
-        else if (n < i){
-            printf("%d is divisible by %d \n", n, i);
+        else if (n < i) {
+            printf("%d is divisible by %d\n", n, i);
         }
-        else{
-            printf("%d is prime \n", n);
+        else {
+            printf("%d is prime\n", n);
         }
     }
 ```
 
 ---
 
-# Control Statements - `continue`
+# Control Statements: `continue`
 
-- Unlike `break`, the `continue` statement doesnt really take us out of the loop.
-- Rather, it skips the current iteration of the loop.
+- Like `break`, the `continue` statement changes the execution flow of a loop
+- Semantics of `continue`:
+  1. Skip the remainder of the loop
+  2. Resume execution at the end of the loop body
 
 ```C
 for(int n = 0, sum = 0; n < 10; n++){
-    if (n == 3 || n == 6 || n == 9){
+    if (n == 3 || n == 6 || n == 9) {
         continue;
     }
     sum += n;
+    // this program point is "the end of the loop body"
 }
 ```
 
-The above code computes the series:
-$$ 1 + 2 + 4 + 5 + 7 + 8 $$
+<!-- The above code computes the series:
+$$ 1 + 2 + 4 + 5 + 7 + 8 $$ -->
+
+<!--
 
 ---
 
@@ -408,19 +516,21 @@ $$ 1 + 2 + 4 + 5 + 7 + 8 $$
 
 - Results in a haphazard, *spaghetti* code
 
+-->
+
 ---
 
 # Quiz :question:
 
-What is the output of the program below:
+What is the output of the program:
 
 ```C
 #include <stdio.h>
 int main()
 {
-    int sum = 0;
+    int sum = 1;
     for (int n = 0; n < 10; n++){
-        if (n == 0){
+        if (!(n % 5)) {
             break;
         }
         sum += n;
@@ -430,17 +540,24 @@ int main()
 }
 ```
 
-![bg right 60%](assets/quiz-2.png)
+![bg right 60%](assets/lecture5_quiz_qr.png)
 
-Visit [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
+<!--
+Visit [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`. -->
 
 ---
 
 # Today's Summary :spiral_notepad:
 
 - Introduced three types of loop statements
+  - `while`
+  - `do` `while`
+  - `for`
+- Considered two control statements
+  - `break` (also mentioned in the context of `switch` statements)
+  - `continue`
 
-- Looked into control statements
+<!--
 
 ---
 
@@ -457,3 +574,5 @@ Visit [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) a
 ![bg right 60%](assets/quiz-2.png)
 
 [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) and type the code `5273 8857`.
+
+-->
