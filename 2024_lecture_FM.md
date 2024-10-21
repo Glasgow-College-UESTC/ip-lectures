@@ -245,7 +245,7 @@ $$
 ---
 # Further Reading 
 
-- Section 4.5 - Angle Modulation 
+- Section 4.5 - Angle Modulation
 <span style="color:green">Modern Digital and Analog Communication Systems</span>, $5^{th}$ Edition
 - B P Lathi and Zhi Ding
 

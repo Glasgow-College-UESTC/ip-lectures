@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+% Blocks
+% \draw (0,0) rectangle (2,1) node[midway] {$\phi_{FM}(t)$};
+
+\draw[->] (0,.5) -- (2,0.5);
+\node[] at (1,0.8) {${\phi}_{FM}(t)$};
+
+\draw (6,0) rectangle (10,1) node[midway] {Envelope Detector};
+\draw (2,0) rectangle (4,1) node[midway] {$\frac{d}{dt}$};
+
+\draw[->] (4,.5) -- (6,0.5);
+\node[] at (5,0.8) {$\dot{\phi}_{FM}(t)$};
+\draw (6,0) rectangle (10,1) node[midway] {Envelope Detector};
+
+% Arrows
+% \draw[->] (-1,0.5) -- (0,0.5);
+% \draw[->] (2,0.5) -- (4,0.5);
+% \draw[->] (6,0.5) -- (10,0.5);
+\draw[->] (10,0.5) -- (12,0.5) node[above] {$A[\omega_c + k_f m(t)]$};
+
+\end{tikzpicture}
+
+\end{document}
