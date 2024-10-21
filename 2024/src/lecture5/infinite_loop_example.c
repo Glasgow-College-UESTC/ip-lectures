@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int sum, input;
+    sum = 0;
+    printf("Enter an integer (0 to terminate):\n");
+    while(1) {
+        scanf("%d", &input);
+        if (input == 0) {
+            break;
+        }
+        sum += input;
+    }
+    printf("The sum of the entered integers is: %d\n", sum);
+    return 0;
+}
