@@ -18,7 +18,6 @@ _color: "#093867"
 
 <style scoped>li::marker { color: black; }</style>
 
-![bg](assets/zen1-1280x686.jpg)
 
 <div color: black;>
 
@@ -53,7 +52,7 @@ _color: "#093867"
 
 # UESTC 1005 - Introductory Programming
 
-<h2>Lecture 4 - Operators (✖️➕➖➗🟰) and Program Control (⚙️)</h2>
+<h2>Lecture 4 &mdash; Operators (✖️➕➖➗🟰) and Program Control (⚙️)</h2>
 
 Dr. Hasan T. Abbas
 <!-- transition: fade -->
@@ -508,7 +507,7 @@ int main(){
 
 # `break` statement
 
-- `break` simply *breaks* the program flow to *immediately* exit from the `switch`
+- `break` causes the program flow to *immediately* exit from the `switch`
 - `break` is necessary to exit the `switch` statement once the particular option has been executed
 - If it is not used, the remaining cases are also considered
 
