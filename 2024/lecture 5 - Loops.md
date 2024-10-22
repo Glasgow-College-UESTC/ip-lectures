@@ -20,7 +20,7 @@ _color: "#093867"
 
 ![bg right:35%](assets/Martin_Fowler.jpg)
 
-# "Any fool 🤡 can write code that a computer 🤖 can understand. Good programmers write code that humans 🧑‍💻 can understand"
+# "Any fool 🤡 can write code that a computer 🤖 can understand. Good programmers write code that humans 🧑‍💻 can understand."
 
 ## &mdash; Martin Fowler (proponent of *agile* and *extreme* programming styles, https://martinfowler.com)
 
@@ -55,6 +55,21 @@ Dr. Hasan T. Abbas
 </div>
 
 ---
+
+# Glasgow/UESTC Programming Competition 🥇🥈🥉
+
+- Open to all students
+  - Chengdu
+  - Singapore
+  - Hainan
+- Date: **November 30** (for Hainan students)
+- C exercises with Codegrade submission
+
+![bg right:50% 80%](assets/programming_competition_2024.png)
+
+
+---
+
 
 # Questions 🙋❓
 
@@ -192,7 +207,7 @@ Is i < 20? No; exit from loop.
 
 ---
 
-![bg right:35%](assets/KenThompson.jpg)
+![bg right:35% 90%](assets/KenThompson.jpg)
 
 # "When in doubt 🤔, use brute force 🏋️"
 
@@ -202,17 +217,17 @@ Is i < 20? No; exit from loop.
 
 # The <span style="color:red"> *Infinite*</span> Loop
 
-Sometimes we delibrately construct a controlling expression that is always *true*
+Sometimes it is useful to construct a controlling expression that is always *true*
 
 - When paired with a loop, we call this an infinite loop
-- It executes forever until we tell the compiler to stop
-- We can use `break` or some other mechanism to terminate the loop
+- The loop executes forever until explicitly signaled to stop
+- A `break` statement or some other mechanism can terminate the loop
 - Infinite loops are often used embedded systems such as an Arduino
 
 ```C
 while(1)
 {
-    // some statements inside
+    // statements
 }
 ```
 
@@ -269,7 +284,7 @@ int main() {
 - A `do while` loop checks the condition at the *end* of each loop
 ```C
 do {
-    // Statements
+    // statements
 } while(expression);
 ```
 
@@ -429,14 +444,14 @@ for (int i = 0; i < 20 ; i++){
 printf("%d", i); // ----> INCORRECT, error at comple time
 ```
 - The variable `i` is only visible <span style="color:red">*inside*</span> the loop &mdash; `i` *cannot* be accessed from outside the loop
-- Technical terminology: the `scope` (visible region) of the variable `i` is `for` loop statement block
+- Technical terminology: the `scope` (visible region 👀🔍) of the variable `i` is the `for` loop statement block
 ---
 
 # Example: Display a Table of Cubes :placard:
 
 - Compute the cube of the integers $\{0, 1, \dotsc, 10\}$ and display on the screen:
 ```C
-for (int n = 0, cube = 0; n <= 10; n++) {
+for (int n = 0, cube; n <= 10; n++) {
     cube = n * n * n;
     printf("The cube of the number %8d is %8d\n", n, cube);
 }
@@ -452,7 +467,7 @@ for (int n = 0, cube = 0; n <= 10; n++) {
 
 <!-- - `while` and `for` loops have exit points typically before the body -->
 
-- Sometimes, we would like force an exist from a loop at an arbitrary code point
+- Sometimes, it is useful to force an exit from a loop at an arbitrary code point
 - Similar to its use in `switch`, the `break` statement will immediately exit the loop body
 
 ```C
@@ -467,6 +482,7 @@ for (int n = 0, cube = 0; n <= 10; n++) {
             printf("%d is prime\n", n);
         }
     }
+    // execution continues at this point after "break"
 ```
 
 ---
