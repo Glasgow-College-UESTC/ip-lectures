@@ -1,0 +1,73 @@
+\documentclass[tikz]{standalone}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % RF amplifier block
+    \draw[thick] (0,0) rectangle (3,2);
+    \node at (1.5,1) {RF stage};
+    
+    % Antenna symbol
+    \draw[thick] (-1,1.5) -- (0,1.5);
+    \draw[thick] (-1.5,1.8) -- (-1,1.5) -- (-1.5,1.2);
+    \draw[thick] (-1.8,1.6) -- (-1.5,1.5) -- (-1.8,1.4);
+
+    % Arrow to RF amplifier
+    \draw[->, thick] (-2,1.5) -- (-1,1.5);
+
+    % Label for RF input
+    \node at (-2.5,1.5) {Antenna};
+    
+    % Frequency converter block
+    \draw[thick] (4,0) rectangle (7,2);
+    \node at (5.5,1) {Mixer};
+    
+    % Arrow between RF amplifier and mixer
+    \draw[->, thick] (3,1) -- (4,1);
+    
+    % Local oscillator
+    \draw[thick] (4.5,-1.5) circle (0.5);
+    \node at (4.5,-1.5) {LO};
+    \node[align=center] at (4.5,-2.2) {$\omega_c + \omega_{IF}$};
+    \draw[->, thick] (4.5,-1) -- (4.5,0);
+
+    % IF amplifier block
+    \draw[thick] (8,0) rectangle (10.5,2);
+    \node at (9.25,1) {IF Amplifier};
+
+    % Arrow between mixer and IF amplifier
+    \draw[->, thick] (7,1) -- (8,1);
+    
+    % Detector block
+    \draw[thick] (11.5,0) rectangle (14,2);
+    \node at (12.75,1) {Detector};
+    
+    % Arrow between IF amplifier and Detector
+    \draw[->, thick] (10.5,1) -- (11.5,1);
+
+    % Audio amplifier block
+    \draw[thick] (15,0) rectangle (17.5,2);
+    \node at (16.25,1) {Audio amplifier};
+
+    % Arrow between Detector and Audio amplifier
+    \draw[->, thick] (14,1) -- (15,1);
+
+    % Speaker
+    \draw[thick] (17.5,0.5) -- (18.5,1) -- (18.5,0);
+    \draw[thick] (18.5,1) arc (45:-45:0.7);
+    \draw[thick] (18.5,1) arc (45:-45:1);
+    \draw[thick] (18.5,1) arc (45:-45:1.3);
+    
+    % Arrow between Audio amplifier and Speaker
+    \draw[->, thick] (17.5,1) -- (18.5,1);
+    \node at (19,1) {Speaker};
+
+    % Text above blocks (input and output signals)
+    \node[align=center] at (4.5,2.5) {[A + $m(t)$] cos $\omega_c t$ };
+    \node[align=center] at (11.75,2.5) {[A + $m(t)$] cos $\omega_{IF} t$};
+    \node[align=center] at (18.25,1.5) {$Km(t)$};
+
+\end{tikzpicture}
+
+\end{document}

@@ -103,6 +103,8 @@ $$
 
 ---
 
+
+
 # <!--fit--> <span style="color:white"> Demodulation </span>
 ![bg opacity:100%](assets/gradient3.png)
 
@@ -114,6 +116,8 @@ $$
 - $\omega_i^{FM}(t) = \omega_c +k_f m(t)$
 - We need a system where output is proportional to the input.
 - The simplest is an ideal differentiator ($j \omega$)
+- Need to convert frequency variations into amplitude variations
+- Then use envelope detection
 
 ![bg right:40% 100%](assets/freq_change.svg)
 
@@ -146,133 +150,103 @@ img[alt~="center"] {
 
 ---
 
-# Some Observations
+# A Simple RC Circuit
 
-- If $m(t)$ or $M(\omega)$ has a bandwidth of B
-- Then $ a(t)$ also has a bandwidth of $B$ Hz <span style="color:gray">(integration is a linear operator)</span>.
-- The $n^{th}$ term, $\frac{k_f^n}{n!}a^n(t)$ will have a bandwidth of $n \times B$
-- This is due to convolution principle, i.e.
-- $A(\omega) * A(\omega)$ spreads the Fourier transform to $2B$ 
-- Essentially, we have <span style="color:red">**infinite bandwidth**</span>
-- But...
-- $\frac{k_f^n}{n!}a^n(t) \to 0$, meaning we only care about the <span style="color:green">first few terms</span>.
+- A Simple RC highpass circuit can be used to detect the slope
+- The transfer function (voltage across the resistor) is
+$$
+H(\omega) = \frac{R}{R + \frac{1}{j\omega C}} = \frac{j\omega RC}{1 + j\omega RC} \approx j \omega RC
+$$
+- The approximation is true when $\omega_c RC \ll 1$
+- We have a differentiator
+- This is one of many possibilities
+
+![bg right:40% 100%](assets/RC.svg)
+![bg right:40% 100%](assets/linear_response.svg)
 
 ---
 
-# FM Signal Representation
+# Superheterodyne Receivers
 
-- Using the $\varphi^{\mathrm{FM}} (t) = \Re \left[\hat{\varphi}^{\mathrm{FM}}(t) \right]$ representaion, we get,
-
+- Frequency Conversion or mixing is done to change the carrier frequency from $\omega_c$ to $\omega_{IF}$
+- We call IF as intermediate frequency
 $$
 \begin{aligned}
-\varphi^{\mathrm{FM}} (t) &= \Re  \left\{A \left[ 1 + jk_f a(t) - \frac{k_f^2}{2!}a^2(t) + \dots + j^n \frac{k_f^n}{n!}a^n(t)\right] \times \left[\cos (2 \pi f_c t) + j \sin (2 \pi f_c t) \right] \right\} \\
-&= A \left( \cos (2 \pi f_c t)  - k_f a(t) \sin (2 \pi f_c t) - \frac{k_f^2}{2!}a^2(t) \cos (2 \pi f_c t) + \dots \right) \\
-&\approx A \left( \cos (2 \pi f_c t)  - k_f a(t) \sin (2 \pi f_c t) \right)
+x(t) &= 2 m(t) \cos \omega_c t \cos \omega_{mix} t \\
+  &= m(t) \left[ \cos (\omega_c + \omega_{mix}) t + \cos (\omega_c - \omega_{mix}) t \right]
+\end{aligned}
+$$
+- Setting $\omega_{mix} = \omega_c \pm \omega_{IF}$
+$$
+\begin{aligned}
+x(t) &=  m(t) \left[ \cos \omega_{IF} t + \cos (2\omega_c \mp \omega_{IF}) t \right]
 \end{aligned}
 $$
 
-- This is a narrowband FM signal representation
-- The approximation is good when $\left| k_f a(t) \right| \ll 1$
-- Generally, we consider 2B bandwidth as narrowband
-- PM has a similar expression
+![bg right:40% 100%](assets/Block_diagram_heterodyne.svg)
+
+<!-- Key Components and Their Functions:
+RF Amplifier:
+
+Amplifies the incoming RF signal to increase its strength before mixing.
+Typically uses wideband amplification to accommodate a range of frequencies.
+Must have low noise figure to minimize noise introduced by the receiver.
+Local Oscillator:
+
+Generates a sinusoidal signal at a frequency offset from the RF signal.
+The frequency offset is chosen to produce the desired IF frequency.
+Often uses a voltage-controlled oscillator (VCO) for tunability.
+Mixer:
+
+Multiplies the RF signal and the local oscillator signal.
+Produces sum and difference frequencies.
+Nonlinear device, typically a diode or transistor.
+IF Amplifier:
+
+Amplifies the IF signal.
+Narrowband amplification is used to select the desired IF frequency and reject unwanted signals.
+Provides most of the gain in the receiver.
+IF Filter:
+
+Filters the IF signal to remove noise and interference.
+Typically a bandpass filter centered at the IF frequency.
+Demodulator:
+
+Extracts the original information-carrying signal from the IF signal.
+The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM). -->
 
 ---
 
-# Playing with the tones
+# Superheterodyne Receivers
 
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
+- Downconverting to IF allows us to use sensitive amplifiers
+- Bandpass filter is <span style="color:red"> very hard </span>to design at RF
+- Commonly used in many broadcast systems
 
-![w:800 center](assets/plot.svg)
-
+![bg right:60% 100%](assets/superheterodyne.svg)
 
 ---
 
-# Playing with the tones
+# Phased-Locked Loop
 
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
-![w:800 center](assets/plot_1.svg)
-
----
-
-# Playing with the tones
-
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
-![w:800 center](assets/plot_3.svg)
-
----
-
-# A Dilemma 😵‍💫
-
-- To make the best of FM (or PM), we need make the frequency deviation large enough
-- Need to choose a large enough $k_f$ to break the $\left| k_f a(t) \right| \ll 1$ condition
-- This is the <span style="color:red">**wideband**</span> FM case
-- ⚠️ We can't ignore the higher order terms in the power series anymore
-- We need to rely on empirical formulas to estimate the bandwidth
-
----
-
-# Wideband FM
-
-- <span style="color:red">**Context**</span> We need frequency deviation for the FM signal to be meaningful
-- But what is the bandwidth of an FM signal?
-- <span style="color:green">*Answer*</span> We use empirical methods / estimations 
+- A negative feedback system used in FM demodulation
+- 
 
 
-![bg right:50% 100%](assets/modulation_animated.gif)
+![bg right:50% 100%](assets/PLL.svg)
 
+<!-- --- -->
+<!-- 
+<!-- # fit <span style="color:white"> FM Generation 📡 </span> -->
+<!-- ![bg opacity:100%](assets/gradient3.png) -->
 
---- 
+<!-- --- -->
 
-# An Example
+<!-- # Generation of FM Signals
 
-- For an FM signal  $m(t)$, the max and min centre frequencies are $\omega_c + k_f m_p$ and $\omega_c - k_f m_p$ respectively
-- Taking into account the bandwidth of the sinc lobe ($4 \pi B$)
-- Total Bandwidth is the difference
-
-![bg right:60% 75%](assets/WBFM.svg)
-
----
-
-# Carson's Rule 🔑
-
-- The estimated bandwidth is,
-
-$$
-B^{\mathrm{FM}} = \frac{1}{2 \pi} \left( 2 k_f m_p + 8 \pi B \right)
-$$
-
-- The frequency deviation $\Delta f$ is given by,
-$$
-\Delta f = k_f \frac{m_{\mathrm{max}} - m_{\mathrm{max}}}{2 \times 2 \pi} \, \mathrm{Hz}
-$$
-
-- The estimated bandwidth (Hz) is,
-
-$$
-B^{\mathrm{FM}} \approx 2 (\Delta f + 2B)
-$$
-
-
----
-
-
+- The instantaneous frequency of the carrier changes with $m(t)$
+- A <span style="color:green"> voltage-controlled oscillator </span> does exactly this!
+-  -->
 
 ---
 

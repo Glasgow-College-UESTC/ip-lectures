@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+% Axes
+\draw[->] (-1,0) -- (4,0) node[right] {$f$};
+\draw[->] (0,0) -- (0,3) node[left] {$|H(f)|$};
+
+% Linear segment
+\draw[domain=0:2, samples=2] plot (\x, {\x});
+
+% Curve
+\draw[domain=2:4, samples=100] plot (\x, {2.75 - 0.75*(2 -.5*\x)^2});
+
+% Dashed lines
+\draw[dashed] (0.2,0) -- (0.2,3);
+\draw[dashed] (2,0) -- (2,3);
+
+\end{tikzpicture}
+
+\end{document}
