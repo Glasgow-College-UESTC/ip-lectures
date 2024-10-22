@@ -230,7 +230,13 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 # Phased-Locked Loop
 
 - A negative feedback system used in FM demodulation
-- 
+- Compares the phase of the FM signal with the phase of a locally generated reference signal.
+- First generate a VCO output $r(t)$ <span style="color:green"> Phase Comparison </span>
+- Check for errors with $e(t)$ <span style="color:blue"> Error Generated </span>
+- $e(t)$ controls the VCO frequency <span style="color:orange"> VCO function </span>
+- VCO adjuts the frequency $x(t)$ <span style="color:red"> Phase Lock </span>
+
+- Objective is to minimise the phase difference between $x(t)$ and $y(t)$.
 
 
 ![bg right:50% 100%](assets/PLL.svg)
@@ -260,11 +266,11 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 
 # Further Reading 
 
-- Section 4.6 - Bandwidth Analysis of Angle Modulations 
 - Section 4.7 - Demodulation of FM Signals 
 <span style="color:green">Modern Digital and Analog Communication Systems</span>, $5^{th}$ Edition
 - B P Lathi and Zhi Ding
 
+---
 
 # Get in touch
 
