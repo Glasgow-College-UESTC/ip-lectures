@@ -49,8 +49,7 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 # Today's Lecture 📆
 
 - FM with a Tone
-- FM Demodulation
-- Generation of FM Signals
+- FM Demodulation Techniques
 
 ---
 
