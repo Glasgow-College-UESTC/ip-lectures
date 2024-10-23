@@ -441,7 +441,7 @@ for (int i = 0; i < 20 ; i++) {
 printf("%d", i); // ----> INCORRECT, error at comple time
 ```
 - The variable `i` is only visible <span style="color:red">*inside*</span> the loop &mdash; `i` *cannot* be accessed from outside the loop
-- Technical terminology: the `scope` (visible region 👀🔍) of the variable `i` is the `for` loop statement block
+- Technical terminology: the *scope* (visible region 👀🔍) of the variable `i` is the `for` loop statement block
 
 
 ---
