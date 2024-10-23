@@ -48,20 +48,20 @@ Dr. Hasan T. Abbas
 | Chengdu Team | Hainan Team |
 |--------------|-------------|
 | Dr. Syed M. Raza | Dr. Mark D. Butala |
-| Dr. Ahmad Zoha | Dr. Bo Liu |
-| Dr. Hassan T. Abbas | Dr. Chong Li |
+| Dr. Ahmad Zoha | Prof. Bo Liu |
+| Dr. Hassan T. Abbas | Prof. Chong Li |
 
 </p>
 </div>
 
 ---
 
-# Glasgow/UESTC Programming Competition 🥇🥈🥉
+# Glasgow/UESTC Programming Competition 2024&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🥇🥈🥉
 
 - Open to all students
   - Chengdu
   - Singapore
-  - Hainan
+  - Hainan (whole campus)
 - Date: **November 30** (for Hainan students)
 - C exercises with Codegrade submission
 
@@ -112,10 +112,10 @@ Dr. Hasan T. Abbas
 # Why Iteration :question:
 
 - In the last lecture, we talked about *building* logic
-- An **algorithms** is
+- An **algorithm** is
   - A set of rules, making *logical and meaningful* decisions, to solve a problem
-  - A sequence of clearly defined steps and instructions with clear start and end points
-- Iteration provide a mechanism to <span style="color:green">automate</span> repetitive tasks
+  - A sequence of explicit steps and instructions with clear start and end points
+- Iteration provides a mechanism to <span style="color:green">automate</span> repetitive tasks
 
 ---
 
@@ -125,7 +125,7 @@ Dr. Hasan T. Abbas
 - Every loop has a *controlling expression*
   - A logical expression
   - Iterate again or stop looping?
-- C has three kinds of loops
+- C has three kinds of loops:
   1. `while`
   2. `do while`
   3. `for`
@@ -267,9 +267,7 @@ int main() {
         if (input == 0) {
             break;
         }
-        else {
-            sum += input;
-        }
+        sum += input;
     }
     printf("The sum of the entered integers is: %d\n", sum);
     return 0;
@@ -306,13 +304,13 @@ do {
 
 <!-- - `for` loop is the most C-like thing in C -->
 - A `for` loop is (usually) the clearest way to express a simple loop structure
-- The following looping structure
+- The following looping `for` structure
 ```C
 for (init; condition; increment) {
     // statements
 }
 ```
-is semantically equivalent to
+is (almost) *semantically equivalent* to the following `while` loop structure
 ``` C
 init;
 while (condition) {
@@ -394,7 +392,6 @@ for (int i = n - 1; i >= 0; i--) {
 ```C
 for (i = n; i > 0; i--) {
     printf("%d\n", i);
-
 }
 ```
 
@@ -438,13 +435,51 @@ Go to [https://www.menti.com/al4htqpzusws](https://www.menti.com/al4htqpzusws) a
 - Modern versions of C allow us to *declare* a variable in the `for` loop initialization:
 
 ```C
-for (int i = 0; i < 20 ; i++){
+for (int i = 0; i < 20 ; i++) {
     printf("%d", i); // -----> CORRECT
 }
 printf("%d", i); // ----> INCORRECT, error at comple time
 ```
 - The variable `i` is only visible <span style="color:red">*inside*</span> the loop &mdash; `i` *cannot* be accessed from outside the loop
 - Technical terminology: the `scope` (visible region 👀🔍) of the variable `i` is the `for` loop statement block
+
+
+---
+
+# A Bit More on Variable *Scope* 👀🔍
+- Braces create a new "variable visibility zone":
+``` C
+#include <stdio.h>
+int main() {
+    {
+        int x = 10;
+        // `x` is said to be "local to this inner scope (between `{` and `}`)"
+    }
+    printf("x = %d\n", x);  // COMPILER ERROR: `x` is undeclared
+}
+```
+
+---
+
+# A Bit More on Variable *Scope* 👀🔍
+- What is the output of the following program?
+
+``` C
+#include <stdio.h>
+
+int x = 20;  // a "global" variable (it has global scope) --- AVOID THESE!
+
+int main() {
+    printf("x = %d\n", x);
+    int x = 0;
+    {
+        int x = 10;
+        printf("x = %d\n", x);
+    }
+    printf("x = %d\n", x);
+}
+```
+
 ---
 
 # Example: Display a Table of Cubes :placard:
@@ -471,18 +506,17 @@ for (int n = 0, cube; n <= 10; n++) {
 - Similar to its use in `switch`, the `break` statement will immediately exit the loop body
 
 ```C
-    for (i = 2; i < n; i++) {
-        if (n % i == 0) {
-            break;
-        }
-        else if (n < i) {
-            printf("%d is divisible by %d\n", n, i);
-        }
-        else {
-            printf("%d is prime\n", n);
-        }
-    }
+#include <stdio.h>
+int main() {
+    int i;
+    int n = 7;
+    for (i = 2; i < n; i++)
+        if (n % i == 0) break;
     // execution continues at this point after "break"
+    if (i < n) printf("%d is divisible by %d\n", n, i);
+    else       printf("%d is prime\n", n);
+    return 0;
+}
 ```
 
 ---
@@ -495,7 +529,7 @@ for (int n = 0, cube; n <= 10; n++) {
   2. Resume execution at the end of the loop body
 
 ```C
-for(int n = 0, sum = 0; n < 10; n++){
+for(int n = 0, sum = 0; n < 10; n++) {
     if (n == 3 || n == 6 || n == 9) {
         continue;
     }
@@ -545,7 +579,7 @@ What is the output of the program:
 int main()
 {
     int sum = 1;
-    for (int n = 0; n < 10; n++){
+    for (int n = 0; n < 10; n++) {
         if (!(n % 5)) {
             break;
         }
