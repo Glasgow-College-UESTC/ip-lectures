@@ -25,7 +25,7 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 2018 - Communication Systems and Principles
+# UESTC 3018 - Communication Systems and Principles
 
 Lecture 11 — Angle Modulation
 
@@ -176,24 +176,23 @@ $$
 
 # Frequency Modulation (FM)
 
-- In FM we vary the $\theta(t)$ <span style="color:red">**frequency linearly**</span> with $m(t)$,
+- In FM we vary the $\omega(t)$ <span style="color:red">**frequency linearly**</span> with $m(t)$,
 
 $$
 \omega_i^{FM}(t) = \omega_c +k_f m(t)
 $$
 
-The transmitted signal is thus,
-$$
-\varphi^{\mathrm{FM}}(t) = A_c \cos \left(\omega_c t + k_f m(t) \times t\right)
-$$
-
-Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 - The phase $\theta^{FM}$ is,
-  
 $$
 \theta^{FM}(t) = \int_{-\infty}^{t} \omega_i^{FM}(u) du = \omega_c t + k_f \int_{-\infty}^{t} m(u) du
 $$
 
+The transmitted signal is thus,
+$$
+\varphi^{\mathrm{FM}}(t) = A_c \cos \left(\omega_c t + k_f \int_{-\infty}^{t} m(u) du \right)
+$$
+
+Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 - 🔑 $\theta^{FM}(t)$ to a phase modulator $\equiv$ $\omega_i^{PM}(t)$ to a frequency modulator.
 
 <!-- The integral term needs to be broken into limits from -\infty to zero which can be safely considered to be zero for a causal signal. This leaves only 0 to t limits for the integral. -->
@@ -254,4 +253,4 @@ $$
 # Get in touch
 
 Hanaa.Aburmarshoud@glasgow.ac.uk
-Hasan.abbas@glasgow.ac.uk
+Hasan.Abbas@glasgow.ac.uk
