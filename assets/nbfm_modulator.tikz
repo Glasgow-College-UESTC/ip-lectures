@@ -1,0 +1,69 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{blox}
+
+\begin{document}
+\tikzset{output/.style={}} % Define the output style
+% \begin{tikzpicture}
+
+%     % Define the blocks and input/output
+%     \bXInput{input}{m(t)};
+%     \bXBloc[2]{integrator}{$\int$}{input};
+%     \bXBloc[2]{mult}{$\times$}{integrator};
+%     \bXBloc[2]{adder}{+}{mult};
+%     \node[output, right of=adder] (output) {$\hat{\phi}_{FM}(t)$};
+    
+%     % For cosine and sine branches
+%     \bXBloc[2]{cosine}{$A \cos(2\pi f_c t)$}{mult};
+%     \bXBloc[2]{sine}{$A \sin(2\pi f_c t)$}{mult};
+%     \bXBloc[2]{phase_shift}{$\frac{\pi}{2}$}{cosine};
+
+%     % Connecting lines (links)
+%     \bXLink{input}{integrator};
+%     \bXLink{integrator}{mult};
+%     \bXLink{mult}{adder};
+%     \bXLink{adder}{output};
+%     \bXLink{cosine}{mult};
+%     \bXLink{sine}{adder};
+%     \bXLink{phase_shift}{cosine};
+
+% \end{tikzpicture}
+
+\begin{tikzpicture}
+\bXInput[$m(t)$]{in} % input node
+\bXBloc[3]{integrator}{$\int$}{in} % integrator block
+\bXLink[]{in}{integrator} % in-int link
+\bXCompSum[5]{comp}{integrator}{}{}{}{} % modulator 
+\bXLink[]{integrator}{comp} % in-int link
+% \bXCompSum[15]{comp1}{integrator}{+}{}{+}{} % modulator 
+% \bXLink[]{comp}{comp1} % in-int link
+\bXSumb*[8]{summer}{comp}
+% \bXBlocr{return}{$LO$}{summer}
+% \bXLink[]{return}{summer} % in-int link
+\bXLink[]{comp}{summer} % in-int link
+
+\bXDefaultLineStyle
+\bXBranchy[5]{summer}{back}
+\begin{tiny}
+\bXChainReturn[2]{back}
+{f/$LO$,g/{$\pi/2$}}
+\bXLinkyx{summer}{f}
+\bXLinkxy{g}{comp}
+\end{tiny}
+\bXDefaultLineStyle
+\bXStyleBlocDefault
+
+\bXBloc[5]{limiter}{Limiter}{summer} % input node
+\bXLink[$\hat\psi^{\mathrm{FM}}(t)$]{summer}{limiter} % in-int link
+
+\bXBloc[2]{filter}{Filter}{limiter} % input node
+\bXLink[]{limiter}{filter} % in-int link
+
+\bXOutput[5]{out}{filter} % input node
+\bXLink[$\psi^{\mathrm{FM}}(t)$]{filter}{out} % in-int link
+
+
+
+\end{tikzpicture}
+\end{document}

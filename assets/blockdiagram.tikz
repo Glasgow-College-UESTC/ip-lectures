@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{blox}
+
+\begin{document}
+\tikzset{output/.style={}} % Define the output style
+
+
+\begin{tikzpicture}
+    \bXInput[$m(t)$]{in} % input node
+    \bXBloc[3]{integrator}{$\int$}{in} % integrator block
+    \bXLink[]{in}{integrator} % in-int link
+    \bXCompSum[5]{comp}{integrator}{}{}{}{} % modulator 
+    \bXLink[]{integrator}{comp} % in-int link
+    % \bXCompSum[15]{comp1}{integrator}{+}{}{+}{} % modulator 
+    % \bXLink[]{comp}{comp1} % in-int link
+    \bXSumb*[8]{summer}{comp}
+    % \bXBlocr{return}{$LO$}{summer}
+    % \bXLink[]{return}{summer} % in-int link
+    \bXLink[]{comp}{summer} % in-int link
+
+    \bXDefaultLineStyle
+    \bXBranchy[5]{summer}{back}
+    \begin{tiny}
+        \bXChainReturn[2]{back}
+        {f/$LO$,g/{$\pi/2$}}
+        \bXLinkyx{summer}{f}
+        \bXLinkxy{g}{comp}
+    \end{tiny}
+    \bXDefaultLineStyle
+    \bXStyleBlocDefault
+
+    \bXOutput[5]{out}{summer} % input node
+    \bXLink[$\hat\psi^{\mathrm{FM}}(t)$]{summer}{out} % in-int link
+
+\end{tikzpicture}
+\end{document}

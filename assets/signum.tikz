@@ -1,0 +1,20 @@
+\documentclass[]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+    % Draw the axes
+    \draw[->] (-2,0) -- (2,0) node[right] {$v_{in}$};
+    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$v_{out}$};
+
+    % Draw the step lines for the signum function
+    \draw[thick,red] (-1.5,-1) -- (0,-1) -- (0,1) -- (1.5,1);
+    % \draw (0,0) -- (0,-1) -- (-1,-1);
+
+    % Labels
+    \node[above left] at (0,1) {1};
+    \node[below left] at (0,-1) {-1};
+    
+\end{tikzpicture}
+\end{document}
