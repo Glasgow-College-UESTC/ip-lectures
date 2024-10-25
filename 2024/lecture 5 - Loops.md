@@ -198,10 +198,10 @@ Is i < 20? Yes; continue.
 i = i*2; i is now 8.
 Is i < 20? Yes; continue.
 
-i = i * 2; i is now 16.
+i = i*2; i is now 16.
 Is i < 20? Yes; continue.
 
-i = i * 2; i is now 32.
+i = i*2; i is now 32.
 Is i < 20? No; exit from loop.
 ```
 
@@ -390,7 +390,7 @@ for (int i = n - 1; i >= 0; i--) {
 - Create a counter down from `n` to `1`:
 
 ```C
-for (i = n; i > 0; i--) {
+for (int i = n; i > 0; i--) {
     printf("%d\n", i);
 }
 ```
@@ -406,7 +406,7 @@ for (i = 0 ; i < 2 ;)
 ```
 or
 ```C
-for(; i < 20 ; )
+for (; i < 20 ;)
 ```
 or
 ```C
