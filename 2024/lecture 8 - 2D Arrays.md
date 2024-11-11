@@ -1,6 +1,6 @@
 ---
 title: UESTC 1005 - Introductory Programming
-description: Course Slides for the C programming course - lecture 8 on 2D arrays
+description: Course Slides for the C programming course - lecture 8 on 2D arrays and pointers
 theme: uncovered
 paginate: true
 math: katex
@@ -12,7 +12,11 @@ style: |
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
-_backgroundColor: "#FFF"
+  section {
+      background-color: #FFFCEE;
+  --color-background: #FFFCEE;
+  }
+_backgroundColor: "#FFFCEE"
 _color: "#093867"
 
 ---
@@ -33,9 +37,9 @@ Hasan T Abbas
 
 --- 
 
-# <!--fit--> <span style="color:white"> If a program manipulates a large amount of data it does so in a small number of ways </span>
+# <!--fit--> <span style="color:white"> Mastering pointers is mastering the power of memory in C.</span>
 
-![bg opacity:100%](assets/gradient2.jpg)
+![bg opacity:100%](assets/gradient3.png "decorative background")
 
 ---
 
@@ -48,7 +52,7 @@ Hasan T Abbas
 - Function Calls
 - Pointers 🔑
 
-![bg right:35% 95%](assets/chess_2D.jpeg)
+![bg right:35% 95%](assets/Xiangqi_board.svg "illustration of a xiangqi game board")
 
 ---
 
@@ -67,7 +71,7 @@ int table[5][5]; // creates a 2D array of 5 rows and 5 columns
 printf("size of array = %zu bytes\n", sizeof(table)); // %zu is for unsigned long
 ```
 
-![bg right:30% 95%](assets/c_2darrays_tikz.svg)
+![bg right:30% 95%](assets/c_2darrays_tikz.svg "picture of a 2d array")
 
 ---
 
@@ -76,22 +80,22 @@ printf("size of array = %zu bytes\n", sizeof(table)); // %zu is for unsigned lon
 - 2D matrices heavily used in matrix manipulation
 - Backbone of linear algebra and numerical computation
 
-![bg right:30% 95%](assets/c_2darrays_ID_matrix.svg)
+![bg right:30% 95%](assets/c_2darrays_ID_matrix.svg "a nice 2D matrix")
 
 ```C
 #include <stdio.h>
-#define N 5 // size of the matrix
+#define N 5 // size of the matrix size is always 1 more
 int main(void)
 {
 
-    double ident_matrix[N][N];
+    int ident_matrix[N][N];
     int row, col;
     for (row = 0; row < N; row++)
         for (col = 0; col < N; col++)
             if (row == col)
-                ident_matrix[row][col] = 1.0;
+                ident_matrix[row][col] = 1;
             else
-                ident_matrix[row][col] = 0.0;
+                ident_matrix[row][col] = 0;
     return 0;
 }
 ```
@@ -101,7 +105,7 @@ int main(void)
 # Multidimensional Array Initialisation 
 
 ```C
-int m[5][5] = {{1, 1, 1, 0, 1},
+int ident_matrix[5][5] = {{1, 1, 1, 0, 1},
             {0, 1, 0, 1, 1, 2},
             {0, 5, 7, 9, 10, 12},
             {3, 7, -1, 3, 32, 76},
@@ -130,8 +134,7 @@ Passing by Reference
 - We pass the <span style="color:green">array name</span> i.e., a pointer
 - Since we pass the memory locations, contents are changed inside the function
 
-
-![bg right:45% 95%](assets/passing.gif)
+![bg right:45% 95%](assets/passing.gif "an animation showing the concept of passing by reference and value")
 
 ---
 
@@ -149,7 +152,7 @@ someOtherFunction(AnotherArrayName[0]); // passing by value. Argument is an elem
 
 # <!--fit--> <span style="color:white"> Pointers </span>
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](assets/gradient.jpg "decorative background")
 
 ---
 
@@ -158,6 +161,7 @@ someOtherFunction(AnotherArrayName[0]); // passing by value. Argument is an elem
 - Just another data type
 - A key feature of C
 - Allows <span style="color:green">byte-sized</span> memory access
+- A variable that stores the memory address of another variable.
 
 ```C
 int *ptr; // -> The variable ptr stores a pointer to an int
@@ -167,14 +171,22 @@ int *ptr; // -> The variable ptr stores a pointer to an int
 
 # <!--fit--> <span style="color:white"> Pointer stores the **address** of a memory location </span>
 
-![bg opacity:100%](assets/gradient.jpg)
+![bg opacity:100%](assets/gradient.jpg "decorative background")
+
+---
+
+# Why Pointers? 🤔
+
+- Efficient memory management.
+- Allows functions to modify variables directly.
 
 ---
 
 # So what is all about Pointers?
 
 - How to create/declare pointers?
-- We use the `*` dereferencing operator
+- `&` (address-of): Gets the memory address.
+- `*` (dereference): Accesses the value at the memory address.
 
 ```C
 int a = 10;  // declare an integer variable
@@ -188,9 +200,13 @@ printf("%d", *ptr);  // dereference the pointer and print the value it points to
 # Initialising and Indirect Assignment
 
 - Pointers are like a map
-- Helps us navigate a specific memory location
+- Variables are stored in memory, each at a unique address.
+- <span style="color:red">Address Representation</span>
+- Pointers allow access to these addresses directly.
+- E.g., `int x = 5;` & `int *p = &x;`
+- `p` now holds the memory address of `x`.
 
-![bg right:45% 95%](assets/houses.jpg)
+![bg right:45% 95%](assets/buildings.jpeg "an illustration showing an analogy of memory and buildings in an urban environment")
 
 ---
 
@@ -253,15 +269,31 @@ p += 1;
 
 ---
 
+# The Dangling Pointer ❗
+
+- **Null Pointer (`NULL`)**
+- A pointer that doesn’t point to any address: `int *p = NULL;`
+- A pointer pointing to deallocated memory.
+- **Best Practice**
+- Always initialise pointers, and set to `NULL` after freeing memory.
+- Avoid unexpected behaviour and crashes 🛑
+- Memory area can be reused and data can be corrupted
+
+---
+
 # Questions :question:
 
-![bg right 60%](assets/quiz-5.png)
+![bg right 60%](assets/quiz-5.png "QR code for Menti https://www.menti.com/alok51h26yh3")
 
-[https://www.menti.com/alwtri69b15f](https://www.menti.com/alwtri69b15f) and type the code `4792 0589`.
+[https://www.menti.com/alok51h26yh3](https://www.menti.com/alok51h26yh3) and type the code `5448 6697`.
 
 ---
 
 # Next Up ⏭️
 
-- Class Tutorial
+- A wee Tutorial
+- Pointers contd.
+- Strings
 - Bring your Laptops!
+
+![bg right 60%](assets/BYOL.jpeg "a picture instructing the students to bring their own laptops")
