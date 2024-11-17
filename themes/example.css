@@ -4,6 +4,8 @@
 
 section {
   background: #cef;
+  background-color: #FFFCEE;
+  --color-background: #FFFCEE;
   color: #135;
 }
 

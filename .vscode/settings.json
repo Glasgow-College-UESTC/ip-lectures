@@ -64,5 +64,11 @@
     "*.config": "bat",
     "__locale": "c",
     "cstring": "c"
-  }
+  },
+  "cSpell.language": "en-GB",
+  "cSpell.enableFiletypes": [
+    "juliamarkdown",
+    "latex-expl3",
+    "latex_workshop_log"
+  ]
 }

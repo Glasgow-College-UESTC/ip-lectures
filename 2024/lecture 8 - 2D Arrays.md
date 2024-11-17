@@ -9,7 +9,7 @@ _paginate: false
 style: |
   .columns {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0,fs 1fr));
     gap: 1rem;
   }
   section {
@@ -271,13 +271,16 @@ p += 1;
 
 # The Dangling Pointer ❗
 
-- **Null Pointer (`NULL`)**
+- Null Pointer (`NULL`)
 - A pointer that doesn’t point to any address: `int *p = NULL;`
 - A pointer pointing to deallocated memory.
-- **Best Practice**
+## **Best Practice**
 - Always initialise pointers, and set to `NULL` after freeing memory.
 - Avoid unexpected behaviour and crashes 🛑
 - Memory area can be reused and data can be corrupted
+- Modern compilers take care of this 😎
+- start pointer names beginning with `p`, eg. `px`
+
 
 ---
 
