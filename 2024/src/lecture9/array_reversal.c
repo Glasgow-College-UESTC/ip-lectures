@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+void reverseArray(int *arr, int size)
+{
+    int *start = arr, *end = arr + size - 1;
+    while (start < end)
+    {
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+}
+
+int main()
+{
+    int arr[] = {78, 81, 88, 46, 28, 72, 96, 87, 42, 98};
+    int *ptr = arr;
+    int size = sizeof(arr)/sizeof(arr[0]); // get the number of elements
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+    printf("\n");
+    reverseArray(arr, size);
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+    printf("\n");
+    return 0;
+}
+
+
