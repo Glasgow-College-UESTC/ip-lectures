@@ -19,7 +19,7 @@ _color: "#093867"
 
 # <!--fit--> <span style="color:white"> 💡 Modulation is the art of transforming simple signals into complex forms! </span>
 
-![bg opacity:100%](assets/gradient2.jpg)
+![bg opacity:100% a decorative background](assets/gradient2.jpg)
 
 ---
 
@@ -29,7 +29,7 @@ _color: "#093867"
 
 Lecture 11 — Angle Modulation
 
-Dr Hanaa Abumarshoud and Dr Hasan Abbas
+Dr Hasan Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
@@ -45,7 +45,7 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 - AM is not resilient to noise
   
 <!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/menti_FM.png)
+![bg right:50% 70% QR code showing menti code](assets/menti_FM.png "QR code showing menti code")
 
 ---
 
@@ -63,8 +63,8 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 - The envelope changes along the real axis with $m(t)$
 - Or $m(t)$ scales the carrier signal $\cos(2\pi f_c t)$
 
-![bg right:50% 100%](assets/AM_phasor.gif)
-![bg right:50% 100%](assets/phaser_animated.gif)
+![bg right:50% 100% an animated figure showing AM phasor](assets/AM_phasor.gif "an animated figure showing AM phasor")
+![bg right:50% 100% an animated figure showing FM phasor](assets/phaser_animated.gif "an animated figure showing FM phasor")
 
 ---
 
@@ -77,13 +77,13 @@ $$
 $$
 
 
-![bg right:50% 100%](assets/FM_phasor.gif)
-![bg right:50% 100%](assets/FM_animated.gif)
+![bg right:50% 100% an animated figure showing FM phasor](assets/FM_phasor.gif "an animated figure showing FM phasor")
+![bg right:50% 100% an animated figure showing FM phasor](assets/FM_animated.gif "an animated figure showing FM phasor")
 
 ---
 # <!--fit--> <span style="color:white"> Angle Modulation </span>
 
-![bg opacity:100%](assets/gradient2.jpg)
+![bg opacity:100% a decorative background](assets/gradient2.jpg)
 
 ---
 
@@ -101,21 +101,21 @@ $$
 
 ---
 
-# Instantaneous Frequency
+# Instantaneous Frequency 😵‍💫
 
 - 🧭 Remember instantaneous velocity from high school days
 - Use of derivatives to describe the **instantaneous** phenomenon
 - We can vary the <span style="color:orange">*instantaneous frequency*</span> of the signal through $m(t)$
 
-![bg right:50% 100%](assets/inst_freq.svg)
+![bg right:50% 100% concept of instantaneous frequency](assets/inst_freq.svg)
 
 <!-- We need to find the slope of the signal which is the ins. frequency -->
 ---
 
-# Instantaneous Frequency (contd.)
+# Instantaneous Frequency (contd.) 😣
 
 - At any time instant $t_0$, we can find the instantaneous frequency by taking the derivative
-![bg right:50% 100%](assets/inst_freq_slope.svg)
+![bg right:50% 100% concept of instantaneous frequency](assets/inst_freq_slope.svg)
 
 ---
 
@@ -143,7 +143,7 @@ $$
 
 - The other way, phase is the integral of the instantaneous frequency,
   
-$$ 
+$$
 \theta (t) = \int_{-\infty}^{t} \omega_i(u) du = \theta_0 + \int_{0}^{t} \omega_i(u) du
 $$
 - We can modulate by either varying $\omega_i(t)$ or $\theta(t)$
@@ -151,7 +151,7 @@ $$
 
 # Phase Modulation (PM)
 
-- As the name suggests, we vary the , $\theta(t)$ <span style="color:red">**phase linearly**</span> with $m(t)$
+- As the name suggests, we vary the phase $\theta(t)$ <span style="color:red">**linearly**</span> with $m(t)$
 
 $$
 \theta^{PM}(t) = \omega_c t + k_p m(t)
@@ -176,7 +176,7 @@ $$
 
 # Frequency Modulation (FM)
 
-- In FM we vary the $\omega(t)$ <span style="color:red">**frequency linearly**</span> with $m(t)$,
+- In FM we vary the frequency $\omega(t)$ <span style="color:red">**linearly**</span> with $m(t)$,
 
 $$
 \omega_i^{FM}(t) = \omega_c +k_f m(t)
@@ -200,17 +200,17 @@ Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 ---
 # <!--fit--> <span style="color:white"> 📻 FM vs PM </span>
 
-![bg opacity:100%](assets/gradient2.jpg)
+![bg opacity:100% decorative background](assets/gradient2.jpg)
 
 ---
 
 # Guess the 🟡, 🔴 and 🟢 signals
 
-![bg right:50% 60%](assets/Dfference.svg)
+![bg right:50% 60% difference in waveforms](assets/Dfference.svg)
 
 ---
 
-![bg 60%](assets/Difference.svg)
+![bg 60% a block diagram of difference in techniques](assets/Difference.svg)
 
 ---
 
@@ -218,10 +218,9 @@ Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 
 - Regardless of PM or FM, angle modulation signal has constant amplitude
 - Power of the signal remains the same irrespective of $k_p$ or $k_f$.
-- PM is a $90\degree$ shifted version of FM and vice versa
+- PM is a $90\degree$ shifted version of FM and vice versa.
 
-![bg right:50% 100%](assets/modulation_animated.gif)
-
+![bg right:50% 100% modulated signals animated](assets/modulation_animated.gif "modulated signals animated")
 
 --- 
 
@@ -230,7 +229,7 @@ Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 - Given a signal $m(t)$, sketch the FM and PM waves.
 - $k_f = 2 \pi \times 10^{5}$, $k_p = 10\pi$ and $f_c = 100$ MHz.
 
-![bg right:60% 90%](assets/example_signal.svg)
+![bg right:60% 90% an example showing a signal](assets/example_signal.svg)
 
 ---
 
@@ -239,7 +238,7 @@ Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 - You can ask on Menti
 
 <!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/menti_FM.png)
+![bg right:50% 70% Menti QR code](assets/menti_FM.png "Menti QR code")
 
 ---
 # Further Reading 
@@ -252,5 +251,4 @@ Note the parameter $k_f$ which along with $m(t)$ determines the bandwidth
 
 # Get in touch
 
-Hanaa.Aburmarshoud@glasgow.ac.uk
 Hasan.Abbas@glasgow.ac.uk
