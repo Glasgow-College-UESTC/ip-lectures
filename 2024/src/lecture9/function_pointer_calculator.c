@@ -25,7 +25,7 @@ float divide(int a, int b) {
 // Main program
 int main() {
     int num1, num2, choice;
-    float (*operation)(int, int); // Function pointer declaration
+    int (*operation)(int, int); // Function pointer declaration
 
     // Menu for user input
     printf("Enter two numbers: ");
@@ -42,13 +42,13 @@ int main() {
     // Assign the appropriate function to the pointer
     switch (choice) {
         case 1:
-            operation = add;
+            operation = add; // add is a pointer to the location where the function add is stored in memory
             break;
         case 2:
-            operation = subtract;
+            operation = subtract; // indirectly call a functionv (indirection)
             break;
         case 3:
-            operation = multiply;
+            operation = multiply; // event handles 
             break;
         case 4:
             operation = divide;
@@ -59,7 +59,11 @@ int main() {
     }
 
     // Execute the operation using the function pointer
-    float result = operation(num1, num2);
+    float result = operation(num1, num2); // this is the callback function 
+    //that we would like to perform 
+
+    float x;
+    x = add (num1, num2); // static execution we cANNOT perform event handling at run time 
     printf("Result: %f\n", result);
 
     return 0;
