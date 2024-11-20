@@ -25,15 +25,27 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 2018 - Communication Systems and Principles
+# UESTC 3018 — Communication Systems and Principles
 
 Lecture 14 — PLLs et al.
 
-Dr Hanaa Abumarshoud and Dr Hasan Abbas
+Dr Hasan Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
+
+---
+
+# It's a Beautiful Day
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+![w:500 center A sunny day at UESTC](assets/Beautiful_day.jpg)
 
 ---
 
@@ -45,14 +57,100 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 
 ---
 
-# Today's Lecture 📆
+# Tonight's Lecture 📆
 
+- Talk Further About FM Detectors
 - FM Generation
 - Talk about Detection
 - Noise Resilience
 
-![bg right:50% 70%](assets/qr_4.png)
+# Superheterodyne Receivers
 
+- Frequency Conversion or mixing is done to change the carrier frequency from $\omega_c$ to $\omega_{IF}$
+- We call IF as intermediate frequency
+$$
+\begin{aligned}
+x(t) &= 2 m(t) \cos \omega_c t \cos \omega_{mix} t \\
+  &= m(t) \left[ \cos (\omega_c + \omega_{mix}) t + \cos (\omega_c - \omega_{mix}) t \right]
+\end{aligned}
+$$
+- Setting $\omega_{mix} = \omega_c \pm \omega_{IF}$
+$$
+\begin{aligned}
+x(t) &=  m(t) \left[ \cos \omega_{IF} t + \cos (2\omega_c \mp \omega_{IF}) t \right]
+\end{aligned}
+$$
+
+![bg right:40% 100%](assets/Block_diagram_heterodyne.svg)
+
+<!-- Key Components and Their Functions:
+RF Amplifier:
+
+Amplifies the incoming RF signal to increase its strength before mixing.
+Typically uses wideband amplification to accommodate a range of frequencies.
+Must have low noise figure to minimize noise introduced by the receiver.
+
+Local Oscillator:
+Generates a sinusoidal signal at a frequency offset from the RF signal.
+The frequency offset is chosen to produce the desired IF frequency.
+Often uses a voltage-controlled oscillator (VCO) for tunability.
+
+Mixer:
+Multiplies the RF signal and the local oscillator signal.
+Produces sum and difference frequencies.
+Nonlinear device, typically a diode or transistor.
+
+IF Amplifier:
+Amplifies the IF signal.
+Narrowband amplification is used to select the desired IF frequency and reject unwanted signals.
+Provides most of the gain in the receiver.
+IF Filter:
+
+Filters the IF signal to remove noise and interference.
+Typically a bandpass filter centred at the IF frequency.
+Demodulator:
+
+Extracts the original information-carrying signal from the IF signal.
+The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM). -->
+
+---
+
+# Superheterodyne Receivers
+
+- Down converting to IF allows us to use sensitive amplifiers
+- Bandpass filter is <span style="color:red"> very hard </span>to design at RF
+- Commonly used in many broadcast systems
+
+![bg right:60% 100%](assets/superheterodyne.svg)
+
+---
+
+# Phased-Locked Loop
+
+- A negative feedback system used in FM demodulation
+- Compares the phase of the FM signal with the phase of a locally generated reference signal.
+- First generate a VCO output $r(t)$ <span style="color:green"> Phase Comparison </span>
+- Check for errors with $e(t)$ <span style="color:blue"> Error Generated </span>
+- $e(t)$ controls the VCO frequency <span style="color:orange"> VCO function </span>
+- VCO adjusts the frequency $x(t)$ <span style="color:red"> Phase Lock </span>
+
+- Objective is to minimise the phase difference between $x(t)$ and $y(t)$.
+
+![bg right:50% 100%](assets/PLL.svg)
+
+<!-- --- -->
+<!-- 
+<!-- # fit <span style="color:white"> FM Generation 📡 </span> -->
+<!-- ![bg opacity:100%](assets/gradient3.png) -->
+
+<!-- --- -->
+
+<!-- # Generation of FM Signals
+
+- The instantaneous frequency of the carrier changes with $m(t)$
+- A <span style="color:green"> voltage-controlled oscillator </span> does exactly this!
+-  -->
+ 
 ---
 
 # <!--fit--> <span style="color:white"> FM Generation 📡 </span>
@@ -63,7 +161,7 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 # Generation of FM Signals
 
 - The instantaneous frequency of the carrier changes with $m(t)$
-- A <span style="color:green"> voltage-controlled oscillator </span> does exactly this!
+- A <span style="color:green">voltage-controlled oscillator</span> does exactly this!
 - In FM, recall
 $$
 \omega_i (t) = \omega_c + k_f m(t)
@@ -84,12 +182,11 @@ $$
 
 ![bg right:50% 100%](assets/blockdiagram.svg)
 
-
 ---
 
 # Narrowband FM Generation
 
-- The above is simple yet there are some artefacts
+- The above is simple, yet there are some artefacts
 - Some amplitude modulation remains in the system
 
 
@@ -100,7 +197,7 @@ $$
 # The Limiter and Bandpass Filter
 
 - Amplitude variations create noise and interference 👎
-- We first a limiter circuit to limit any amplitude fluctuations
+- We first use a limiter circuit to limit any amplitude fluctuations
 $$
 v_o(t)= \begin{cases}+1 & v_i(t)>0 \\ -1 & v_i(t)<0\end{cases}
 $$
@@ -158,9 +255,8 @@ $$
 
 # Questions ❓
 - You can ask on Menti
-
+<!-- 
 <!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/qr_4.png)
 
 ---
 
@@ -174,5 +270,4 @@ $$
 
 # Get in touch
 
-Hanaa.Aburmarshoud@glasgow.ac.uk
 Hasan.Abbas@glasgow.ac.uk 

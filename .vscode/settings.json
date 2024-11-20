@@ -64,5 +64,8 @@
     "*.config": "bat",
     "__locale": "c",
     "cstring": "c"
-  }
+  },
+  "cSpell.words": [
+    "Nonlinear"
+  ]
 }

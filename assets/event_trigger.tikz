@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=2cm]
+
+% Nodes
+\node (start) [startstop] {Start};
+\node (eventloop) [process, below of=start] {Wait for Event};
+\node (event) [decision, below of=eventloop, , yshift=-1cm] {Event Triggered?};
+\node (callback) [process, right of=event, xshift=3cm] {Execute Callback Function};
+\node (continue) [process, below of=event, yshift=-1cm] {Continue Program};
+\node (end) [startstop, below of=continue] {End};
+
+% Arrows
+\draw [arrow] (start) -- (eventloop);
+\draw [arrow] (eventloop) -- (event);
+\draw [arrow] (event) -- node[anchor=south] {Yes} (callback);
+\draw [arrow] (callback) |- (eventloop);
+\draw [arrow] (event) -- node[anchor=east] {No} (continue);
+\draw [arrow] (continue) -- (end);
+
+\end{tikzpicture}
+
+\end{document}

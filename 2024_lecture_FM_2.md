@@ -25,15 +25,27 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 2018 - Communication Systems and Principles
+# UESTC 3018 - Communication Systems and Principles
 
 Lecture 12 — Angle Modulation II
 
-Dr Hanaa Abumarshoud and Dr Hasan Abbas
+Dr Hasan Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
+
+---
+
+# Somewhere (just) Familiar ... 
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+![w:600 center picture of a route 318 in China](assets/20240518_113151.jpg)
 
 ---
 
@@ -43,12 +55,10 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 - We don't change the amplitude
 - PM and FM are very similar - a $90 \degree$ phase-shift
   
-<!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/qr_2_lecture.png)
 
 ---
 
-# Today's Lecture 📆
+# This Lecture 📆
 
 - Bandwidth in FM
 - Carson's Rule
@@ -63,7 +73,7 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 - Motivation was to reduce the bandwidth
 - Turns out FM has infinite theoretical bandwidth
 
-![bg right:50% 100%](assets/Edwin_Armstrong_at_blackboard.jpg)
+![bg right:50% 100% Edwin Armstrong Inventor](assets/Edwin_Armstrong_at_blackboard.jpg)
 
 ---
 
@@ -73,12 +83,12 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 - $k_f = 2 \pi \times 10^{5}$, $k_p = \pi/2$ and $f_c = 100$ MHz.
 
 
-![bg right:50% 95%](assets/exameple_lect2.svg)
+![bg right:50% 95% Another example](assets/exameple_lect2.svg)
 
 ---
 
 # <!--fit--> <span style="color:white"> Bandwidth Analysis ♾️ </span>
-![bg opacity:100%](assets/gradient3.png)
+![bg opacity:100% Background](assets/gradient3.png "Background")
 
 ---
 
@@ -103,10 +113,10 @@ $$
 # Some Observations
 
 - If $m(t)$ or $M(\omega)$ has a bandwidth of B
-- Then $ a(t)$ also has a bandwidth of $B$ Hz <span style="color:gray">(integration is a linear operator)</span>.
+- Then $a(t)$ also has a bandwidth of $B$ Hz <span style="color:gray">(integration is a linear operator)</span>.
 - The $n^{th}$ term, $\frac{k_f^n}{n!}a^n(t)$ will have a bandwidth of $n \times B$
 - This is due to convolution principle, i.e.
-- $A(\omega) * A(\omega)$ spreads the Fourier transform to $2B$ 
+- $A(\omega) * A(\omega)$ spreads the Fourier transform to $2B$
 - Essentially, we have <span style="color:red">**infinite bandwidth**</span>
 - But...
 - $\frac{k_f^n}{n!}a^n(t) \to 0$, meaning we only care about the <span style="color:green">first few terms</span>.
@@ -141,7 +151,7 @@ img[alt~="center"] {
 }
 </style>
 
-![w:800 center](assets/plot.svg)
+![w:800 center A spectral plot](assets/plot.svg)
 
 
 ---
@@ -155,7 +165,7 @@ img[alt~="center"] {
 }
 </style>
 
-![w:800 center](assets/plot_1.svg)
+![w:800 center A spectral plot](assets/plot_1.svg)
 
 ---
 
@@ -168,7 +178,7 @@ img[alt~="center"] {
 }
 </style>
 
-![w:800 center](assets/plot_3.svg)
+![w:800 center A spectral plot](assets/plot_3.svg)
 
 ---
 
@@ -189,18 +199,17 @@ img[alt~="center"] {
 - <span style="color:green">*Answer*</span> We use empirical methods / estimations 
 
 
-![bg right:50% 100%](assets/modulation_animated.gif)
-
+![bg right:50% 100% Animation of a wideband modulation](assets/modulation_animated.gif)
 
 --- 
 
 # An Example
 
-- For an FM signal  $m(t)$, the max and min centre frequencies are $\omega_c + k_f m_p$ and $\omega_c - k_f m_p$ respectively
+- For an FM signal $m(t)$, the max and min centre frequencies are $\omega_c + k_f m_p$ and $\omega_c - k_f m_p$ respectively
 - Taking into account the bandwidth of the sinc lobe ($4 \pi B$)
 - Total Bandwidth is the difference
 
-![bg right:60% 75%](assets/WBFM.svg)
+![bg right:60% 75% WBFM signal](assets/WBFM.svg)
 
 ---
 
@@ -247,17 +256,10 @@ $$
 B^{\mathrm{FM}} = 2B (\beta + 1)
 $$
 
-where $\beta$ is th deviation ratio $\Delta f/B$
+where $\beta$ is the deviation ratio $\Delta f/B$
 
 ---
 
-# Questions ❓
-- You can ask on Menti
-
-<!-- Need to change the QR code here -->
-![bg right:50% 70%](assets/qr_2_lecture.png)
-
----
 
 # Further Reading 
 
@@ -265,8 +267,9 @@ where $\beta$ is th deviation ratio $\Delta f/B$
 <span style="color:green">Modern Digital and Analog Communication Systems</span>, $5^{th}$ Edition
 - B P Lathi and Zhi Ding
 
+---
 
 # Get in touch
 
-Hanaa.Aburmarshoud@glasgow.ac.uk
+
 Hasan.Abbas@glasgow.ac.uk 

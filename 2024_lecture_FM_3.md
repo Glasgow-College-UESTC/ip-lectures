@@ -25,11 +25,11 @@ _color: "#093867"
 
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
-# UESTC 2018 - Communication Systems and Principles
+# UESTC 3018 - Communication Systems and Principles
 
 Lecture 13 — Angle Modulation Detection
 
-Dr Hanaa Abumarshoud and Dr Hasan Abbas
+Dr Hasan Abbas
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
@@ -56,7 +56,7 @@ Dr Hanaa Abumarshoud and Dr Hasan Abbas
 # FM with a Tone
 
 - Due to inherent non-linearity, FM is hard to analyse
-- Lets start off with a tone i.e. a sinusoidal signal, $m(t) = \cos (2 \pi f_m t)$
+- Lets start off with a tone i.e., a sinusoidal signal, $m(t) = \cos (2 \pi f_m t)$
 
 $$
 a(t) = \int_{-\infty}^{t} m(u) du = \frac{1}{2 \pi f_m} \sin (2 \pi f_m t)
@@ -116,7 +116,7 @@ $$
 - We need a system where output is proportional to the input.
 - The simplest is an ideal differentiator ($j \omega$)
 - Need to convert frequency variations into amplitude variations
-- Then use envelope detection
+- Then use envelope detection.
 
 ![bg right:40% 100%](assets/freq_change.svg)
 
@@ -151,7 +151,7 @@ img[alt~="center"] {
 
 # A Simple RC Circuit
 
-- A Simple RC highpass circuit can be used to detect the slope
+- A Simple RC high-pass circuit can be used to detect the slope
 - The transfer function (voltage across the resistor) is
 $$
 H(\omega) = \frac{R}{R + \frac{1}{j\omega C}} = \frac{j\omega RC}{1 + j\omega RC} \approx j \omega RC
@@ -218,7 +218,7 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 
 # Superheterodyne Receivers
 
-- Downconverting to IF allows us to use sensitive amplifiers
+- Down converting to IF allows us to use sensitive amplifiers
 - Bandpass filter is <span style="color:red"> very hard </span>to design at RF
 - Commonly used in many broadcast systems
 
@@ -233,7 +233,7 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 - First generate a VCO output $r(t)$ <span style="color:green"> Phase Comparison </span>
 - Check for errors with $e(t)$ <span style="color:blue"> Error Generated </span>
 - $e(t)$ controls the VCO frequency <span style="color:orange"> VCO function </span>
-- VCO adjuts the frequency $x(t)$ <span style="color:red"> Phase Lock </span>
+- VCO adjusts the frequency $x(t)$ <span style="color:red"> Phase Lock </span>
 
 - Objective is to minimise the phase difference between $x(t)$ and $y(t)$.
 
@@ -265,7 +265,7 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 
 # Further Reading 
 
-- Section 4.7 - Demodulation of FM Signals 
+- Section 4.7 - Demodulation of FM Signals
 <span style="color:green">Modern Digital and Analog Communication Systems</span>, $5^{th}$ Edition
 - B P Lathi and Zhi Ding
 
@@ -273,5 +273,4 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 
 # Get in touch
 
-Hanaa.Aburmarshoud@glasgow.ac.uk
 Hasan.Abbas@glasgow.ac.uk 
