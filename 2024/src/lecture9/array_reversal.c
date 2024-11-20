@@ -4,6 +4,8 @@ void reverseArray(int *arr, int size)
 {
     int *start = arr, *end = arr + size - 1;
     while (start < end)
+
+    // as an assignment, I would like you to try and make the program work for any size of the array
     {
         int temp = *start;
         *start = *end;

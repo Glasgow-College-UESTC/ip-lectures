@@ -5,8 +5,8 @@ float add(int a, int b) {
     return (float)(a + b);
 }
 
-float subtract(int a, int b) {
-    return (float)(a - b);
+float subtract(int a) {
+    return (float)(a );
 }
 
 float multiply(int a, int b) {
@@ -25,7 +25,7 @@ float divide(int a, int b) {
 // Main program
 int main() {
     int num1, num2, choice;
-    int (*operation)(int, int); // Function pointer declaration
+    float (*operation)(int, int); // Function pointer declaration
 
     // Menu for user input
     printf("Enter two numbers: ");
