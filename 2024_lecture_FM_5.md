@@ -17,52 +17,17 @@ _color: "#093867"
 ---
 
 
-# <!--fit--> <span style="color:white"> If you wish to understand the universe, think of energy, frequency, and vibration </span>
-
-![bg opacity:100%](assets/gradient3.png)
-
----
-
 <!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
 
 # UESTC 3018 — Communication Systems and Principles
 
-Lecture 14 — PLLs et al.
+Lecture 15 — Tutorial Time ⌛
 
-Dr Hasan Abbas
+Dr Hasan Abbas and Jionghui Wang
 <!-- transition: fade -->
 <!-- <style scoped>a { color: #eee; }</style> -->
 
 <!-- This is presenter note. You can write down notes through HTML comment. -->
-
----
-
-# It's a Beautiful Day
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
-![w:500 center A sunny day at UESTC](assets/Beautiful_day.jpg)
-
----
-
-# From Last Time ⌛
-
-- Frequency Modulation Detection
-<!-- Need to change the QR code here -->
-![bg right:50% 60%](assets/syncing.gif)
-
----
-
-# Tonight's Lecture 📆
-
-- Talk Further About FM Detectors
-- FM Generation
-- Talk about Detection
-- Noise Resilience
 
 ---
 
@@ -152,7 +117,7 @@ The type of demodulator depends on the modulation scheme used (e.g., AM, FM, QAM
 - The instantaneous frequency of the carrier changes with $m(t)$
 - A <span style="color:green"> voltage-controlled oscillator </span> does exactly this!
 -  -->
- 
+-  
 ---
 
 # <!--fit--> <span style="color:white"> FM Generation 📡 </span>
@@ -169,7 +134,6 @@ $$
 \omega_i (t) = \omega_c + k_f m(t)
 $$
 - There is another simpler method, called the <span style="color:green">indirect FM generation</span>
-
 
 ---
 
@@ -227,31 +191,20 @@ $$
 
 ---
 
-# <!--fit--> <span style="color:white"> Noise Resilience 📢 </span>
+# <!--fit--> <span style="color:white"> Tutorial Time 🕗 </span>
 ![bg opacity:100%](assets/gradient3.png)
 
 ---
 
-# Advantages of FM
 
-- FM is less susceptible to amplifier non-linearities
-$$
-x(t)=A\cos(\omega_{c}t+\psi(t))
-$$
-- The output that we get is,
-$$
-\begin{aligned}
-y(t) &= a_{0}+a_{1}x(t)+a_{2}x^{2}(t)+\cdots\\ 
-{}&= c_{0}+c_{1}\cos(\omega_{c}t+\psi(t))+c_{2}\cos(2\omega_{c}t+2\psi(t))+\cdots
-\end{aligned}
-$$
-- For amplitude modulation, the output is, $y(t) = a x(t)+bx^{3}(t)$
-$$
-\begin{aligned}
-y(t) &=a m(t)\cos\omega_{c}t+b m^{3}(t)\cos^{3}\omega_{c}t \\
-&{}= (a m(t)+\frac{3}{4}b m^{3}(t))\cos\omega_{c}t+\frac{1}{4}b\cos3\omega_{c}t
-\end{aligned}
-$$
+# Our GTA - Jionghui Wang
+
+- B.Eng. UESTC 2020
+- PhD Candidate at UESTC since September, 2022
+- Works in millimetre wave/THz communication, signal processing
+- Active in Integrated sensing and communications (ISAC).
+
+![bg right:50% 100%](assets/Jionghui.jpeg)
 
 ---
 
@@ -264,7 +217,8 @@ $$
 
 # Further Reading 
 
-- Section 4.9 - Generating FM Signals
+
+- Chapter 4
 <span style="color:green">Modern Digital and Analog Communication Systems</span>, $5^{th}$ Edition
 - B P Lathi and Zhi Ding
 
