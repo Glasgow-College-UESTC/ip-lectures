@@ -217,6 +217,77 @@ img[alt~="center"] {
 
 ---
 
+# Reconstruction
+
+- In an ideal world ...
+- To avoid spectral overlap, we need to ensure the sampling frequency is $>= 2B$
+
+![w:550 center](assets/ideal_aliasing.svg)
+
+---
+
+# Realistic Reconstruction
+
+- Due to causality we cant really have an ideal low-pass filter
+
+![w:550 center](assets/interpolation.svg)
+
+---
+
+# Pulsed Sampling
+
+- In reality, we will always a finite time pulse
+- This will lead to further changes in the shape of the sampled signal
+
+![w:750 center](assets/practical_interpolation_pulse.svg)
+
+---
+
+# Pulsed Sampling 
+
+- At the recovery/reconstruction
+- Equalisation is akin to frequency inversion (more later)
+
+![w:750 center](assets/Comm_syste.svg)
+
+---
+
+# Different Kinds of Pulses
+
+![w:550 center](assets/pulse_modulation.svg)
+
+---
+
+# <!--fit--> <span style="color:white">Digital Modulation</span>
+
+![bg opacity:100%](assets/gradient3.png)
+
+---
+
+# Digital Modulation
+
+- Digital Communications
+- Analog vs Digital Communication
+- Pulse Code Modulation (PCM)
+- Quantisation
+
+---
+
+# Analog vs Digital Communication
+
+- Analogue communication (baseband and modulated) is subject to noise.
+- Pulse modulations (PAM, PWM, PPM) represent analogue signals by analogue variations in pulses and are also subject to noise.
+- Long distance communication requires repeaters, which amplify signal and noise. Each link adds noise.
+- Digital communication suppresses noise by regenerating signal.
+
+---
+
+# The Digital Communication Paradigm
+
+
+![w:550 center](assets/analog_digital.svg)
+
+---
 
 # Questions ❓
 - You can ask on Menti
