@@ -113,12 +113,12 @@ Dr. Hasan T. Abbas
 - A **pointer** is a variable that stores the address of another variable.
 - Efficient memory management
 - Direct access to data
-- Dynamic memory handling.
+- Dynamic memory handling
 
 ```C
-#include <stdio.h> // which has definition of printf function
+#include <stdio.h>
 
-int main() // void means nothing
+int main()
 {
     int x = 10;
     int *ptr = &x;
@@ -136,21 +136,21 @@ int main() // void means nothing
 - A nice library `string.h` with many useful functions
 
 ```c
-char str[10] = "Chengdu";
+char str[10] = "Hainan";
 ```
 
 ```
  54   55   56   57   58   59   60   61   62   63   64   65   66   67   68   69
 +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
-| 62 | 22 | 55 | 1  | C  | h  | e  | n  | g  | d  |  u | \0 | \0 | \0 | 10 | 3  |
+| 62 | 22 | 55 | 1  | H  | a  | i  | n  | a  | n  | \0 | \0 | \0 | \0 | 10 | 3  |
 +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 ```
 
 ---
 
-# The `string` library
+# The `string.h` Standard Library
 
-- `#include <string.h>` has many useful strings functions
+- `#include <string.h>` provides many useful string functions
 
 ```C
 char str1[10] = "UESTC";
@@ -162,6 +162,10 @@ strcmp(str1, str2); // compare the elements of two strings
 strlen(str1);
 ```
 
+- The variants `strncat`, `strncpy`, and `strncmp` include a size parameter and are generally "safer" than their counterpart functions
+  + E.g., `strncpy(str1, str2, 9)` copies only the portion of `str2` that fits in the memory reserved for `str1`
+- Further reference: https://en.cppreference.com/w/c/string/byte
+
 ---
 
 # ⚠️ `strcat`, `strcpy`, and `strcmp` can be dangerous
@@ -172,9 +176,9 @@ For example, the programmer is responsible that:
 - Failure to do so will result in runtime failure (segmentation violation error)
 
 ``` C
-char str1[] = "xxx";
+char str1[3];
 char str2[] = "I AM A VERY LONG STRING"
-strcpy(str1, str2);  // compiles, but will (liekly) fail at runtime
+strcpy(str1, str2);  // compiles, but will (likely) fail at runtime
 ```
 
 ---
@@ -196,9 +200,9 @@ printf("%s", *(ptr + 6)); // Outputs '1005'
 
 # String Tokenisation 🇬🇧💂‍♂️🏏 (I cringe and want to change the slide title to String Tokenization 🇺🇸🗽⚾)
 
-- Split a single string to multile components (tokens)
+- Split a single string into multile components (tokens)
 - For example, how to split an IP address `192.168.1.1` into its four octet components?
-- `strtok()` function splits a string based on specified a *delimiter*, i.e., characters that denote a break between tokens
+- The `strtok()` function splits a string based on specified *delimiters*, i.e., a set of characters that denote a break between tokens
 - The "string tokenize" function in `string.h` has the following function signature:
 
 ```C
@@ -223,12 +227,50 @@ int main() {
 
     // Get the first token
     token = strtok(str, ",");
-    while (token != NULL) {
-        printf("%s\n", token); // Print the token
+    while (token != NULL) {        // NULL is a pointer to nothing
+        printf("%s\n", token);     // Print the token
         token = strtok(NULL, ","); // Get the next token
     }
 
     return 0;
+}
+```
+
+---
+
+# String Equality 🟰
+
+- It might be tempting to write the following code to determine if two strings are equal:
+
+``` C
+#include <stdio.h>
+int main() {
+    char str1[] = "string";  char str2[] = "string";
+    printf("str1 == str2? %d\n", str1 == str2);
+    // always outputs "str1 == str? 0"
+    return 0;
+}
+```
+
+- In the above, `str1 == str2` is always false because `str1`, the address of string 1, is never equal to `str2`
+- Instead, use the `strcmp` (or the safer `strncmp`) function to compare strings
+  + If `strcmp(str1, str2) == 0` then `str1` is equal to `str2`
+
+
+---
+
+# Lexicographic Order
+
+- The result of `strcmp` can also be positive or negative, indicating `str1 < str2` or `str1 > str2`, but what does this mean?
+- If `str1 < str2` then `str1` appears before `str2` in an "ASCII special character aware" dictionary
+
+``` C
+#include <stdio.h>
+#include <string.h>
+int main() {
+    printf("strcmp(Apple, apple) = %d\n", strcmp("Apple", "apple"));  // -1
+    printf("strcmp(Apple, !pple) = %d\n", strcmp("Apple", "!pple"));  //  1
+    printf("strcmp(Apple, App)   = %d\n", strcmp("Apple", "App"));    //  1
 }
 ```
 
@@ -245,7 +287,7 @@ int main() {
 
 - Until now, we have only considered arrays of *fixed* size and *explicit* length specified at compile time, e.g., `int x[10];`
 - What if the appropriate array length depends on program input?
-- Option 1: allocate enough memory to store the maximum expected data length
+- **Option 1:** allocate enough memory to store the maximum expected data length
 
 ``` C
 #include <stdio.h>
@@ -263,7 +305,7 @@ int main() {
 
 # Introduction to `malloc` and `free`
 
-- Option 2: request memory from the operating system *dynamically*, i.e., at runtime
+- **Option 2:** request memory from the operating system *dynamically*, i.e., at runtime
 
 ``` C
 #include <stdio.h>
@@ -360,7 +402,7 @@ p->x = 10; p->y = 20; p->z = 30;
 
 ---
 
-# Accessing the Structure Members
+# Structure Member Access
 
 - The *dot operator* is used to peer into a structure and refer to its members:
 ```C
@@ -386,7 +428,6 @@ ptr->x = 15;
 # An Array of Structures
 
 - Consider the example of a student database
-- Best to use when individual records have multiple attributes of different data types
 
 ```C
 // Record for a single student
@@ -403,7 +444,7 @@ struct Student {
 
 # Passing an Array of Structures to a Function
 
-- An array of structures can be passed to a function in a structured and efficient manner
+- An array of structures can be efficiently (by reference) passed to a function
 
 ```C
 // Function to calculate average grade
@@ -430,13 +471,12 @@ int main() {
 # Structure Pointers
 
 - A pointer to a structure points to the memory address where the structure is located
-- The name of the structure is <span style="color:red">not a pointer</span>
-- In this sense, it is closer to a variable
-- If the structure contains an array, the pointer can be used to indirectly access the array elements.
-- Structure can contain a self-referencing pointer to another structure
+- If the structure contains an array member, that pointer can be used to indirectly access the array elements
+- A structure can contain a self-referencing pointer (useful for constructing dynamic data structures, e.g., a *linked list* or *tree*)
 
 ```C
 #include <stdio.h>
+
 struct Student {
     char name[50];       // Name of the student
     int grades[5];       // Array to store 5 grades
@@ -451,12 +491,15 @@ struct Student {
 int main() {
     // Declare and initialize a structure
     struct Student ip_student = {"DaXue Sheng", {85, 90, 88, 92, 67}};
+
     // Declare a pointer to the structure
-    struct Student *ptr = &student1;
+    struct Student *ptr = &ip_student;
+
     // Access array elements using the pointer
     printf("Student Name: %s\n", ptr->name);
     printf("Grade 1: %d\n", ptr->grades[0]);
     printf("Grade 5: %d\n", ptr->grades[4]);
+
     return 0;
 }
 ```
@@ -467,7 +510,7 @@ int main() {
 # Mixing it all Together 🥣
 
 - We could have a pointer to the structure allowing indirect access
-- We can have an array of structures
+- We can have an array of pointers to structures
 - Many possible solutions to a given problem!
 
 <!-- --- -->
