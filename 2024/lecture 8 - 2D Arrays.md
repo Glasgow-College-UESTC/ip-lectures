@@ -206,7 +206,7 @@ printf("%d", *ptr);  // dereference the pointer and print the value it points to
 - E.g., `int x = 5;` & `int *p = &x;`
 - `p` now holds the memory address of `x`.
 
-![bg right:45% 95%](assets/buildings.jpeg "an illustration showing an analogy of memory and buildings in an urban environment")
+![bg right:45% 95% an illustration showing an analogy of memory and buildings in an urban environment](assets/buildings.jpeg "an illustration showing an analogy of memory and buildings in an urban environment")
 
 ---
 
@@ -281,14 +281,15 @@ p += 1;
 - Modern compilers take care of this 😎
 - start pointer names beginning with `p`, eg. `px`
 
-
 ---
+
+<!-- ---
 
 # Questions :question:
 
 ![bg right 60%](assets/quiz-5.png "QR code for Menti https://www.menti.com/alok51h26yh3")
 
-[https://www.menti.com/alok51h26yh3](https://www.menti.com/alok51h26yh3) and type the code `5448 6697`.
+[https://www.menti.com/alok51h26yh3](https://www.menti.com/alok51h26yh3) and type the code `5448 6697`. -->
 
 ---
 
@@ -299,4 +300,4 @@ p += 1;
 - Strings
 - Bring your Laptops!
 
-![bg right 60%](assets/BYOL.jpeg "a picture instructing the students to bring their own laptops")
+<!-- ![bg right 60%](assets/BYOL.jpeg "a picture instructing the students to bring their own laptops") -->
