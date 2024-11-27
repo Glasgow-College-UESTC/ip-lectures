@@ -101,8 +101,8 @@ Dr. Hasan T. Abbas
 
 # Lecture Outline
 
-- Strings🧵
-- Structure 🍱
+- Strings 🧵
+- Structures 🍱
 - Dynamic memory allocation ☢️
 - Structure pointers ↗️
 
@@ -110,10 +110,10 @@ Dr. Hasan T. Abbas
 
 # But First a Recap ..
 
-- A **pointer** is a variable that stores the address of another variable.
-- Efficient memory management
-- Direct access to data
-- Dynamic memory handling
+- A **pointer** is a variable that stores the address of another variable
+- Useful for memory management:
+  + Direct access to data
+  + Dynamic memory handling
 
 ```C
 #include <stdio.h>
@@ -131,9 +131,9 @@ int main()
 
 # Strings 🧵
 
-- An array of characters terminated by the **null character** (`\0`).
-- A contiguous block of memory where each character is accessible via indexing or pointers.
-- A nice library `string.h` with many useful functions
+- An array of characters terminated by the **null character** (`\0`)
+- A contiguous block of memory where each character is accessible via indexing or pointers
+- The C standard library (`string.h`) includes many useful string manipulation functions
 
 ```c
 char str[10] = "Hainan";
@@ -150,17 +150,24 @@ char str[10] = "Hainan";
 
 # The `string.h` Standard Library
 
-- `#include <string.h>` provides many useful string functions
+- `#include <string.h>` provides many useful string functions:
+  + `strcat(str1, str2)`: concatenates two strings
+  + `strcpy(str1, str2)`: copies one strings to another
+  + `strcmp(str1, str2)`: compare the elements of two strings
+  + `strlen(str)`: compute the length of a string
+<!--
 
 ```C
 char str1[10] = "UESTC";
-char str2[10] = "1005"
+char str2[10] = "1005";
 printf("%s %s", str1, str2); // %s placeholder for strings
 strcat(str1, str2); // concatenates two strings
 strcpy(str1, str2); // copies one strings to another
 strcmp(str1, str2); // compare the elements of two strings
 strlen(str1);
 ```
+
+-->
 
 - The variants `strncat`, `strncpy`, and `strncmp` include a size parameter and are generally "safer" than their counterpart functions
   + E.g., `strncpy(str1, str2, 9)` copies only the portion of `str2` that fits in the memory reserved for `str1`
@@ -191,18 +198,18 @@ strcpy(str1, str2);  // compiles, but will (likely) fail at runtime
 
 ```C
 char str[] = "UESTC 1005";
-char *ptr = str; // Points to the first character
+char *ptr = str;          // Points to the first character of str
 printf("%c", *(ptr + 1)); // Outputs 'E'
 printf("%s", *(ptr + 6)); // Outputs '1005'
 ```
 
 ---
 
-# String Tokenisation 🇬🇧💂‍♂️🏏 (I cringe and want to change the slide title to String Tokenization 🇺🇸🗽⚾)
+# String Tokenisation 🇬🇧💂‍♂️🏏 (I cringe 😬 and want to change the slide title to String Tokenization 🇺🇸🗽⚾)
 
 - Split a single string into multile components (tokens)
 - For example, how to split an IP address `192.168.1.1` into its four octet components?
-- The `strtok()` function splits a string based on specified *delimiters*, i.e., a set of characters that denote a break between tokens
+- The `strtok` function splits a string based on specified *delimiters*, i.e., a set of characters that denote a break between tokens
 - The "string tokenize" function in `string.h` has the following function signature:
 
 ```C
@@ -213,7 +220,7 @@ char *strtok(char *str, const char *delim);
 
 ---
 
-# The `strtok()` Function
+# The `strtok` function
 
 - Major source of complexity: first call is different from subsequent calls
 
@@ -238,7 +245,7 @@ int main() {
 
 ---
 
-# String Equality 🟰
+# String equality 🟰
 
 - It might be tempting to write the following code to determine if two strings are equal:
 
@@ -252,14 +259,14 @@ int main() {
 }
 ```
 
-- In the above, `str1 == str2` is always false because `str1`, the address of string 1, is never equal to `str2`
-- Instead, use the `strcmp` (or the safer `strncmp`) function to compare strings
+- In the above, `str1 == str2` is always false because `str1` (the address of string 1) will be different than `str2` (the address of string 2)
+- The `strcmp` (or the safer `strncmp`) function is for string comparison
   + If `strcmp(str1, str2) == 0` then `str1` is equal to `str2`
 
 
 ---
 
-# Lexicographic Order
+# Lexicographic order
 
 - The result of `strcmp` can also be positive or negative, indicating `str1 < str2` or `str1 > str2`, but what does this mean?
 - If `str1 < str2` then `str1` appears before `str2` in an "ASCII special character aware" dictionary
@@ -283,7 +290,7 @@ int main() {
 
 ---
 
-# Why is Dynamic Memory Allocation Necessary?
+# Why is dynamic memory allocation necessary?
 
 - Until now, we have only considered arrays of *fixed* size and *explicit* length specified at compile time, e.g., `int x[10];`
 - What if the appropriate array length depends on program input?
@@ -312,7 +319,7 @@ int main() {
 #include <stdlib.h>
 int main() {
     int   given_name_length;
-    char *given_name;
+    char *given_name = NULL;  // advise: never leave a pointer "dangling," i.e., uninitialized
     printf("What is the length of your given name? ");
     scanf("%d", &given_name_length);
 

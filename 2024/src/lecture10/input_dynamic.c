@@ -3,7 +3,7 @@
 
 int main() {
      int   given_name_length;
-     char *given_name;
+     char *given_name = NULL;  // advise: never leave a pointer "dangling," i.e., uninitialized
      printf("What is the length of your given name? ");
      scanf("%d", &given_name_length);
 
