@@ -4,12 +4,15 @@
 #include <stdbool.h>
 
 
+
+// To ask for an IP v4 address there will be 4 octets 
 // in this program, we ask the user to enter a valid IP v4 address
 // v4 means there are 4 octets
 // lately we have slowly started moving to IP v6 addresses
 
 // determine the IP address has a valid octet part or not
 // ie. range is between 0 and 255
+// so far all the values are of type string even the number 192
 bool isValidOctet(const char *octet)
 {
     int value = atoi(octet); // Convert string to integer
@@ -45,12 +48,13 @@ int main()
     // Break the string into octets
     // Split the entered string into 4 octets and also check whether the addresses are correct and valid 
     // 0 - 255 
-    char *ptr = strtok(ipAddress, ".");
+    char *ptr = strtok(ipAddress, "."); // this is the first call
     int octetCount = 0;
 
     printf("Parsing the IP address:\n");
 
     // Validate each octet
+    // '\0'
     while (ptr != NULL)
     {
         printf("Octet %d: %s\n", ++octetCount, ptr);

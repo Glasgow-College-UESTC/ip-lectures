@@ -53,8 +53,6 @@ Hasan T Abbas
 - Structure Pointers ↗️
 
 
-![bg right 70% 95%](assets/Carbon_poem.svg)
-
 ---
 
 # But First a Recap ..

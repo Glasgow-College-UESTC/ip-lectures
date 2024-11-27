@@ -2,6 +2,9 @@
 #include <string.h>
 
 // Define a structure to represent a bike
+
+// written for a client who services bikes 
+// A logbook of service history --> Table data structure e.g. array
 struct Bike {
     char type[50];         // Type of bike (e.g., road, electric, mountain)
     int bikeID;            // Unique bike ID
@@ -20,6 +23,8 @@ float calculateTotalRepairCost(struct Bike bikes[], int size) {
 }
 
 // Function to display bike repair details
+// inside this function we call the structure bike
+// . 
 void displayBikeDetails(struct Bike bike) {
     printf("Bike ID: %d\n", bike.bikeID);
     printf("Bike Type: %s\n", bike.type);
