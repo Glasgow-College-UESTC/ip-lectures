@@ -206,7 +206,7 @@ printf("%d", *ptr);  // dereference the pointer and print the value it points to
 - E.g., `int x = 5;` & `int *p = &x;`
 - `p` now holds the memory address of `x`.
 
-![bg right:45% 95% an illustration showing an analogy of memory and buildings in an urban environment](assets/buildings.jpeg "an illustration showing an analogy of memory and buildings in an urban environment")
+![bg right:45% 95%](assets/buildings.jpeg "an illustration showing an analogy of memory and buildings in an urban environment")
 
 ---
 

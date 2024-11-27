@@ -53,11 +53,11 @@ Hasan T Abbas
 - Pointers to Pointers
 
 
-![bg right 70% 95%](assets/Carbon_poem.svg)
+<!-- ![bg right 70% 95%](assets/Carbon_poem.svg) -->
 
 ---
 
-# Some Fun
+<!-- # Some Fun
 
 
 
@@ -72,13 +72,13 @@ Hasan T Abbas
 
 
 
----
+--- -->
 
-# Questions from Last time? :question:
+<!-- # Questions from Last time? :question:
 
 ![bg right 60% QR code for Menti https://www.menti.com/alok51h26yh3](assets/quiz-6.png)
 
----
+--- -->
 
 # But First a Recap ..
 
