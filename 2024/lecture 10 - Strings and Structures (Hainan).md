@@ -85,6 +85,7 @@ Dr. Hasan T. Abbas
 
 - Date: **November 30** (for Hainan students)
 - C exercises with Codegrade submission
+- There is one prize for the top first-year student submission
 
 ![bg right:50% 80%](assets/programming_competition_2024.png)
 
@@ -180,11 +181,11 @@ strlen(str1);
 For example, the programmer is responsible that:
 - The input parameters are strings (null terminated arrays)
 - The destination array is large enough to accommodate the result
-- Failure to do so will result in runtime failure (segmentation violation error)
+- Failure to do so may result in runtime failure (segmentation violation)
 
 ``` C
 char str1[3];
-char str2[] = "I AM A VERY LONG STRING"
+char str2[] = "I AM A VERY LONG STRING";
 strcpy(str1, str2);  // compiles, but will (likely) fail at runtime
 ```
 
@@ -216,7 +217,7 @@ printf("%s", *(ptr + 6)); // Outputs '1005'
 char *strtok(char *str, const char *delim);
 ```
 
-- Powerful and useful function, but it is relative complex
+- Powerful and useful function, but it is relatively complex
 
 ---
 
@@ -275,6 +276,7 @@ int main() {
 #include <stdio.h>
 #include <string.h>
 int main() {
+    printf("strcmp(apple, apple) = %d\n", strcmp("apple", "apple"));  //  0
     printf("strcmp(Apple, apple) = %d\n", strcmp("Apple", "apple"));  // -1
     printf("strcmp(Apple, !pple) = %d\n", strcmp("Apple", "!pple"));  //  1
     printf("strcmp(Apple, App)   = %d\n", strcmp("Apple", "App"));    //  1
@@ -389,7 +391,6 @@ struct Person {
 # Why Structures? 🤔
 
 - Organise related data together
-- *Modular code design* involves separation of data from code
 
 ```C
 struct Coordinate {
@@ -401,17 +402,18 @@ struct Coordinate p1 = {10, 20, 30};
 ```C
 // dynamic memory allocation for a Coordinate
 struct Coordinate *p = (struct Coordinate *) malloc(sizeof(struct Coordinate));
-p->x = 10; p->y = 20; p->z = 30;
+(*p).x = 10; (*p).y = 20; (*p).z = 30;
 ```
 
-- We did not check if `p` is `NULL`
-- Will we remember to later call `free(p)`?
+- The above code snippet may result in runtime errors:
+  + We did not check if `p` is `NULL` after `malloc`
+  + Did we remember to call `free(p)` later in the code?
 
 ---
 
 # Structure Member Access
 
-- The *dot operator* is used to peer into a structure and refer to its members:
+- The *dot operator* is used to peer into a structure and access its members:
 ```C
 struct Coordinate {
     int x, y, z;
@@ -424,11 +426,11 @@ printf("%d", p1.x);
 - Example of member access using a pointer:
 
 ```C
-struct Coordinate *ptr = &p1;
-ptr->x = 15;
+struct Coordinate *coord_ptr = &p1;
+coord_ptr->x = 15;
 ```
 
-- Note that the *arrow operator* `ptr->x` is equivalent to `(*ptr).x`
+- Note that the *arrow operator* `coord_ptr->x` is equivalent to `(*coord_ptr).x`
 
 ---
 
@@ -445,7 +447,7 @@ struct Student {
 };
 ```
 - Suppose `sizeof(char)` is 1 and `sizeof(int)` and `sizeof(float)` are 4. What is `sizeof(struct Student)`?
-- For performance reasons (byte alignment), the correct answer is `sizeof(struct Student) >= 50*1 + 4*1 + 4*1 = 58`
+- For performance reasons (byte alignment), the correct answer is different than what you might assume: `sizeof(struct Student) >= 50*1 + 4*1 + 4*1 = 58`
 
 ---
 
@@ -479,7 +481,24 @@ int main() {
 
 - A pointer to a structure points to the memory address where the structure is located
 - If the structure contains an array member, that pointer can be used to indirectly access the array elements
-- A structure can contain a self-referencing pointer (useful for constructing dynamic data structures, e.g., a *linked list* or *tree*)
+
+```C
+struct Student {
+    char name[50];       // Name of the student
+    int grades[5];       // Array to store 5 grades
+};
+
+// declare and initialize a structure variable
+struct Student s = {"NAME", {1, 2, 3, 4, 5}};
+// declare and initialize a pointer to a structure
+struct Student *s_ptr = &s;
+```
+
+- Advanced topic: A structure can contain a self-referencing pointer (useful for constructing dynamic data structures, e.g., a *linked list* or *tree*)
+
+---
+
+# Structure Pointer Example
 
 ```C
 #include <stdio.h>
@@ -488,13 +507,7 @@ struct Student {
     char name[50];       // Name of the student
     int grades[5];       // Array to store 5 grades
 };
-```
 
----
-
-# Structure Pointers
-
-```C
 int main() {
     // Declare and initialize a structure
     struct Student ip_student = {"DaXue Sheng", {85, 90, 88, 92, 67}};
