@@ -9,7 +9,7 @@ _paginate: false
 style: |
   .columns {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0,fs 1fr));
+    grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 1rem;
   }
   section {
@@ -289,3 +289,89 @@ void min_max_call_by_ref(int *min, int *max, const int *a, unsigned length) {
 ![bg opacity:100% decorative background](assets/gradient.jpg)
 
 ---
+
+# Bitwise Arithmetic Operators in C
+
+- C provides arithmetic operators for *bitwise* 👾 manipulation of values
+- By bitwise, we mean that a value is operated on one bit at a time:
+
+<div align="center">
+
+| $a_i$ | $b_i$ | $a_i$ `&` $b_i$ (AND) | $a_i$ `\|` $b_i$ (OR) | $a_i$ `^` $b_i$ (XOR) | `~`$a_i$ (NOT) |
+|-------|-------|:---------------------:|:---------------------:|:---------------------:|:--------------:|
+| 0     | 0     | 0                     | 0                     | 0                     | 1              |
+| 0     | 1     | 0                     | 1                     | 1                     | 1              |
+| 1     | 0     | 0                     | 1                     | 1                     | 0              |
+| 1     | 1     | 1                     | 1                     | 0                     | 0              |
+
+</div>
+
+``` C
+int x = 0b101010;   // = 32 +  8 + 2 = 42
+int y = 0b111000;   // = 32 + 16 + 8 = 56
+int z = x ^ y;      // 0b010010 = 16 + 2 = 18
+```
+
+---
+
+# ⚠️☠️🚨 Arithmetic vs. Logical Operators
+
+- We previously learned the *logical* 🖖 operators `&&`, `||`, and `!`
+- **DO NOT** confuse these with the bitwise *arithmetic* 🧮 operators `&`, `|`, and `~`
+
+``` C
+int x = 42;  // = 32 +  8 + 2 = 0b101010
+int y =  0;  //               = 0b000000
+
+printf("x||y = %d\n", x || y);  // output: x || y = 1
+printf(" x|y = %d\n",  x | y);  // output:  x | y = 42
+// note the identity: x | 0 = x
+// quetsion to you: what is x & 1 = ?
+```
+
+- Remember:
+  + Logical operators (`&&`, `||`, `!`) operate on *values*
+  + Arithmetic bitwise operators (`&`, `|`, `~`) operate on the bits of values
+
+---
+
+# Use Case: Swap 🔄 Variable Values
+
+<div class="columns">
+
+<div>
+
+``` C
+void SwapInt(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+```
+
+</div>
+
+<div>
+
+``` C
+void XorSwapInt(int *x, int *y) {
+  if (x == y) return;
+  *x = *x ^ *y;
+  *y = *x ^ *y;
+  *x = *x ^ *y;
+}
+```
+
+</div>
+</div>
+
+- Both functions above *swap* the values of two variables
+- `XorSwapInt` does so without the need of extra memory storage
+- Often found in classic 🏺👴🏻👵🏻 code where every byte was precious 💎
+- Homework problem 📚☕:
+  - Prove that `XorSwapInt` works for any input values
+  - What happens if `if (x == y) return;` is removed?
+
+---
+
+# Bitwise Shift ➡️⬅️ Operators in C
