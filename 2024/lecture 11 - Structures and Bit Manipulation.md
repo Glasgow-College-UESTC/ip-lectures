@@ -158,6 +158,24 @@ Dr. Mark D. Butala
 
 ---
 
+# Questions 🙋❓
+
+- Ask me anything (programming-related 😎)
+
+
+---
+
+# Lecture Outline
+
+- Recap of pass by value ⩇⩇:⩇⩇ and reference 👉(⩇⩇:⩇⩇)
+- Why you should pass structures by reference 📢
+- The `const` ⛰️ type qualifier
+- Bit manipulation 👾
+  - Use cases of bit manipulation
+  - Bit fields
+
+---
+
 # Recap: Pass by Value ⩇⩇:⩇⩇ vs. by Reference 👉(⩇⩇:⩇⩇)
 
 ``` C
@@ -374,4 +392,95 @@ void XorSwapInt(int *x, int *y) {
 
 ---
 
-# Bitwise Shift ➡️⬅️ Operators in C
+# Bitwise Shift ➡️⬅️➡️➡️⬅️ Operators in C
+
+- Left shift `x << N` shifts the bits of `x` to the left by `N` (inserting `0`s)
+``` C
+int x = 0b11;           // = 3
+printf("%d\n", x << 3)  // ouput: 24
+// Note that 0b11000 = 16 + 8 = 24
+```
+- Right shift `x >> N` shifts the bits of `x` to the right by `N` (inserting `0`s)
+
+``` C
+int x = 24;             // = 0b11000
+printf("%d\n", x >> 2)  // output: 6
+// Note that 6 = 4 + 2 = 0b110
+```
+
+- ⚠️ The result of bit-shifting a negative value may be machine dependent and should be avoided!
+
+
+---
+
+# Example Bitwise Shift Use-Cases
+
+- Computers are optimized 🏎️💨 for bit manipulation and some useful operations can be directly mapped a bitwise shift
+
+### Is a value odd 🙃 or even 🙂?
+
+- For an positive value, an integer is negative if its right-most bit is equal to `1`:
+
+``` C
+// Similar to: if ((x % 2) > 0) { ... }
+if ((x & 1) > 0) {
+    printf("The value of x is odd\n");
+}
+```
+
+### Multiplication ✖ and division ÷ by 2
+
+- `x << N` is similar to `x * (2 * N)` and `x >> M` is similar to `x / (2 * M)`
+
+---
+
+# Bit Fields
+
+- A bit field is one way to efficiently represent a set of *flags*, i.e., on ✅ and off ❌ values, stored as `1`s and `0`s, respectively
+- Example: Consider a Nintendo Entertainment System controller 🎮
+  - 8 buttons: up, down, left, right, start, select, A, and B
+  - Efficiently store the controller *state* with a `char` (which is $\geq$ 8 bits):
+
+<div align="center">
+
+| Bit     | 8  | 7    | 6    | 5     | 4     | 3      | 2 | 1 |
+|---------|----|------|------|-------|-------|--------|---|---|
+| Button  | up | down | left | right | start | select | A | B |
+
+</div>
+
+``` C
+char controller_state = 0b10000010;  // store that "up" and "A" were pressed simultaneously
+```
+
+---
+
+# Getting and Setting Bit Field Values
+
+- Bitwise operators enable *bit masking* 🎭, i.e., bit field member selection
+
+### Is the $N$th bit field entry (from the right) set?
+
+``` C
+char mask_bit_N = 0x1 << N;
+int is_bit_N_on = (bit_field & mask_bit_N) != 0;
+```
+
+### Set the $N$th bit field entry
+
+``` C
+bit_field |= mask_bit_N;  // equivalent to bit_field = bit_field | mask_bit_N;
+```
+
+### Merge bit fields, i.e., combine the "on" bits from two bit fields
+
+``` C
+char combined_bit_field = bit_field1 | bit_field2;
+```
+
+---
+
+# Next Up ⏭️
+
+- File input / output 💾
+- Linked lists ⫘⫘⫘⫘⫘⫘
