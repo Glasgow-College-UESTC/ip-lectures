@@ -1,0 +1,91 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{tikz}
+
+\usetikzlibrary{positioning,chains,decorations.pathreplacing,arrows}
+\usepackage{circuitikz}
+
+
+\definecolor{bluekeywords}{RGB}{0,0,127}
+\definecolor{greencomments}{RGB}{0,127,0}
+\definecolor{redstrings}{RGB}{127,0,0}
+\definecolor{graynumbers}{RGB}{127,127,127}
+\definecolor{glasglowblue}{RGB}{0,56,101}
+
+\definecolor{Burgundy}{RGB}{125,34,57}
+\definecolor{Leaf}{RGB}{0,132,61}
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{
+  language=C,
+  columns=fullflexible,
+  tabsize=4,
+  basicstyle=\ttfamily,
+  numbers=left,
+  numbersep = 5pt,
+  frame=none,
+  xleftmargin=1.5cm,
+  breaklines=true,
+  autogobble=true,
+  showstringspaces=false,
+  xleftmargin=2em,
+  xrightmargin=2em,
+  backgroundcolor=\color{subtlegray},
+  frame=single,
+  framesep=6pt,
+  framexleftmargin=6mm,
+  keywordstyle=\color{bluekeywords},
+  commentstyle=\color{greencomments},
+  stringstyle=\color{redstrings},
+  numberstyle=\color{graynumbers},
+}
+
+\lstdefinestyle{example}{xleftmargin=0cm, xrightmargin=0em}
+
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings}
+
+
+\newcommand{\code}{\lstinline}\begin{document}
+\tikzset{
+  block/.style = {draw, rectangle, align=center, minimum width=2cm, minimum height=3em},
+  input/.style = {coordinate}
+}
+
+
+\begin{tikzpicture}[auto, node distance=2.5cm, thick, >=Stealth]
+    \coordinate [input, name=input] (INPUT);
+    \node [block, right=of INPUT] (CPP1) {C Preprocessor};
+    \node [block, right=of CPP1] (CLANG1) {Compiler};
+    \node [block, right=of CLANG1] (AS1) {Assembler};
+    \node [output, right=of AS1, name=output] (OUTPUT) {OUT};
+
+    \draw[->] (INPUT) -- node[above,minimum width=2.5cm,align=left,text width=2.5cm]{\code|input.c|} (CPP1);
+
+    \path (INPUT) -- ++(0, -3\baselineskip) coordinate(HEADER11) -- (CPP1.south) -- ++(-0.75, 0) coordinate(HEADER1in);
+
+    \draw[->] (HEADER11) -- node[above,minimum width=2.5cm,align=left,text width=2.5cm]{\code|header_1.h|} (HEADER11 -| CPP1.west) -- (HEADER11 -| HEADER1in) -- (HEADER1in |- CPP1.south);
+
+    \path (INPUT) -- ++(0, -4.5\baselineskip) coordinate(HEADER1dot) -- (CPP1.south) coordinate(HEADER1dotin);
+
+    \path (HEADER1dot) -- node[above,draw=none]{$\vdots$} (HEADER1dot -| CPP1.west) -- (HEADER1dot -| HEADER1dotin) -- (HEADER1dotin |- CPP1.south);
+
+    \draw (CPP1.south) node[below=6pt]{$\dotsb$};
+
+    \path (INPUT) -- ++(0, -6\baselineskip) coordinate(HEADER1n) -- (CPP1.south) -- ++(0.75, 0) coordinate(HEADER1nin);
+
+    \draw[->] (HEADER1n) -- node[above,minimum width=2.5cm,align=left,text width=2.5cm]{\code|header_N.h|} (HEADER1n -| CPP1.west) -- (HEADER1n -| HEADER1nin) -- (HEADER1nin |- CPP1.south);
+
+    \draw[->] (CPP1.east) -- node[above]{\code|input.E|} (CLANG1.west);
+
+    \draw[->] (CLANG1.east) -- node[above]{\code|input.S|} (AS1.west);
+
+    \draw[->] (AS1.east) -- node[above]{\code|output.o|} (OUTPUT);
+  \end{tikzpicture}
+\end{document}
