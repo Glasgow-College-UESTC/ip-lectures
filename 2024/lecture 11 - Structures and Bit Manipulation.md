@@ -117,7 +117,7 @@ int a = 1;                  // VALID
 
 ---
 
-![bg right:29%](assets/Dale-Carnegie.jpg)
+![bg right:29%](../assets/Dale-Carnegie.jpg)
 
 # "...investigations revealed that even in such technical lines as engineering, about 15 percent of one’s financial success is due to one’s technical knowledge and about 85 percent is due to skill in human engineering &mdash; to personality and the ability to lead people."
 
@@ -125,7 +125,7 @@ int a = 1;                  // VALID
 
 ---
 
-<!-- _header: ![h:5em](assets/UoG_keyline.svg) -->
+<!-- _header: ![h:5em](../assets/UoG_keyline.svg) -->
 
 # UESTC 1005 — Introductory Programming
 
@@ -206,12 +206,13 @@ int main() {
 
 # C Functions with Multiple Outputs
 
-- In C, a function may accept multiple inputs but may only return *one* value 💃
+- In C, a function may accept multiple inputs but may only return one value 💃
 - What to do when you would like to return multiple values 💃🏻🕺🏽?
 
-## Option 1: Pass Output Variables by Reference
+## Option 1: Pass output variables by reference
 
 ``` C
+#include <limits.h>  // INT_MIN and INT_MAX are defined in the numerical limits header file
 void min_max_call_by_ref(int *min, int *max, int *a, unsigned length) {
     // Find the minimum and maximum value found in an array
     // Input parameters: a, length
@@ -229,7 +230,7 @@ void min_max_call_by_ref(int *min, int *max, int *a, unsigned length) {
 
 # C Functions with Multiple Outputs
 
-## Option 2: Return a Structure Variable
+## Option 2: Return a structure variable
 
 ``` C
 struct MinMax {
@@ -258,7 +259,7 @@ struct MinMax min_max_by_struct(int *a, unsigned length) {
   - Memory requirement is doubled
   - CPU time 💻 to perform the copy
 ##  Advantage of passing by value:
-  - May provide some protection 😷: modification of the copied value in function does not affect the variable passed to the function
+  - May provide some protection 😷: modification of the copied value in the function does not affect the variable passed to the function
 
 ---
 
@@ -274,7 +275,8 @@ int main() {
     y = 0;             // ERROR
     // error: cannot assign to variable 'y' with const-qualified type 'const int'
     int *y_ptr = &y;   // WARNING
-    // warning: initializing 'int *' with an expression of type 'const int *' discards qualifiers
+    // warning: initializing 'int *' with an expression of type 'const int *'
+    //          discards qualifiers
     *y_ptr = 0;        // UNDEFINED BEHAVIOR!
     return 0;
 }}
@@ -304,7 +306,7 @@ void min_max_call_by_ref(int *min, int *max, const int *a, unsigned length) {
 
 # <!--fit--> <span style="color:white"> Bit Manipulation</span>
 
-![bg opacity:100% decorative background](assets/gradient.jpg)
+![bg opacity:100% decorative background](../assets/gradient.jpg)
 
 ---
 
@@ -344,12 +346,54 @@ int y =  0;  //               = 0b000000
 printf("x||y = %d\n", x || y);  // output: x || y = 1
 printf(" x|y = %d\n",  x | y);  // output:  x | y = 42
 // note the identity: x | 0 = x
-// quetsion to you: what is x & 1 = ?
+// question to you: what is x & 1 = ?
 ```
 
 - Remember:
   + Logical operators (`&&`, `||`, `!`) operate on *values*
-  + Arithmetic bitwise operators (`&`, `|`, `~`) operate on the bits of values
+  + Arithmetic bitwise operators (`&`, `|`, `~`, `^`) operate on the bits of values
+
+---
+
+# Use Case: Data Recovery 💾
+
+
+- Suppose you have 3 disks, `X1`, `X2`, and `X3` that can each store 8 bits of information
+- On a fourth disk `P`, the *parity* disk, store the XOR of each bit across the 3 disks
+
+<div align='center'>
+
+| Disk           | $b_8$ | $b_7$ | $b_6$ | $b_5$ | $b_4$ | $b_3$ | $b_2$ | $b_1$ |
+|----------------|-------|-------|-------|-------|-------|-------|-------|-------|
+| `X1`           | 0     | 0     | 0     | 0     | 1     | 1     | 1     | 1     |
+| `X2`           | 1     | 0     | 1     | 0     | 1     | 0     | 1     | 0     |
+| `X3`           | 1     | 1     | 0     | 1     | 0     | 0     | 1     | 1     |
+| `P = X1^X2^X3` | 0     | 1     | 1     | 1     | 0     | 1     | 1     | 0     |
+
+</div>
+
+- Now, disk 2 fails &mdash; we will show that `X2` can be recovered from `X1`, `X3`, and `P`
+
+---
+
+# Use Case: Data Recovery 💾 (continued)
+
+- First, some properties of the XOR operator:
+  + Commutative: `X^Y = Y^X`
+  + Associative (`X^(Y^Z) = (X^Y)^Z`)
+  + Two identities: `X^X=0` and `X^0 = X`
+- `P ^ X1 ^ X3` = `(X1^X1) ^ (X3^X3) ^ X2 = X2`
+
+<div align='center'>
+
+| Disk          | $b_8$ | $b_7$ | $b_6$ | $b_5$ | $b_4$ | $b_3$ | $b_2$ | $b_1$ |
+|---------------|-------|-------|-------|-------|-------|-------|-------|-------|
+| `X1`          | 0     | 0     | 0     | 0     | 1     | 1     | 1     | 1     |
+| `X3`          | 1     | 1     | 0     | 1     | 0     | 0     | 1     | 1     |
+| `P`           | 0     | 1     | 1     | 1     | 0     | 1     | 1     | 0     |
+| `P ^ X1 ^ X3` | 1     | 0     | 1     | 0     | 1     | 0     | 1     | 0     |
+
+</div>
 
 ---
 
@@ -415,7 +459,7 @@ printf("%d\n", x >> 2)  // output: 6
 
 # Example Bitwise Shift Use-Cases
 
-- Computers are optimized 🏎️💨 for bit manipulation and some useful operations can be directly mapped a bitwise shift
+- Computers are optimized 🏎️💨 for bit manipulation and some useful operations can be directly mapped as a bitwise shift
 
 ### Is a value odd 🙃 or even 🙂?
 
