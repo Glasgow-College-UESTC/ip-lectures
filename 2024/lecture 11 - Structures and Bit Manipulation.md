@@ -217,6 +217,7 @@ void min_max_call_by_ref(int *min, int *max, int *a, unsigned length) {
     // Find the minimum and maximum value found in an array
     // Input parameters: a, length
     // Output parameters: min, max
+    assert(length > 0);
     *min = INT_MAX;
     *max = INT_MIN;
     for (unsigned i = 0; i < length; i++) {
@@ -241,6 +242,7 @@ struct MinMax {
 struct MinMax min_max_by_struct(int *a, unsigned length) {
     // Find the minimum and maximum value found in an array
     struct MinMax tuple = {INT_MAX, INT_MIN};
+    assert(length > 0);
     for (unsigned i = 0; i < length; i++) {
         if (a[i] < tuple.min) {tuple.min = a[i];}
         if (a[i] > tuple.max) {tuple.max = a[i];}
@@ -272,12 +274,16 @@ struct MinMax min_max_by_struct(int *a, unsigned length) {
 int main() {
     int x = 10;
     const int y = x;
-    y = 0;             // ERROR
+    y = 0;                       // ERROR
     // error: cannot assign to variable 'y' with const-qualified type 'const int'
-    int *y_ptr = &y;   // WARNING
+    int *y_ptr = &y;             // WARNING
     // warning: initializing 'int *' with an expression of type 'const int *'
     //          discards qualifiers
-    *y_ptr = 0;        // UNDEFINED BEHAVIOR!
+    *y_ptr = 0;                  // UNDEFINED BEHAVIOR!
+    const int *y_ptr_const = &y; // VALID
+    x = y_ptr_const[2];          // VALID
+    y_ptr_const[2] = 20;         // ERROR
+    // error: read-only variable is not assignable
     return 0;
 }}
 ```
@@ -292,6 +298,7 @@ void min_max_call_by_ref(int *min, int *max, const int *a, unsigned length) {
     // Find the minimum and maximum value found in an array
     // Input parameters: a, length
     // Output parameters: min, max
+    assert(length > 0);
     *min = INT_MAX;
     *max = INT_MIN;
     for (unsigned i = 0; i < length; i++) {
@@ -337,7 +344,7 @@ int z = x ^ y;      // 0b010010 = 16 + 2 = 18
 # ⚠️☠️🚨 Arithmetic vs. Logical Operators
 
 - We previously learned the *logical* 🖖 operators `&&`, `||`, and `!`
-- **DO NOT** confuse these with the bitwise *arithmetic* 🧮 operators `&`, `|`, and `~`
+- **DO NOT** confuse these with the *bitwise arithmetic* 🧮 operators `&`, `|`, and `~`
 
 ``` C
 int x = 42;  // = 32 +  8 + 2 = 0b101010
@@ -380,9 +387,9 @@ printf(" x|y = %d\n",  x | y);  // output:  x | y = 42
 
 - First, some properties of the XOR operator:
   + Commutative: `X^Y = Y^X`
-  + Associative (`X^(Y^Z) = (X^Y)^Z`)
+  + Associative: `X^(Y^Z) = (X^Y)^Z`
   + Two identities: `X^X=0` and `X^0 = X`
-- `P ^ X1 ^ X3` = `(X1^X1) ^ (X3^X3) ^ X2 = X2`
+- `P ^ X1 ^ X3` = `(X1 ^ X2 ^ X3) ^ X1 ^ X3` = `(X1^X1) ^ (X3^X3) ^ X2 = X2`
 
 <div align='center'>
 
@@ -494,6 +501,7 @@ if ((x & 1) > 0) {
 </div>
 
 ``` C
+//                        updlseAB
 char controller_state = 0b10000010;  // store that "up" and "A" were pressed simultaneously
 ```
 
@@ -510,16 +518,61 @@ char mask_bit_N = 0x1 << N;
 int is_bit_N_on = (bit_field & mask_bit_N) != 0;
 ```
 
-### Set the $N$th bit field entry
+#### Example
+
+
+``` C
+//                        udlrseAB
+char controller_state = 0b10000010;  // store that "up" and "A" were pressed simultaneously
+//                                          seAB
+char A_bitmask        = 1 << 1;      // = 0b0010
+char start_bitmask    = 1 << 3;      // = 0b1000
+if (controller_state & A_bitmask) printf("A pressed!\n");
+if (controller_state & start_bitmask) printf("start pressed!\n");
+```
+
+---
+
+# Getting and Setting Bit Field Values
+
+### Set the $N$th bit field entry to `1` ("on")
 
 ``` C
 bit_field |= mask_bit_N;  // equivalent to bit_field = bit_field | mask_bit_N;
 ```
 
+#### Example
+
+``` C
+//                        udlrseAB
+char controller_state = 0b10000010;  // store that "up" and "A" were pressed simultaneously
+//                                          udlrseAB
+char left_bitmask     = 1 << 5;      // = 0b00100000
+controller_state |= left_bitmask;    // = 0b10100010
+```
+
+#### Homework problem
+
+How would you set the $N$th bit of a bit field to `0` ("off")?
+
+---
+
+# Getting and Setting Bit Field Values
+
 ### Merge bit fields, i.e., combine the "on" bits from two bit fields
 
 ``` C
 char combined_bit_field = bit_field1 | bit_field2;
+```
+
+#### Example
+
+``` C
+//                         udlrseAB
+char controller_state1 = 0b10000010;  // store that "up" and "A" were pressed simultaneously
+char controller_state2 = 0b00010010;  // store that "right" and "A" were pressed simultaneously
+char merged_state = controller_state1 | controller_state2
+//                     = 0b10010010
 ```
 
 ---
