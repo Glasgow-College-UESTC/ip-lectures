@@ -317,6 +317,110 @@ int main(int argc, char const *argv[]) {
 
 ---
 
+# What is the purpose of a linked list? 🤔
+
+- An array stores a *fixed* number of elements of the same type
+- Potential issues with arrays: what if
+  - the array size is unknown at compile-time?
+  - the array size needs to change over time?
+  - an element must be inserted or removed?
+- Potential solution: `malloc` / `free` and copy array contents as necessary
+  - But this can be computationally wasteful! 🚮
+
+---
+
+# Nodes 📦 and links 🔗
+
+- A linked list *node* stores two things:
+  - A value
+  - A pointer (the link) to the next node in the linked list
+- Example definition of a node:
+``` c
+struct IntNode {
+    int value;
+    struct IntNode *next;
+}
+```
+
+---
+
+# Example definition of a linked list
+
+<style scoped>
+    pre {
+        font-size: 18px;
+    }
+</style>
+
+
+<div align="center">
+
+![width:20cm](figures/linked_list/linked_list.png)
+
+</div>
+
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct IntNode {
+  int value;
+  struct IntNode *next;
+};
+
+int main() {
+  struct IntNode node1 = {12, NULL};
+  struct IntNode node2 = {99, NULL};
+  struct IntNode node3 = {37, NULL};
+  node1.next = &node2;
+  node2.next = &node3;
+  struct IntNode *HEAD = &node1;
+
+  return 0;
+}
+```
+
+</div>
+
+---
+
+# Example of linked list traversal 🚶‍♂️🚶‍♂️🚶‍♂️
+
+<style scoped>
+    pre {
+        font-size: 18px;
+    }
+</style>
+
+
+- Example linked list:
+
+<div align="center">
+
+
+![width:20cm](figures/linked_list/linked_list.png)
+
+</div>
+
+- Code to traverse (walk across) the linked list values:
+
+``` c
+// for loop to traverse the linked list
+for (struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
+    printf("%d\n", ptr->value);
+}
+```
+
+- Output:
+
+```
+12
+99
+37
+```
+
+---
+
 # Next Up ⏭️
 
 - Tutorial (with GTA)  👨‍🏫
