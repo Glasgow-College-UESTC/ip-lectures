@@ -221,8 +221,8 @@ void min_max_call_by_ref(int *min, int *max, int *a, unsigned length) {
     *min = INT_MAX;
     *max = INT_MIN;
     for (unsigned i = 0; i < length; i++) {
-        if (a[i] < *min) {*min = a[i];}
-        if (a[i] > *max) {*max = a[i];}
+        if (a[i] < *min) *min = a[i];
+        if (a[i] > *max) *max = a[i];
     }
 }
 ```
@@ -244,8 +244,8 @@ struct MinMax min_max_by_struct(int *a, unsigned length) {
     struct MinMax tuple = {INT_MAX, INT_MIN};
     assert(length > 0);
     for (unsigned i = 0; i < length; i++) {
-        if (a[i] < tuple.min) {tuple.min = a[i];}
-        if (a[i] > tuple.max) {tuple.max = a[i];}
+        if (a[i] < tuple.min) tuple.min = a[i];
+        if (a[i] > tuple.max) tuple.max = a[i];
     }
     return tuple;
 }
@@ -253,9 +253,9 @@ struct MinMax min_max_by_struct(int *a, unsigned length) {
 
 ---
 
-# You Should (Probably) Always Pass Structure Variables by Reference
+# Structure Variables Should (Probably) Always Be Passed by Reference 📢
 
-- Passing a structure variable to a function will be *by value* ⩇⩇:⩇⩇
+- Passing a variable to a function will be *by value* ⩇⩇:⩇⩇
 - Recall: a copy of a variable is created when passed by value ⩇⩇:⩇⩇+⩇⩇:⩇⩇
 ## Disadvantages of passing by value:
   - Memory requirement is doubled
@@ -285,7 +285,7 @@ int main() {
     y_ptr_const[2] = 20;         // ERROR
     // error: read-only variable is not assignable
     return 0;
-}}
+}
 ```
 
 ---
@@ -302,8 +302,8 @@ void min_max_call_by_ref(int *min, int *max, const int *a, unsigned length) {
     *min = INT_MAX;
     *max = INT_MIN;
     for (unsigned i = 0; i < length; i++) {
-        if (a[i] < *min) {*min = a[i];}
-        if (a[i] > *max) {*max = a[i];}
+        if (a[i] < *min) *min = a[i];
+        if (a[i] > *max) *max = a[i];
     }
 }
 ```
@@ -357,8 +357,8 @@ printf(" x|y = %d\n",  x | y);  // output:  x | y = 42
 ```
 
 - Remember:
-  + Logical operators (`&&`, `||`, `!`) operate on *values*
-  + Arithmetic bitwise operators (`&`, `|`, `~`, `^`) operate on the bits of values
+  + Logical operators (`&&`, `||`, `!`) consider *values*
+  + Arithmetic bitwise operators (`&`, `|`, `~`, `^`) consider the bits of values
 
 ---
 
@@ -379,6 +379,7 @@ printf(" x|y = %d\n",  x | y);  // output:  x | y = 42
 
 </div>
 
+- In computer storage, this scheme is referred to as RAID 5 (distributed parity)
 - Now, disk 2 fails &mdash; we will show that `X2` can be recovered from `X1`, `X3`, and `P`
 
 ---
@@ -459,14 +460,14 @@ printf("%d\n", x >> 2)  // output: 6
 // Note that 6 = 4 + 2 = 0b110
 ```
 
-- ⚠️ The result of bit-shifting a negative value may be machine dependent and should be avoided!
+- ⚠️ In C, the result of bit-shifting a negative value may be machine dependent and should be avoided!
 
 
 ---
 
 # Example Bitwise Shift Use-Cases
 
-- Computers are optimized 🏎️💨 for bit manipulation and some useful operations can be directly mapped as a bitwise shift
+- Computers are optimized 🏎️💨 for bit manipulation and some useful operations accomplished using a bitwise shift
 
 ### Is a value odd 🙃 or even 🙂?
 
@@ -501,7 +502,7 @@ if ((x & 1) > 0) {
 </div>
 
 ``` C
-//                        updlseAB
+//                        udlrseAB
 char controller_state = 0b10000010;  // store that "up" and "A" were pressed simultaneously
 ```
 
