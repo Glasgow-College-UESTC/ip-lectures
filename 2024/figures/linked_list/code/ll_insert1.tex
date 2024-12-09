@@ -1,0 +1,52 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{xcolor}
+\usepackage{listings}
+\begin{document}
+\lstdefinelanguage{Example}{
+    columns=fullflexible,
+    tabsize=4,
+    basicstyle=\ttfamily,
+    keywords={node_ptr, new_node},
+    keywordstyle=\color{blue}\bfseries,
+    %ndkeywords={class, export, boolean, throw, implements, import, this},
+    %ndkeywordstyle=\color{darkgray}\bfseries,
+    %identifierstyle=\color{black},
+    %sensitive=false,
+    %comment=[l]{//},
+    %morecomment=[s]{/*}{*/},
+    %commentstyle=\color{purple}\ttfamily,
+    %stringstyle=\color{red}\ttfamily,
+    %morestring=[b]',
+    %morestring=[b]"
+}
+
+\lstdefinelanguage{ExampleGray}{
+    columns=fullflexible,
+    tabsize=4,
+    basicstyle=\color{gray}\ttfamily,
+}
+
+
+\begin{lstlisting}[language=Example]
+struct IntNode *insertNode(struct IntNode *node_ptr, int value) {
+    // allocate memory to store new node
+    struct IntNode *new_node = malloc(sizeof(struct IntNode));  
+    assert(new_node);
+    new_node->value = value;
+\end{lstlisting}
+\vspace*{-\baselineskip}
+\begin{lstlisting}[language=ExampleGray]
+    if (node_ptr != NULL) {
+        // link newly created node to current node's linked node
+        new_node->next = node_ptr->next;
+        // link current node to newly created node
+        node_ptr->next = new_node;
+    }
+    return new_node;
+}
+\end{lstlisting}
+\end{document}
