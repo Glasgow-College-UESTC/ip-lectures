@@ -397,7 +397,6 @@ int main() {
 
 <div align="center">
 
-
 ![width:20cm](figures/linked_list/linked_list.png)
 
 </div>
@@ -406,7 +405,7 @@ int main() {
 
 ``` c
 // for loop to traverse the linked list
-for (struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
+for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
     printf("%d\n", ptr->value);
 }
 ```
@@ -419,7 +418,133 @@ for (struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 37
 ```
 
+
 ---
+
+# Linked list node insertion: memory allocation
+
+<div align="center">
+
+![height:5cm](figures/linked_list/linked_list_insert1.png)
+
+</div>
+
+
+<div align="center">
+
+![width:17cm](figures/linked_list/code/ll_insert1.tex.png)
+
+</div>
+
+
+---
+
+# Linked list node insertion: assign `new_node` link
+
+<div align="center">
+
+![height:5cm](figures/linked_list/linked_list_insert2.png)
+
+</div>
+
+
+<div align="center">
+
+![width:17cm](figures/linked_list/code/ll_insert2.tex.png)
+
+</div>
+
+
+---
+
+# Linked list node insertion: assign `new_ptr` link
+
+<div align="center">
+
+![height:5cm](figures/linked_list/linked_list_insert3.png)
+
+</div>
+
+
+<div align="center">
+
+![width:17cm](figures/linked_list/code/ll_insert3.tex.png)
+
+</div>
+
+
+---
+
+# Linked list node insertion: example
+
+- Recreation of "Example definition of linked list" using `insertNode`:
+
+``` c
+int main() {
+    struct IntNode *HEAD, *TAIL;
+
+    HEAD = TAIL = insertNode(NULL, 12);
+    TAIL = insertNode(TAIL, 99);
+    TAIL = insertNode(TAIL, 37);
+    TAIL = insertNode(TAIL, 42);
+
+    printfLL(HEAD);               // output: 12 99 37 42
+
+    return 0;
+}
+```
+
+- How would you implement `printLL`?
+
+---
+
+# Remember to tidy your mess! ♻️🚮🧹
+- The `insertNode` function uses `malloc` &mdash; every `malloc` must have a corresponding call to `free`
+
+``` c
+void freeLL(struct IntNode **node_ptr_ptr) {
+    struct IntNode *node_ptr = *node_ptr_ptr;
+    while (node_ptr != NULL) {
+        struct IntNode *next_node_ptr = node_ptr->next;
+        free(node_ptr);
+        node_ptr = next_node_ptr;
+    }
+    *node_ptr_ptr = NULL;
+}
+```
+- The function takes a `struct IntNode **` as input, i.e., a *pointer to a pointer* 🤯
+- The final line `*node_ptr_ptr = NULL;` assigns the input pointer to `NULL`
+
+---
+
+# Brief introduction to "big $O$ notation"
+
+- How does run-time performance scale as the input size becomes "large"?
+- Provides a way to compare and contrast different data structure and algorithms
+
+<div align="center">
+
+![width:15cm](assets/big_O.png)
+
+</div>
+
+---
+
+# Dynamic array implementation performance
+
+- A dynamic array is an *abstract data type* that supports variable size, random access, and element insertion/deletion
+
+|             | Index  | Mutate beginning / end | Mutate middle | Excess space (average) |
+|-------------|--------|------------------------|---------------|------------------------|
+| Array       | $O(1)$ | $O(n)$                 | $O(n)$        | 0                      |
+| Linked list | $O(n)$ | $O(1)$                 | $O(n)$        | $O(n)$                 |
+
+- Index: get or set the $n$th element
+- Mutate: insert or delete from dynamic array
+- Excess space: overhead (storing `next` for linked list)
+
+---
+
 
 # Next Up ⏭️
 
