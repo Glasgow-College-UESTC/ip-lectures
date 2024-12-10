@@ -30,7 +30,7 @@ _color: "#093867"
 
 # "Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it."
 
-## &mdash; Sir Henry Royce
+## &mdash; Sir Henry Royce  🚗✈️
 
 
 ---
@@ -126,17 +126,22 @@ Dr. Mark D. Butala
 
 ---
 
-# How to close 🚪 and flush 🚽 a stream
+# How to close 🚪 a stream
 
 - File close: `int fclose(FILE *stream)`
-  + Return `0` on success
-  + Tidy your mess 🧹💩, i.e., every `fopen` should be paired with an `fclose` because there is OS limit on the number of open files
+- Return `0` on success
+- Tidy your mess 🧹💩, i.e., every `fopen` should be paired with an `fclose` because there is OS limit on the number of open files
+
+
+---
+
+# How to flush 🚽 a stream
 
 - File flush (write unwritten data stored in buffer): `int fflush( FILE *stream )`
-  + Only for output streams &mdash; return `0` on success
-  + For performance, files/streams are (usually) *buffered* and input/output occurs on blocks (array of bytes) rather than bytes
-  + Notable unbuffered stream: `stderr`
-  + ❗⚠️: `stdio` is buffered and output may "disappear" when a program crashes
+- Only for output streams &mdash; return `0` on success
+- For performance, files/streams are (usually) *buffered* and input/output occurs on blocks (array of bytes) rather than bytes
+- Notable unbuffered stream: `stderr`
+- ❗⚠️: `stdio` is buffered and output may "disappear" when a program crashes
 
 ---
 
@@ -431,7 +436,7 @@ for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 
 ---
 
-# Linked list node insertion: memory allocation
+# Linked list node insertion: 1) memory allocation
 
 <div align="center">
 
@@ -449,7 +454,7 @@ for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 
 ---
 
-# Linked list node insertion: assign `new_node` link
+# Linked list node insertion: 2) assign `new_node` link
 
 <div align="center">
 
@@ -467,7 +472,7 @@ for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 
 ---
 
-# Linked list node insertion: assign `new_ptr` link
+# Linked list node insertion: 3) assign `new_ptr` link
 
 <div align="center">
 
@@ -491,14 +496,18 @@ for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 
 ``` c
 int main() {
-    struct IntNode *HEAD, *TAIL;
+    struct IntNode *HEAD = NULL, *TAIL = NULL, *node99 = NULL;
 
     HEAD = TAIL = insertNode(NULL, 12);
-    TAIL = insertNode(TAIL, 99);
+    node99 = TAIL = insertNode(TAIL, 99);
     TAIL = insertNode(TAIL, 37);
     TAIL = insertNode(TAIL, 42);
 
-    printfLL(HEAD);               // output: 12 99 37 42
+    printfLL(HEAD);                    // output: 12 99 37 42
+
+    insertNode(node99, -1);
+
+    printfLL(HEAD);                    // output: 12 99 -1 37 42
 
     return 0;
 }
@@ -542,7 +551,7 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 
 # Brief introduction to "big $O$ notation"
 
-- How does run-time performance scale as the input size becomes "large"?
+- How does run-time ⏰ or memory usage 💾 scale as the input size becomes "large"?
 - Provides a way to compare and contrast different data structure and algorithms
 
 <div align="center">
@@ -563,13 +572,13 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 | Linked list | $O(n)$ | $O(1)$                 | $O(n)$        | $O(n)$                 |
 
 - Index: get or set the $n$ th element
-- Mutate: insert or delete from dynamic array
-- Excess space: overhead (storing `next` for linked list)
+- Mutate: insert/delete element to/from dynamic array
+- Excess space: memory overhead (storing `next` for linked list)
 
 
 ---
 
-# <!--fit--> <span style="color:white">Bubble Sort: A Simple Sorting Algorithm</span>
+# <!--fit--> <span style="color:white">Bubble Sort: A simple sorting algorithm</span>
 
 ![bg opacity:100% decorative background](../assets/gradient.jpg)
 
@@ -599,15 +608,15 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 ``` c
 void sortLL(struct IntNode *head, unsigned int length) {
     assert(head != NULL);
-    bool swap_occurred;
+    int swap_occurred;
     unsigned int N_i = length;
     do {
-        swap_occurred = false;
+        swap_occurred = 0;
         struct IntNode *node = head;
         for (unsigned int i = 0; i < N_i - 1; i++, node = node->next) {
             if (node->value > node->next->value) {
                 swapInt(&node->value, &node->next->value);
-                swap_occurred = true;
+                swap_occurred = 1;
             }
         }
         N_i--;
@@ -621,9 +630,9 @@ void sortLL(struct IntNode *head, unsigned int length) {
 
 - Bubble sort is said to have $O(N^2)$ complexity
   + For each element in the list, do operations on the remaining elements
-  + Double the list length and bubble sort takes $4\times$ as long ⏱️
+  + Double the list length and bubble sort takes $4\times$ as long ⏱😬
 - More advanced algorithms, e.g., quicksort, have $O(N \log N)$ performance
-- Donald Knuth, *The Art of Computer Programming*, "the bubble sort seems to have nothing to recommend it, except a catchy name and the fact that it leads to some interesting theoretical problems"
+- Donald Knuth, *The Art of Computer Programming*, "the bubble sort seems to have nothing to recommend it, except a catchy name and the fact that it leads to some interesting theoretical problems" 🔥🤣
 
 ---
 
