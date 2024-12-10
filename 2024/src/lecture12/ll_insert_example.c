@@ -42,18 +42,18 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 }
 
 int main() {
-    struct IntNode *HEAD = NULL, *TAIL = NULL;
+    struct IntNode *HEAD = NULL, *TAIL = NULL, *node99 = NULL;
 
     HEAD = TAIL = insertNode(NULL, 12);
-    TAIL = insertNode(TAIL, 99);
+    node99 = TAIL = insertNode(TAIL, 99);
     TAIL = insertNode(TAIL, 37);
     TAIL = insertNode(TAIL, 42);
 
-    printfLL(HEAD);
+    printfLL(HEAD);                    // output: 12 99 37 42
 
-    freeLL(&HEAD);
-    printf("Does HEAD == NULL? %d\n", HEAD == NULL);
-    TAIL = NULL;
+    insertNode(node99, -1);
+
+    printfLL(HEAD);                    // output: 12 99 -1 37 42
 
     freeLL(&HEAD);
 
