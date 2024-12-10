@@ -26,6 +26,15 @@ _color: "#093867"
 
 ---
 
+![bg right:34%](../assets/sir-henry-royce.jpg)
+
+# "Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it."
+
+## &mdash; Sir Henry Royce
+
+
+---
+
 <!-- _header: ![h:5em](../assets/UoG_keyline.svg) -->
 
 # UESTC 1005 — Introductory Programming
@@ -69,6 +78,7 @@ Dr. Mark D. Butala
 
 - File 💾📀💽 input and output
 - Linked lists  ...⫘📦⫘📦⫘📦⫘📦⫘📦⫘...
+- Bubble sort 🫧
 
 ---
 
@@ -517,6 +527,19 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 
 ---
 
+# The linked list data structure  📐👷🏻‍️🏗️
+- A *data structure* builds upon simple, primitive data types (e.g., integer, floating point number, string)
+- The goal 🎯: clear and clean data representation and programming interface:
+  + Retrieve list element value
+  + Append to end of list
+  + Insert / delete list element
+  + Join two lists
+  + Free allocated memory
+- Frees the programmer to focus on higher level tasks 🚀
+
+
+---
+
 # Brief introduction to "big $O$ notation"
 
 - How does run-time performance scale as the input size becomes "large"?
@@ -539,12 +562,70 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 | Array       | $O(1)$ | $O(n)$                 | $O(n)$        | 0                      |
 | Linked list | $O(n)$ | $O(1)$                 | $O(n)$        | $O(n)$                 |
 
-- Index: get or set the $n$th element
+- Index: get or set the $n$ th element
 - Mutate: insert or delete from dynamic array
 - Excess space: overhead (storing `next` for linked list)
 
+
 ---
 
+# <!--fit--> <span style="color:white">Bubble Sort: A Simple Sorting Algorithm</span>
+
+![bg opacity:100% decorative background](../assets/gradient.jpg)
+
+
+---
+
+# Bubble sort 🫧
+
+- In bubble sort, small values "bubble" to the top and large values "sink" to the bottom
+- The algorithm: set `i=0` and `N_i = N - 1` where `N` is the length of the list
+  + If `value[i]` is greater than `value[i+1]` then swap the values
+  + Increment `i++` and stop when `i > N_i - 1`
+- The largest value encounterd will now appear at index `N_i`
+- Set `i=0`, decrement `N_i--`, and repeat until no swap occurs
+
+<div align="center">
+
+![](assets/Bubble-sort-example-300px.gif)
+(https://en.wikipedia.org/wiki/Bubble_sort)
+
+</div>
+
+---
+
+# Bubble sort implementation 👨‍💻
+
+``` c
+void sortLL(struct IntNode *head, unsigned int length) {
+    assert(head != NULL);
+    bool swap_occurred;
+    unsigned int N_i = length;
+    do {
+        swap_occurred = false;
+        struct IntNode *node = head;
+        for (unsigned int i = 0; i < N_i - 1; i++, node = node->next) {
+            if (node->value > node->next->value) {
+                swapInt(&node->value, &node->next->value);
+                swap_occurred = true;
+            }
+        }
+        N_i--;
+    } while (swap_occurred);
+}
+```
+
+---
+
+# Bubble sort performance
+
+- Bubble sort is said to have $O(N^2)$ complexity
+  + For each element in the list, do operations on the remaining elements
+  + Double the list length and bubble sort takes $4\times$ as long ⏱️
+- More advanced algorithms, e.g., quicksort, have $O(N \log N)$ performance
+- Donald Knuth, *The Art of Computer Programming*, "the bubble sort seems to have nothing to recommend it, except a catchy name and the fact that it leads to some interesting theoretical problems"
+
+---
 
 # Next Up ⏭️
 
