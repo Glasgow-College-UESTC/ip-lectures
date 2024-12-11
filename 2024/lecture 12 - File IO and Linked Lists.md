@@ -85,7 +85,7 @@ Dr. Mark D. Butala
 # Background: Some UNIX philosophy 🧐🏛🎓
 
 - Influential contribution: "stream of bytes" abstraction for all input and output devices
-- History of UNIX and C are closely intertwined 🪢🖇️💞 &mdash; C (and most other programming languages) adopt "stream of bytes" interaction style
+- History of UNIX and C are closely intertwined 🪢🖇️💞 &mdash; C (and most other programming languages) use the "stream of bytes" style
 - Example input ("source") devices:
   + Keyboard ⌨️, mouse 🖱️, game controller 🎮, microphone 🎙️
   + Disk 💾
@@ -111,7 +111,7 @@ Dr. Mark D. Butala
 
 ---
 
-# How to open a file as a stream
+# How to open a file for input or output
 
 - File open: `FILE *fopen(const char *filename, const char *mode)`
 - The string *mode* specifies the file access mode:
@@ -130,14 +130,14 @@ Dr. Mark D. Butala
 
 - File close: `int fclose(FILE *stream)`
 - Return `0` on success
-- Tidy your mess 🧹💩, i.e., every `fopen` should be paired with an `fclose` because there is OS limit on the number of open files
+- Tidy your mess 🧹💩, i.e., every `fopen` should be paired with an `fclose` because there is an OS limit on the number of open files
 
 
 ---
 
 # How to flush 🚽 a stream
 
-- File flush (write unwritten data stored in buffer): `int fflush( FILE *stream )`
+- File flush (write unwritten data stored in buffer): `int fflush(FILE *stream)`
 - Only for output streams &mdash; return `0` on success
 - For performance, files/streams are (usually) *buffered* and input/output occurs on blocks (array of bytes) rather than bytes
 - Notable unbuffered stream: `stderr`
@@ -433,6 +433,21 @@ for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 37
 ```
 
+---
+
+# Linked list node insertion  📦⫘📦⫘📦 + 🎁
+
+- Nodes can be easily inserted into a linked list 🏅
+- Declaration of the insert function:
+  - `node_ptr`: list node to insert a new link in the chain
+  - `value`: data to store in the new node
+  - The function returns a pointer to the new list node
+``` c
+struct IntNode *insertNode(struct IntNode *node_ptr, int value)
+```
+- Common insertion points:
+  - `node_ptr = HEAD`: insert at the beginning
+  - `node_ptr = TAIL`: insert at the end
 
 ---
 
@@ -472,7 +487,7 @@ for (const struct IntNode *ptr = HEAD; ptr != NULL; ptr = ptr->next) {
 
 ---
 
-# Linked list node insertion: 3) assign `new_ptr` link
+# Linked list node insertion: 3) assign `node_ptr` link
 
 <div align="center">
 
@@ -504,9 +519,7 @@ int main() {
     TAIL = insertNode(TAIL, 42);
 
     printfLL(HEAD);                    // output: 12 99 37 42
-
     insertNode(node99, -1);
-
     printfLL(HEAD);                    // output: 12 99 -1 37 42
 
     return 0;
@@ -587,19 +600,19 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 
 # Bubble sort 🫧
 
-- In bubble sort, small values "bubble" to the top and large values "sink" to the bottom
-- The algorithm: set `i=0` and `N_i = N - 1` where `N` is the length of the list
-  + If `value[i]` is greater than `value[i+1]` then swap the values
-  + Increment `i++` and stop when `i > N_i - 1`
-- The largest value encounterd will now appear at index `N_i`
-- Set `i=0`, decrement `N_i--`, and repeat until no swap occurs
-
 <div align="center">
 
 ![](assets/Bubble-sort-example-300px.gif)
 (https://en.wikipedia.org/wiki/Bubble_sort)
 
 </div>
+
+- In bubble sort, small values "bubble" to the top and large values "sink" to the bottom
+- The algorithm: set `i=0` and `N_i = N - 1` where `N` is the length of the list
+  + If `value[i]` is greater than `value[i+1]` then swap the values
+  + Increment `i++` and stop when `i > N_i - 1`
+- The largest value encounterd will now appear at index `N_i`
+- Set `i=0`, decrement `N_i--`, and repeat until no swap occurs
 
 ---
 
@@ -631,7 +644,7 @@ void sortLL(struct IntNode *head, unsigned int length) {
 - Bubble sort is said to have $O(N^2)$ complexity
   + For each element in the list, do operations on the remaining elements
   + Double the list length and bubble sort takes $4\times$ as long ⏱😬
-- More advanced algorithms, e.g., quicksort, have $O(N \log N)$ performance
+- More complex sorting algorithms, e.g., quicksort, have $O(N \log N)$ performance
 - Donald Knuth, *The Art of Computer Programming*, "the bubble sort seems to have nothing to recommend it, except a catchy name and the fact that it leads to some interesting theoretical problems" 🔥🤣
 
 ---
