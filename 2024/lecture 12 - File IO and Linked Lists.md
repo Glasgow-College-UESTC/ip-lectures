@@ -141,7 +141,7 @@ Dr. Mark D. Butala
 - Only for output streams &mdash; return `0` on success
 - For performance, files/streams are (usually) *buffered* and input/output occurs on blocks (array of bytes) rather than bytes
 - Notable unbuffered stream: `stderr`
-- ❗⚠️: `stdio` is buffered and output may "disappear" when a program crashes
+- ❗⚠️: `stdout` is buffered and output may "disappear" when a program crashes
 
 ---
 
