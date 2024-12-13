@@ -216,7 +216,7 @@ int main() {
     // feof returns non-zero when the end of the file has
     // been reached
     while (!feof(fptr)) {
-        fscanf(fptr, "%u\n", &score);
+        fscanf(fptr, "%u", &score);
         total += score;
         N++;
     }
@@ -237,6 +237,7 @@ int main() {
 // begin magic :)
 // Adapted from https://codegolf.stackexchange.com/questions/50625/ascii-art-of-the-day-3-chinese-shrines
 // THIS IS AWFUL CODE --- DON'T WRITE CODE LIKE THIS!  My eyes feel like they are bleeding!
+// This code has been written for "code golf" 🏌⛳, a competition where the shortest code wins
 int d,i,w;  char s[1<<24];  FILE *FPTR = NULL;
 int v(int i, int j){s[w-i]=".|]\\#/"[j%7];s[w+i]=".|[/#\\"[j%7]; while(i--)s[w-i]=s[w+i]="# _-"[j/7];return 0;}
 int m(int _){return v(w,13);}

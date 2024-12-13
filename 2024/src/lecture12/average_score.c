@@ -8,7 +8,7 @@ int main() {
     // feof returns non-zero when the end of the file has
     // been reached
     while (!feof(fptr)) {
-        fscanf(fptr, "%u\n", &score);
+        fscanf(fptr, "%u", &score);
         total += score;
         N++;
     }
