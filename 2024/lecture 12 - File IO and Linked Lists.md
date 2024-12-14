@@ -26,12 +26,29 @@ _color: "#093867"
 
 ---
 
-![bg right:34%](../assets/sir-henry-royce.jpg)
+<!-- ![bg right:34% Sir Henry Royce](../assets/sir-henry-royce.jpg) -->
+
+<!-- # "Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it." -->
+
+<!-- ## &mdash; Sir Henry Royce  🚗✈️ -->
+
+
+<div class="columns">
+
+<div>
 
 # "Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it."
-
 ## &mdash; Sir Henry Royce  🚗✈️
 
+</div>
+
+<div>
+
+![Sir Henry Royce](../assets/sir-henry-royce.jpg)
+
+</div>
+
+</div>
 
 ---
 
@@ -652,6 +669,6 @@ void sortLL(struct IntNode *head, unsigned int length) {
 
 # Next Up ⏭️
 
-- Tutorial (with GTA)  👨‍🏫
+- Tutorial  👨‍🏫
 - Exam preparation  🖊️📖✏️📚
 - Bring questions 🤔💭 and get answers 🤩!
