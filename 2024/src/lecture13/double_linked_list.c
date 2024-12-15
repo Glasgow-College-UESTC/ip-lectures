@@ -10,12 +10,12 @@ struct StringNode {
     struct StringNode *prev;
 };
 
-struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *string) {
+struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str) {
     struct StringNode *new_node = malloc(sizeof(struct StringNode));  // allocate memory to store new node
     assert(new_node);
-    new_node->data = malloc(sizeof(char) * (strlen(string) + 1));
+    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));
     assert(new_node->data);
-    strcpy(new_node->data, string);
+    strcpy(new_node->data, str);
     if (node_ptr != NULL) {
         // link newly created node to current node's linked node
         new_node->next = node_ptr->next;
@@ -31,12 +31,12 @@ struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *stri
 }
 
 
-struct StringNode *insertNodeLeft(struct StringNode *node_ptr, const char *string) {
+struct StringNode *insertNodeLeft(struct StringNode *node_ptr, const char *str) {
     struct StringNode *new_node = malloc(sizeof(struct StringNode));  // allocate memory to store new node
     assert(new_node);
-    new_node->data = malloc(sizeof(char)    * (strlen(string) + 1));
+    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));
     assert(new_node->data);
-    strcpy(new_node->data, string);
+    strcpy(new_node->data, str);
     if (node_ptr != NULL) {
         // link newly created node to current node's linked node
         new_node->next = node_ptr;
@@ -74,7 +74,9 @@ void freeLL(struct StringNode **node_ptr_ptr) {
     struct StringNode *node_ptr = *node_ptr_ptr;
     while (node_ptr != NULL) {
         struct StringNode *next_node_ptr = node_ptr->next;
+        // free the memory reserved for data member (the string)
         free(node_ptr->data);
+        // free the memory reserved for the node
         free(node_ptr);
         node_ptr = next_node_ptr;
     }
@@ -83,30 +85,20 @@ void freeLL(struct StringNode **node_ptr_ptr) {
 
 
 int main() {
-    struct StringNode *HEAD = NULL;
-    struct StringNode *TAIL = NULL;
+    struct StringNode *HEAD = NULL, *TAIL = NULL;
 
-    HEAD = TAIL = insertNodeRight(HEAD, "Hello");
-
-    printfLL(HEAD);
-    rprintfLL(HEAD);
-
+    HEAD = TAIL = insertNodeRight(NULL, "Hello");
     TAIL = insertNodeRight(TAIL, "World");
-
-    printfLL(HEAD);
-    rprintfLL(TAIL);
-
     insertNodeRight(HEAD, "to_the");
+    HEAD = insertNodeLeft(HEAD, "Yo,");  // HW problem! Can you write this code?
 
-    printfLL(HEAD);
-    rprintfLL(TAIL);
+    printfLL(HEAD);   // Output: Yo, Hello to_the World
+    rprintfLL(TAIL);  // Output: World to_the Hello Yo,
 
-    HEAD = insertNodeLeft(HEAD, "Yo,");
-
-    printfLL(HEAD);
-    rprintfLL(TAIL);
-
-    freeLL(&HEAD);
+    printf("HEAD == NULL? %d\n", HEAD == NULL);  // Output: HEAD == NULL? 0
+    freeLL(&HEAD);    // tidy our mess
+    printf("HEAD == NULL? %d\n", HEAD == NULL);  // Output: HEAD == NULL? 1
+    // HEAD was passed by reference to freeLL and assigned to NULL
     TAIL = NULL;
 
     return 0;

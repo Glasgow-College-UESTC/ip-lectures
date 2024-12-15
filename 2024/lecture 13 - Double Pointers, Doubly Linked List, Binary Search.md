@@ -26,6 +26,27 @@ _color: "#093867"
 
 ---
 
+<div style="width: 64%; float:left">
+
+#
+#
+#
+# 🧽 ABSORB what is useful,
+# 🗑️ DISCARD what is not,
+# ➕ ADD what is uniquely your own
+## &mdash; 李小龍
+
+</div>
+
+<div style="width: 30%; float:right">
+
+![Bruce Lee](../assets/bl00040mb-659x1030.jpg)
+
+</div>
+
+
+---
+
 <!-- _header: ![h:5em](../assets/UoG_keyline.svg) -->
 
 # UESTC 1005 — Introductory Programming
@@ -113,7 +134,7 @@ unsigned longer_string(char **c_ptr_ptr, char s1[], char *s2) {
 }
 
 int main(void) {
-    char *string1 = "Hello World";
+    char *string1  = "Hello World";
     char string2[] = "IP rulz!";
     char *c_ptr = NULL;
 
@@ -134,10 +155,243 @@ int main(void) {
 
 ---
 
+# Doubly linked lists: the what 🤔 and why 🤩
+
+- So far we have covered *singly* linked lists
+  + Each node stores the pointer to the next node to right ... ➡️ 📦 ➡️ 📦 ➡️ ...
+  + Supports traversal from list beginning (`HEAD`) to end (`TAIL`)
+
+- Let us add a link to the previous node to each node ... ↔️ 📦 ↔️ 📦 ↔️ ...
+``` c
+struct PersonNode {
+    char name[41];
+    unsigned age;
+    struct PersonNode *next;
+    struct PersonNode *prev;
+}
+```
+
+- Enables forward and backwards traversal (and added memory overhead)
+
+---
+
+# Reverse traversal example
+
+``` c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    struct PersonNode {
+        char name[41];
+        unsigned age;
+        struct PersonNode *next;
+        struct PersonNode *prev;
+    };
+
+    struct PersonNode taichonaut1 = {"Yang Liwei", 59, NULL, NULL};
+    struct PersonNode taichonaut2 = {"Fei Junlong", 59, NULL, NULL};
+    struct PersonNode taichonaut3 = {"Liu Yang", 46, NULL, NULL};
+
+    struct PersonNode *HEAD = &taichonaut1;
+    taichonaut1.next = &taichonaut2; taichonaut2.next = &taichonaut3;
+    taichonaut3.prev = &taichonaut2; taichonaut2.prev = &taichonaut1;
+    struct PersonNode *TAIL = &taichonaut3;
+
+    for (struct PersonNode *node = TAIL; node != NULL; node = node->prev) {
+        printf("%s (%d)  ", node->name, node->age);
+    }
+    // Output: Liu Yang (46)  Fei Junlong (59)  Yang Liwei (59)
+
+    return 0;
+}
+```
+
+---
+
+# Doubly linked list insertion
+
+- Recall `insertNode` for a singly linked list was fairly complex 😵‍💫
+- Added complexity for a doubly linked list: `next` and `prev` member updates
+- Let us consider doubly linked list `insertNodeRight` (insert to right of given node)
+- For added challenge 🏋️, consider nodes with dynamically allocated data:
+
+``` c
+struct StringNode {
+    char *data;
+    struct StringNode *next;
+    struct StringNode *prev;
+};
+
+
+struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str) {
+    // We will consider the code implementation after a few more slides
+}
+```
+
+---
+
+# Case 1: `insertNodeRight` to empty list
+
+`HEAD = TAIL = insertNodeRight(NULL, "Hello");`
+
+<div class="columns">
+
+<div>
+
+## Before call
+
+![width:6cm](figures/doubly_ll/case1_before.png)
+
+</div>
+
+<div>
+
+## After call
+
+![height:10cm](figures/doubly_ll/case1_after.png)
+
+</div>
+
+</div>
+
+---
+
+# Case 2: `insertNodeRight` to `TAIL` of list
+
+`TAIL = insertNodeRight(TAIL, "World");`
+
+<div class="columns">
+
+<div>
+
+## Before call
+
+![height:10cm](figures/doubly_ll/case2_before.png)
+
+</div>
+
+<div>
+
+## After call
+
+![height:10cm](figures/doubly_ll/case2_after.png)
+
+</div>
+
+</div>
+
+
+---
+
+# Case 3: `insertNodeRight` general case
+
+`insertNodeRight(node_ptr, "to_the");`
+
+<div class="columns">
+
+<div>
+
+## Before call
+
+![height:10cm](figures/doubly_ll/case3_before.png)
+
+</div>
+
+<div>
+
+## After call
+
+![height:10cm](figures/doubly_ll/case3_after.png)
+
+</div>
+
+</div>
+
+
+---
+
+# Doubly linked list insertion implementation 🛠️
+
+``` c
+struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str) {
+    struct StringNode *new_node = malloc(sizeof(struct StringNode));  // allocate memory to store new node
+    assert(new_node);
+    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));
+    assert(new_node->data);
+    strcpy(new_node->data, str);
+    if (node_ptr != NULL) {
+        // link newly created node to current node's linked node
+        new_node->next = node_ptr->next;
+        new_node->prev = node_ptr;
+        // link current node to newly created node
+        node_ptr->next = new_node;
+        // link next node back to newly created node
+        if (new_node->next != NULL) {
+            new_node->next->prev = new_node;
+        }
+    }
+    return new_node;
+}
+```
+
+- There is a LOT happening in the above code
+- We would NEVER expect you to write code of this complexity 🧬 in an exam ✍📝
+
+---
+
+# Tidying up `StringNode`-based linked list
+
+- There are two `malloc`s in `insertNodeRight`
+  + To allocate space for the `data` member
+  + To allocate space for a newly created node
+
+``` c
+void freeLL(struct StringNode **node_ptr_ptr) {
+    struct StringNode *node_ptr = *node_ptr_ptr;
+    while (node_ptr != NULL) {
+        struct StringNode *next_node_ptr = node_ptr->next;
+        // free the memory reserved for data member (the string)
+        free(node_ptr->data);
+        // free the memory reserved for the node
+        free(node_ptr);
+        node_ptr = next_node_ptr;
+    }
+    *node_ptr_ptr = NULL;
+}
+```
+
+---
+
+# A `StringNode` doubly linked list in action 🎬
+
+``` c
+int main() {
+    struct StringNode *HEAD = NULL, *TAIL = NULL;
+
+    HEAD = TAIL = insertNodeRight(NULL, "Hello");
+    TAIL = insertNodeRight(TAIL, "World");
+    insertNodeRight(HEAD, "to_the");
+    HEAD = insertNodeLeft(HEAD, "Yo,");  // HW problem! Can you write this code?
+
+    printfLL(HEAD);   // Output: Yo, Hello to_the World
+    rprintfLL(TAIL);  // Output: World to_the Hello Yo,
+
+    printf("HEAD == NULL? %d\n", HEAD == NULL);  // Output: HEAD == NULL? 0
+    freeLL(&HEAD);    // tidy our mess
+    printf("HEAD == NULL? %d\n", HEAD == NULL);  // Output: HEAD == NULL? 1
+    // HEAD was passed by reference to freeLL and assigned to NULL
+    TAIL = NULL;
+
+    return 0;
+}
+```
+
+---
+
 # <!--fit--> <span style="color:white">Binary Search</span>
 
 ![bg opacity:100% decorative background](../assets/gradient.jpg)
-
 
 ---
 
@@ -154,7 +408,7 @@ int main(void) {
 
 ---
 
-☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️🤞☘️
+🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀🤞🍀
 
 <div align="center">
 
