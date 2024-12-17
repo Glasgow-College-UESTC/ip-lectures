@@ -86,6 +86,7 @@ Dr. Mark D. Butala
 - Double pointers ✨✨
 - Doubly linked list   ...↔️📦↔️📦↔️📦↔️📦↔️📦↔️...
 - Binary search  🔟🔎
+- Exam recommendations 💡
 
 ---
 
@@ -110,12 +111,9 @@ Dr. Mark D. Butala
 
 ---
 
-# Double pointer example
+# Double pointer example: `longer_string` function
 
 ``` c
-#include <stdio.h>
-#include <string.h>
-
 // c_ptr_ptr is a pointer, to a pointer, to a char
 unsigned longer_string(char **c_ptr_ptr, char s1[], char *s2) {
     // Compare the lengths of strings s1 and s2. Assign the pointer
@@ -131,6 +129,20 @@ unsigned longer_string(char **c_ptr_ptr, char s1[], char *s2) {
         *c_ptr_ptr = s1;
         return N1;
     }
+}
+```
+
+---
+
+# Double pointer example: `main`
+
+``` c
+#include <stdio.h>
+#include <string.h>
+
+// c_ptr_ptr is a pointer, to a pointer, to a char
+unsigned longer_string(char **c_ptr_ptr, char s1[], char *s2) {
+    // See impplementation on previous slide
 }
 
 int main(void) {
@@ -148,6 +160,7 @@ int main(void) {
 
 
 ---
+
 
 # <!--fit--> <span style="color:white">Doubly Linked List</span>
 
@@ -342,9 +355,9 @@ struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str)
 
 # Tidying up `StringNode`-based linked list
 
-- There are two `malloc`s in `insertNodeRight`
-  + To allocate space for the `data` member
-  + To allocate space for a newly created node
+- There are two `malloc`s in `insertNodeRight` to allocate memory for:
+  + The `data` member
+  + The newly created `StringNode`
 
 ``` c
 void freeLL(struct StringNode **node_ptr_ptr) {
@@ -378,7 +391,7 @@ int main() {
     rprintfLL(TAIL);  // Output: World to_the Hello Yo,
 
     printf("HEAD == NULL? %d\n", HEAD == NULL);  // Output: HEAD == NULL? 0
-    freeLL(&HEAD);    // tidy our mess
+    freeLL(&HEAD);                               // tidy our mess
     printf("HEAD == NULL? %d\n", HEAD == NULL);  // Output: HEAD == NULL? 1
     // HEAD was passed by reference to freeLL and assigned to NULL
     TAIL = NULL;
@@ -395,16 +408,132 @@ int main() {
 
 ---
 
-# Binary search
+#  Typical beginner 🐣 programmer progression
 
+1. Learn a programming language
+2. Learn data structures
+3. Learn search and sort algorithms
+
+### Search algorithms are used everywhere 🌎, all the time 🔁🔁🔁!
 
 <div align="center">
 
-![](assets/Binary-search-work.gif)
+![w:30cm](../assets/baidu.png)
+
+</div>
+
+---
+
+# Linear search
+
+- The simplest search: is a given value in an array?
+``` c
+int *linear_search(int *array, unsigned length, int search_value) {
+    for (unsigned i = 0; i < length; i++) {
+        if (array[i] == search_value) {
+            return &array[i];
+        }
+    }
+    return NULL;
+}
+```
+- This a *linear* search algorithm because it requires, on average, $O(n)$ operations to complete the search
+
+
+---
+
+
+# Binary search
+
+- If the array is sorted, then it is possible to do much better, $O(\log n)$ operations
+
+<div align="center">
+
+![w:15cm](assets/Binary-search-work.gif)
 (https://en.wikipedia.org/wiki/Binary_search)
 
 </div>
 
+- This is an example of a divide ÷ and conquer 💪 algorithm (分治法)
+
+---
+
+# The `bsearch` function
+
+- The C standard library provides a binary search function `bsearch` in `stdlib.h`
+- You must provide a *pointer to a function* 🤯🤯🤯 to use `bsearch`
+  + Functions pointers are beyond the scope of IP
+- Though it appears simple, it is challenging to write a correct binary search function
+- I would always use a binary search function from a robust software library
+
+---
+
+<div style="width: 45%; float:left">
+
+## "Although the basic idea of binary search is comparatively straightforward, the details can be surprisingly tricky"
+## Donald Knuth, *The Art of Computer Programming*
+
+</div>
+
+<div style="width: 50%; float:right">
+
+![Donald Knuth](../assets/DK_VC_2K_01.jpg)
+
+</div>
+
+---
+
+# Binary search: key points 🎯
+
+- What we expect IP students to know:
+  + Sort is an $O(n \log n)$ algorithm
+  + Search on a *sorted* sequence is $O(\log n)$
+  + If you need to search many times, first sort the sequence and then binary search
+
+---
+
+# <!--fit--> <span style="color:white">Exam Recommendations</span>
+
+![bg opacity:100% decorative background](../assets/gradient.jpg)
+
+---
+
+# Typos vs. logical errors
+
+- YES, you will be asked to handwrite ✍ code on the final exam 😬
+- You (and I) are not a computer 💻 or compiler 🤖
+- Small syntax mistakes will result in few (or no) loss of marks
+
+``` c
+#include < stdio >
+int main() {
+   fputs(stdout, "Hello world!")
+}
+```
+
+<div align="center">
+
+(can you find all 4 errors?)
+
+</div>
+
+- *Logic* mistakes will result in some (or all) loss of marks
+
+``` c
+int x;
+scanf("%d", x);
+```
+
+---
+
+# Overall recommendations
+
+- Use past exams to practice
+- The final exam is comprehensive
+- Comment your code
+- Leave *nothing* blank
+  + A question with an empty response will earn 0 marks
+  + Correct pseudo-code (outline of the code steps) will earn partial marks
 
 ---
 
