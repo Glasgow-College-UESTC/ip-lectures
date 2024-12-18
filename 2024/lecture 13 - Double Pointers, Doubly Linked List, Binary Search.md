@@ -78,6 +78,11 @@ Dr. Mark D. Butala
 </p>
 </div>
 
+---
+
+# Questions 🙋❓
+
+- Ask me anything (programming-related 😎)
 
 ---
 
@@ -142,7 +147,7 @@ unsigned longer_string(char **c_ptr_ptr, char s1[], char *s2) {
 
 // c_ptr_ptr is a pointer, to a pointer, to a char
 unsigned longer_string(char **c_ptr_ptr, char s1[], char *s2) {
-    // See impplementation on previous slide
+    // See implementation on previous slide
 }
 
 int main(void) {
@@ -158,6 +163,27 @@ int main(void) {
 }
 ```
 
+---
+
+# Pointer to a pointer to a pointer to a ...
+
+<style scoped>div.link{font-size:20px;}</style>
+
+<div align="center" class="link">
+
+(adapted from https://stackoverflow.com/questions/5580761/why-use-double-indirection-or-why-use-pointers-to-pointers)
+
+</div>
+
+- If you want to have an array of characters (a **word**), you can use `char *word`
+- If you want an array of words (a **sentence**), you can use `char **sentence`
+- If you want an array of sentences (a **paragraph**), you can use `char ***paragraph`
+- If you want an array of paragraphs (a **book**), you can use `char ****book`
+- If you want an array of books (a **library**), you can use `char *****library`
+
+### An array, of arrays, of arrays, ... is likely not the best data structure for this case
+
+- This example illustrates the *semantics* of a pointer: it indicates an array of a given type
 
 ---
 
@@ -171,10 +197,10 @@ int main(void) {
 # Doubly linked lists: the what 🤔 and why 🤩
 
 - So far we have covered *singly* linked lists
-  + Each node stores the pointer to the next node to right ... ➡️ 📦 ➡️ 📦 ➡️ ...
+  + Each node stores the pointer to the next node  (... ➡️ 📦 ➡️ 📦 ➡️ ...)
   + Supports traversal from list beginning (`HEAD`) to end (`TAIL`)
 
-- Let us add a link to the previous node to each node ... ↔️ 📦 ↔️ 📦 ↔️ ...
+- Let us add a link to the previous node  (... ↔️ 📦 ↔️ 📦 ↔️ ...)
 ``` c
 struct PersonNode {
     char name[41];
@@ -411,10 +437,10 @@ int main() {
 #  Typical beginner 🐣 programmer progression
 
 1. Learn a programming language
-2. Learn data structures
-3. Learn search and sort algorithms
+2. Learn basic search and sort algorithms
+3. Learn one or more data structures starting from linked list
 
-### Search algorithms are used everywhere 🌎, all the time 🔁🔁🔁!
+### Search algorithms are used everywhere 🌎, all the time 🔁🔁🔁...!
 
 <div align="center">
 
@@ -442,19 +468,48 @@ int *linear_search(int *array, unsigned length, int search_value) {
 
 ---
 
-
 # Binary search
 
 - If the array is sorted, then it is possible to do much better, $O(\log n)$ operations
+- This is an example of a divide ÷ and conquer 💪 algorithm (分治法)
 
-<div align="center">
+<div style="width: 55%; float:left">
 
-![w:15cm](assets/Binary-search-work.gif)
+![w:17cm](assets/Binary-search-work.gif)
 (https://en.wikipedia.org/wiki/Binary_search)
 
 </div>
 
-- This is an example of a divide ÷ and conquer 💪 algorithm (分治法)
+<div style="width: 42%; float:right; margin-top:2cm;">
+
+<div>
+
+- `L`: left edge of boundary
+- `R`: ️ right edge of boundary
+- `m`:  middle of boundary
+
+<!-- | 1     | 2 | 3 | 4 | 5    | 6 | 7 | 8 | 9 | 10    | -->
+<!-- |-------|---|---|---|------|---|---|---|---|-------| -->
+<!-- | L=▶️   |   |   |   | m=🔼 |   |   |   |   | ◀️=R   | -->
+
+</div>
+
+</div>
+
+---
+
+<style scoped>h2{font-size:16px;}</style>
+
+
+# Binary vs. linear search animation
+
+<div align="center">
+
+![w:19cm](assets/binary-and-linear-search-animations.gif)
+
+## (https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif)
+
+</div>
 
 ---
 
