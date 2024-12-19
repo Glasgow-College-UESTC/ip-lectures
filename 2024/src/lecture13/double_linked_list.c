@@ -34,7 +34,7 @@ struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str)
 struct StringNode *insertNodeLeft(struct StringNode *node_ptr, const char *str) {
     struct StringNode *new_node = malloc(sizeof(struct StringNode));  // allocate memory to store new node
     assert(new_node);
-    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));
+    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));        // allocate memory to store string data
     assert(new_node->data);
     strcpy(new_node->data, str);
     if (node_ptr != NULL) {

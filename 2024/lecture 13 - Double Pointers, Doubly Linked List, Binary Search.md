@@ -325,7 +325,7 @@ struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str)
 
 # Case 3: `insertNodeRight` general case
 
-`insertNodeRight(node_ptr, "to_the");`
+`struct StringNode *new_node = insertNodeRight(node_ptr, "to_the");`
 
 <div class="columns">
 
@@ -356,7 +356,7 @@ struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str)
 struct StringNode *insertNodeRight(struct StringNode *node_ptr, const char *str) {
     struct StringNode *new_node = malloc(sizeof(struct StringNode));  // allocate memory to store new node
     assert(new_node);
-    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));
+    new_node->data = malloc(sizeof(char) * (strlen(str) + 1));        // allocate memory to store string data
     assert(new_node->data);
     strcpy(new_node->data, str);
     if (node_ptr != NULL) {
@@ -526,7 +526,7 @@ int *linear_search(int *array, unsigned length, int search_value) {
 <div style="width: 45%; float:left">
 
 ## "Although the basic idea of binary search is comparatively straightforward, the details can be surprisingly tricky"
-## Donald Knuth, *The Art of Computer Programming*
+### &mdash; Donald Knuth, *The Art of Computer Programming*
 
 </div>
 

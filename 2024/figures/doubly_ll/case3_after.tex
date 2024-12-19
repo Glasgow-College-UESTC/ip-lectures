@@ -32,7 +32,7 @@
       \node[data] at (0,-1.25) (#1 data) {};
       \node[data label] at (0,-0.75) (#1 data label) {data\strut};
 
-      \node[node label,fit={(#1 prev) (#1 prev label) (#1 next) (#1 next label) (#1 data) (#1 data label)},label={[label distance=0.25cm]#2}] (#1) {};
+      \node[node label,fit={(#1 prev) (#1 prev label) (#1 next) (#1 next label) (#1 data) (#1 data label)},label={[label distance=0.25cm]#2\strut}] (#1) {};
     }
   }
 }
@@ -43,7 +43,7 @@
 \begin{tikzpicture}
   \pic at (0,0) {llnode=node_ptr/{node_ptr}};
 
-  \pic at (2,0) {llnode=new_node/{}};
+  \pic at (2,0) {llnode=new_node/{new_node}};
 
   \pic at (4,0) {llnode=new_node2/{}};
 
