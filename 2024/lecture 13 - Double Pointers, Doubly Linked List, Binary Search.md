@@ -196,7 +196,7 @@ int main(void) {
 
 # Doubly linked lists: the what 🤔 and why 🤩
 
-- So far we have covered *singly* linked lists
+- So far we have introduced *singly* linked lists
   + Each node stores the pointer to the next node  (... ➡️ 📦 ➡️ 📦 ➡️ ...)
   + Supports traversal from list beginning (`HEAD`) to end (`TAIL`)
 
