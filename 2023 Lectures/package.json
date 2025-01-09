@@ -1,19 +1,14 @@
 {
-  "name": "marp-cli-example",
-  "version": "0.0.0",
-  "author": "Yuki Hattori <yukihattori1116@gmail.com>",
-  "license": "WTFPL",
   "private": true,
+  "name": "poc-marp-slidev",
   "scripts": {
-    "build": "rimraf public && npm run -s og-image && npm run -s deck",
-    "deck": "marp --no-stdin PITCHME.md -o public/index.html && ncp assets public/assets",
-    "og-image": "marp --no-stdin PITCHME.md -o public/og-image.jpg",
-    "start": "marp -ps .",
-    "vercel-build": "npm i puppeteer --no-save && MARP_USER=root CHROME_PATH=$(node -e \"console.log(require('puppeteer').executablePath())\") npm run build"
+    "dev": "slidev --open",
+    "build": "slidev build"
   },
-  "devDependencies": {
-    "@marp-team/marp-cli": "^2.4.0",
-    "ncp": "^2.0.0",
-    "rimraf": "^5.0.1"
+  "dependencies": {
+    "@marp-team/marp-core": "^3.9.1",
+    "@slidev/cli": "^51.0.0",
+    "@slidev/theme-default": "^0.25",
+    "@slidev/types": "^51.0.0"
   }
 }
