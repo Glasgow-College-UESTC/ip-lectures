@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="145.53804mm"
+   height="145.53804mm"
+   viewBox="0 0 145.53804 145.53804"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   sodipodi:docname="clock.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">   
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleIn"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="EmptyTriangleIn"
+       markerWidth="5.8241119"
+       markerHeight="6.7330775"
+       viewBox="0 0 5.8241121 6.7330776"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path153" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.194989,-50.917355)">
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3.52778;stroke-dasharray:none;stroke-opacity:1"
+       id="path234"
+       cx="96.964012"
+       cy="123.68638"
+       r="71.005135" />
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1.41111111;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleIn);paint-order:normal"
+       d="M 96.964012,124.16742 V 59.261837"
+       id="path359"
+         <animateTransform
+ 		   id="path359"
+ 		   attributeName="transform"
+ 		   type="rotate"
+ 		   from="0 100 98.5"
+ 		   to="90 100 98.5"
+ 		   begin="0s;path359.end"
+ 		   dur="0.5s"
+ 		   />
+      />
+
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.76388889;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="path3702"
+       cx="97.008858"
+       cy="124.7865"
+       r="47.196583" />
+  </g>
+</svg>

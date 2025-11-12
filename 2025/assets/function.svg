@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="222.67332mm"
+   height="82.169662mm"
+   viewBox="0 0 222.67333 82.169663"
+   version="1.1"
+   id="svg4079"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   sodipodi:docname="function.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4081"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0396254"
+     inkscape:cx="362.14967"
+     inkscape:cy="265.96118"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4076">
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleIn"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="EmptyTriangleIn"
+       markerWidth="5.8241119"
+       markerHeight="6.7330775"
+       viewBox="0 0 5.8241121 6.7330776"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path153" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.9918166,-78.231762)">
+    <rect
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:1"
+       id="rect4310"
+       width="112.48843"
+       height="56.244217"
+       x="53.444729"
+       y="90.092545"
+       ry="5.7787161" />
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#EmptyTriangleIn);paint-order:stroke fill markers"
+       d="M 53.444729,118.21465 H 6.1079691"
+       id="path4929"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#EmptyTriangleIn);paint-order:stroke fill markers"
+       d="m 222.94087,118.21465 h -58.5347"
+       id="path5194"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="84.308144"
+       y="121.30489"
+       id="text5260"><tspan
+         sodipodi:role="line"
+         id="tspan5258"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="84.308144"
+         y="121.30489">myFunc()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="4.071979"
+       y="158.2982"
+       id="text5314"><tspan
+         sodipodi:role="line"
+         id="tspan5469"
+         x="4.071979"
+         y="158.2982">arguments as input</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="111.97943"
+       y="86.27507"
+       id="text5322"><tspan
+         sodipodi:role="line"
+         id="tspan5494">return value as output</tspan></text>
+  </g>
+</svg>
