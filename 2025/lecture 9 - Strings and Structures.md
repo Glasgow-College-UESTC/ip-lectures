@@ -70,7 +70,7 @@ Mark D. Butala
 
 # But First a Recap...
 
-- A **pointer** is a variable that stores the address of another variable
+- A **pointer** is a variable that stores a memory address
 - Useful for memory management:
   + Direct access to data
   + Dynamic memory handling
@@ -92,7 +92,7 @@ int main()
 
 # Function Pointer Example: Numerical Integration
 
-- Consider a C function `quadrature` that calculates a numerical integral (数值积分)
+- Consider a C function `quadrature` that calculates a definite integral (数值积分)
 - Recall the Riemann sum (黎曼和):
 
 $$
@@ -116,23 +116,25 @@ $$
 
 
 ```c
-double quadrature(double (*integrand)(double), double a, double b, size_t N)
+double quadrature(double (*integrand)(double), double a, double b, int N)
 ```
 
-- The variable `integrand` is a pointer to a function
-   + One `double` input parameter
-   + Returns a `double`
+- The variable `integrand` is a pointer to a function with these properties:
+   + Input: One `double` input parameter
+   + Output: Returns a `double`
 
 ---
 
 # Function Pointer Example: Numerical Integration
 
 ```c
+#include <stdio.h>
+
 // integrand = 被积函数
-double quadrature(double (*integrand)(double), double a, double b, size_t N) {
-    double accum = 0;
+double quadrature(double (*integrand)(double), double a, double b, int N) {
+    double accum = 0;  // accum = accumlate = 累积求和
     double delta = (b - a) / N;
-    for (size_t i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         accum += integrand(a + i*delta);
     }
     return accum * delta;
@@ -147,7 +149,7 @@ double x_cubed(double x) {
 }
 
 int main(void) {
-    size_t N = 10000;
+    int N = 10000;
     printf("Integral of x^2 from 0 to 10 ~= %f\n", quadrature(x_squared, 0, 10, N));
     printf("Integral of x^3 from 0 to 1  ~= %f\n", quadrature(x_cubed, 0, 1, N));
     return 0;
@@ -162,10 +164,10 @@ int main(void) {
 
 ---
 
-# Strings 🧵
+# Strings (字符串) 🧵
 
 - An array of characters terminated by the **null character** (`\0`)
-- A contiguous block of memory where each character is accessible via indexing or pointers
+- A contiguous (连续的) block of memory where each character is accessible via indexing or pointers
 - The C standard library (`string.h`) includes many useful string manipulation functions
 
 
@@ -176,16 +178,16 @@ char str[10] = "Hainan";
 ```
  54   55   56   57   58   59   60   61   62   63   64   65   66   67   68   69
 +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
-| 62 | 22 | 55 | 1  | H  | a  | i  | n  | a  | n  | \0 | 22 | 42 | 42 | 10 | 3  |
+| 62 | 22 | 55 | 1  | H  | a  | i  | n  | a  | n  | \0 | \0 | \0 | \0 | 10 | 3  |
 +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 ```
 
 ---
 
-# The `string.h` Standard Library
+# The C Standard Library for Strings (`string.h`)
 
 - `#include <string.h>` provides many useful string functions:
-  + `strcat(str1, str2)`: concatenates two strings
+  + `strcat(str1, str2)`: concatenates (拼接) two strings
   + `strcpy(str1, str2)`: copies one strings to another
   + `strcmp(str1, str2)`: compare the elements of two strings
   + `strlen(str)`: compute the length of a string
@@ -234,12 +236,16 @@ strcpy(str1, str2);  // compiles, but will (likely) fail at runtime
 char str[] = "UESTC 1005";
 char *ptr = str;          // Points to the first character of str
 printf("%c", *(ptr + 1)); // Outputs 'E'
-printf("%s", *(ptr + 6)); // Outputs '1005'
+printf("%s", (ptr + 6)); // Outputs '1005'
 ```
 
 ```C
-char *str = (char *) malloc(10 * sizeof(char));
+char *str_ptr = (char *) malloc(10 * sizeof(char));
 ```
+
+
+What length string can `str_ptr` store? (hint: it is **NOT** 10)
+
 
 ---
 
@@ -304,7 +310,7 @@ int main() {
 
 ---
 
-# Lexicographic order
+# Lexicographic order (字典序)
 
 - The result of `strcmp` can also be positive or negative, indicating `str1 < str2` or `str1 > str2`, but what does this mean?
 - If `str1 < str2` then `str1` appears before `str2` in an "ASCII special character aware" dictionary (ASCII 字典序)
@@ -313,10 +319,13 @@ int main() {
 #include <stdio.h>
 #include <string.h>
 int main() {
-    printf("strcmp(apple, apple) = %d\n", strcmp("apple", "apple"));  //  0
-    printf("strcmp(Apple, apple) = %d\n", strcmp("Apple", "apple"));  // -1
-    printf("strcmp(Apple, !pple) = %d\n", strcmp("Apple", "!pple"));  //  1
-    printf("strcmp(Apple, App)   = %d\n", strcmp("Apple", "App"));    //  1
+    printf("A=%d  a=%d\n", 'A', 'a');          //  A=65  a=97
+    printf("A=%d  !=%d\n", 'A', '!');          //  A=65  !=33
+
+    printf("%d\n", strcmp("apple", "apple"));  //  0
+    printf("%d\n", strcmp("Apple", "apple"));  // -1
+    printf("%d\n", strcmp("Apple", "!pple"));  //  1
+    printf("%d\n", strcmp("Apple", "App"));    //  1
 }
 ```
 
@@ -328,11 +337,12 @@ int main() {
 
 ---
 
-# So What is a Structure 🍱?
+# So What is a Structure (结构体) 🍱?
 
-- A user-defined data type with group of variables of different types
-- Better data organisation
-- Allocate storage all at once
+- A user-defined data type composed of variables of (potentially) different types
+- Enables better data organization
+- Allocate storage all at one time
+
 
 ```C
 struct StructureName {
@@ -343,10 +353,10 @@ struct StructureName {
 
 ```C
 struct Person {
-            char    name[10];
-            int     age;
-            char    gender;
-            double  weight;
+    char    name[10];
+    int     age;
+    char    gender;
+    double  weight;
 };
 ```
 
@@ -371,7 +381,7 @@ struct Coordinate *p = (struct Coordinate *) malloc(sizeof(struct Coordinate));
 
 ---
 
-# Structure Member Access
+# Structure Member (结构体成员) Access
 
 
 - The *dot operator* is used to peer into a structure and access its members:
@@ -381,7 +391,7 @@ struct Coordinate {
 };
 struct Coordinate p1 = {10, 20, 30};
 p1.x = 15;
-printf("%d", p1.x);
+printf("%d %d %d\n", p1.x, p1.y, p1.z);
 ```
 
 - Example of member access using a pointer:
@@ -408,19 +418,20 @@ struct Student {
     float grade;
 };
 ```
-- Suppose `sizeof(char)` is 1 and `sizeof(int)` and `sizeof(float)` are 4. What is `sizeof(struct Student)`?
-- For performance reasons (byte alignment), the correct answer is different than what you might assume: `sizeof(struct Student) >= 50*1 + 4*1 + 4*1 = 58`
+- Suppose `sizeof(int)` and `sizeof(float)` are 4. What is `sizeof(struct Student)`?
+- For performance reasons (memory alignment 内存对齐), the correct answer is different than what you might assume: `sizeof(struct Student) >= 50*1 + 4*1 + 4*1 = 58`
 
 ---
 
 
 # Passing an Array of Structures to a Function
 
-- An array of structures can be efficiently (by reference) passed to a function
+- Efficiently pass an array of structures to a function *by its address* (按地址传递)
 
 ```C
 // Function to calculate average grade
 float calculateAverageGrade(struct Student students[], int size) {
+    // equivalently, float calculateAverageGrade(struct Student *students ...
     float total = 0;
     for (int i = 0; i < size; i++) {
         total += students[i].grade;
@@ -433,13 +444,12 @@ int main() {
     struct Student students[100];
     // Initialization of students happens here
     float average_grade = calculateAverageGrade(students, 100);
-    return 0;
 }
 ```
 
 ---
 
-# Structure Pointers
+# Structure Pointers (结构体指针)
 
 - A pointer to a structure points to the memory address where the structure is located
 - If the structure contains an array member, that pointer can be used to indirectly access the array elements
