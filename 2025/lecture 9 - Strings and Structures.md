@@ -236,7 +236,7 @@ strcpy(str1, str2);  // compiles, but will (likely) fail at runtime
 char str[] = "UESTC 1005";
 char *ptr = str;          // Points to the first character of str
 printf("%c", *(ptr + 1)); // Outputs 'E'
-printf("%s", (ptr + 6)); // Outputs '1005'
+printf("%s", ptr + 6); // Outputs '1005'
 ```
 
 ```C
