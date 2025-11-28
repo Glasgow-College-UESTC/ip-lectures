@@ -38,7 +38,7 @@ _color: "#093867"
 
 # UESTC 1005 — Introductory Programming
 
-<h2>Lecture 11 &mdash; Structures and Bit Manipulation</h2>
+<h2>Lecture 10 &mdash; Structures and Bit Manipulation</h2>
 
 Dr. Mark D. Butala
 
@@ -275,7 +275,7 @@ printf(" x|y = %d\n",  x | y);  // output:  x | y = 42
 
 
 - Suppose you have 3 disks, `X1`, `X2`, and `X3` that can each store 8 bits of information
-- On a fourth disk `P`, the *parity* disk, store the XOR of each bit across the 3 disks
+- On a fourth disk `P`, the *parity* (奇偶校验) disk, store the XOR of each bit across the 3 disks
 
 <div align='center'>
 
@@ -395,12 +395,12 @@ if ((x & 1) > 0) {
 
 ---
 
-# Bit Fields
+# Bit Fields (位域)
 
-- A bit field is one way to efficiently represent a set of *flags*, i.e., on ✅ and off ❌ values, stored as `1`s and `0`s, respectively
+- A bit field is one way to efficiently represent a set of *flags* (标志), i.e., on ✅ and off ❌ values, stored as `1`s and `0`s
 - Example: Consider a Nintendo Entertainment System (红白机) controller 🎮
   - 8 buttons: up, down, left, right, start, select, A, and B
-  - Efficiently store the controller *state* with a `char` (which is $\geq$ 8 bits):
+  - Efficiently store the controller *state* with a `char` (which is 8 bits):
 
 <div align="center">
 
@@ -419,7 +419,7 @@ char controller_state = 0b10000010;  // store that "up" and "A" were pressed sim
 
 # Getting and Setting Bit Field Values
 
-- Bitwise operators enable *bit masking* 🎭, i.e., bit field member selection
+- Bitwise operators enable *bit masking* 🎭 (位掩码), i.e., bit field member selection
 
 ### Is the $N$th bit field entry (from the right) set?
 
