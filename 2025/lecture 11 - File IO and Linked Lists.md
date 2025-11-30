@@ -56,7 +56,7 @@ _color: "#093867"
 
 # UESTC 1005 — Introductory Programming
 
-<h2>Lecture 12 &mdash; File I/O and Linked Lists</h2>
+<h2>Lecture 11 &mdash; File I/O and Linked Lists</h2>
 
 Dr. Mark D. Butala
 
