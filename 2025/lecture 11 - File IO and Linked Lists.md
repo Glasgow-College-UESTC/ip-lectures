@@ -103,11 +103,11 @@ Dr. Mark D. Butala
 
 - Influential contribution: "stream of bytes" (字节流) abstraction (抽象) for all input and output devices
 <!-- - History of UNIX and C are closely intertwined 🪢🖇️💞 &mdash; C (and most other programming languages) use the "stream of bytes" style -->
-- Example input ("source", 源) devices:
+- Example input ("source" 源) devices:
   + Keyboard ⌨️, mouse 🖱️, game controller 🎮, microphone 🎙️
   + Disk 💾
   + Network 📡
-- Example output ("sink", 汇) devices:
+- Example output ("sink" 汇) devices:
   + Monitor 🖥️, printer 🖨️, speaker 🔊
   + Disk 💾
   + Network 📡
