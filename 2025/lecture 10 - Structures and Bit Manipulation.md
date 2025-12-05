@@ -376,7 +376,7 @@ printf("%d\n", x >> 2)  // output: 6
 
 # Example Bitwise Shift Use-Cases
 
-- Computers are optimized 🏎️💨 for bit manipulation and some useful operations accomplished using a bitwise shift
+- Computers are optimized 🏎️💨 for bit manipulation
 
 ### Is a value odd 🙃 (奇数) or even 🙂 (偶数)?
 
