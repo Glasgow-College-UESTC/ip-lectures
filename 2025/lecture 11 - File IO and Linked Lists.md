@@ -154,9 +154,10 @@ Dr. Mark D. Butala
 
 # How to flush (刷新) 🚽 a stream
 
-- File flush (write unwritten data stored in buffer): `int fflush(FILE *stream)`
+- File flush (write unwritten data stored in data buffer 缓冲区):
+`int fflush(FILE *stream)`
 - Only for output streams &mdash; return `0` on success
-- For performance, files/streams are (usually) *buffered* (流通常是带缓冲的) and input/output occurs on blocks (array of bytes) rather than bytes
+- For performance, files/streams are (usually) *buffered* (流通常是带缓冲的) and input/output occurs on blocks (数据块, array of bytes) rather than bytes
 - Notable unbuffered stream: `stderr`
 - ❗⚠️: `stdout` is buffered and output may "disappear" when a program crashes (标准输出 (stdout) 是带缓冲区的，当程序崩溃时，其输出内容可能会“丢失”。)
 
@@ -231,7 +232,7 @@ int main() {
     FILE *fptr = fopen("scores.txt", "r");
     assert(fptr);
     // feof returns non-zero when the end of the file has
-    // been reached
+    // been reached --- "eof" means "end of file"
     while (!feof(fptr)) {
         fscanf(fptr, "%u", &score);
         total += score;
@@ -253,7 +254,7 @@ int main() {
 #include <assert.h>
 // begin magic :)
 // Adapted from https://codegolf.stackexchange.com/questions/50625/ascii-art-of-the-day-3-chinese-shrines
-// THIS IS AWFUL CODE --- DON'T WRITE CODE LIKE THIS!  My eyes feel like they are bleeding!
+// THIS IS AWFUL CODE --- DON'T WRITE CODE LIKE THIS!  My eyes feel like they are bleeding! 🤢😵😡
 // This code has been written for "code golf" 🏌⛳, a competition where the shortest code wins
 int d,i,w;  char s[1<<24];  FILE *FPTR = NULL;
 int v(int i, int j){s[w-i]=".|]\\#/"[j%7];s[w+i]=".|[/#\\"[j%7]; while(i--)s[w-i]=s[w+i]="# _-"[j/7];return 0;}
@@ -292,27 +293,27 @@ int main(int argc, char const *argv[]) {
 </style>
 
 ```
-                 .
-                 |
-            .   ]#[   .
-             \_______/
-          .    ]###[    .
-           \___________/
-        .     ]#####[     .
-         \_______________/
-      .      ]#######[      .
-       \___________________/
-    .       ]#########[       .
-     \_______________________/
-  .        ]###########[        .
-   \___________________________/
-.         ]#############[         .
- \_______]####.-----.####[_______/
-  |__|__|__|__|     |__|__|__|__|
-  |__|__|__|__|_____|__|__|__|__|
-  ############/_____\############
-             |_______|
-            /_________\
+                                                                        .
+                                                                        |
+                                                                   .   ]#[   .
+                                                                    \_______/
+                                                                 .    ]###[    .
+                                                                  \___________/
+                                                               .     ]#####[     .
+                                                                \_______________/
+                                                             .      ]#######[      .
+                                                              \___________________/
+                                                           .       ]#########[       .
+                                                            \_______________________/
+                                                         .        ]###########[        .
+                                                          \___________________________/
+                                                       .         ]#############[         .
+                                                        \_______]####.-----.####[_______/
+                                                         |__|__|__|__|     |__|__|__|__|
+                                                         |__|__|__|__|_____|__|__|__|__|
+                                                         ############/_____\############
+                                                                    |_______|
+                                                                   /_________\
 ```
 
 - Running as `./pagoda 6` produces the same output on the screen
@@ -350,9 +351,9 @@ int main(int argc, char const *argv[]) {
 
 ---
 
-# What is the purpose of a linked list? 🤔
+# What is the purpose of a linked list (链表)? 🤔
 
-- An array stores a *fixed* number of elements of the same type
+- An array stores a *fixed* number (定长) of elements of the same type (同类型)
 - Potential issues with arrays: what if
   - the array size is unknown at compile-time?
   - the array size needs to change over time?
@@ -471,11 +472,11 @@ struct IntNode *insertNode(struct IntNode *node_ptr, int value)
 
 # Linked list node insertion: 1) memory allocation
 
-<div align="center">
+<!-- <div align="center"> -->
 
 ![height:5cm](figures/linked_list/linked_list_insert1.png)
 
-</div>
+<!-- </div> -->
 
 
 <div align="center">
@@ -489,11 +490,11 @@ struct IntNode *insertNode(struct IntNode *node_ptr, int value)
 
 # Linked list node insertion: 2) assign `new_node` link
 
-<div align="center">
+<!-- <div align="center"> -->
 
 ![height:5cm](figures/linked_list/linked_list_insert2.png)
 
-</div>
+<!-- </div> -->
 
 
 <div align="center">
@@ -507,11 +508,11 @@ struct IntNode *insertNode(struct IntNode *node_ptr, int value)
 
 # Linked list node insertion: 3) assign `node_ptr` link
 
-<div align="center">
+<!-- <div align="center"> -->
 
 ![height:5cm](figures/linked_list/linked_list_insert3.png)
 
-</div>
+<!-- </div> -->
 
 
 <div align="center">
@@ -568,7 +569,7 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 ---
 
 # The linked list data structure  📐👷🏻‍️🏗️
-- A *data structure* builds upon simple, primitive data types (e.g., integer, floating point number, string)
+- A *data structure* (数据结构) builds upon simple, primitive data types (e.g., integer, floating point number, string)
 - The goal 🎯: clear and clean data representation and programming interface:
   + Retrieve list element value
   + Append to end of list
@@ -595,16 +596,16 @@ void freeLL(struct IntNode **node_ptr_ptr) {
 
 # Dynamic array implementation performance
 
-- A dynamic array is an *abstract data type* that supports variable size, random access, and element insertion/deletion
+- A dynamic array is an *abstract data type* (抽象数据类型) that supports variable size, random access (随机存取), and element insertion/deletion
 
 |             | Index  | Mutate beginning / end | Mutate middle | Excess space (average) |
 |-------------|--------|------------------------|---------------|------------------------|
 | Array       | $O(1)$ | $O(n)$                 | $O(n)$        | 0                      |
 | Linked list | $O(n)$ | $O(1)$                 | $O(n)$        | $O(n)$                 |
 
-- Index: get or set the $n$ th element
-- Mutate: insert/delete element to/from dynamic array
-- Excess space: memory overhead (storing `next` for linked list)
+- Index (索引): get or set the $n$th element
+- Mutate (修改操作): insert/delete element to/from dynamic array
+- Excess space (额外空间): memory overhead (storing `next` pointer for linked)
 
 
 <!-- --- -->
